@@ -1,16 +1,23 @@
 {
-	"name": "@btakita/ui--server--blog",
-	"version": "0.0.0",
-	"module": "src/index.ts",
-	"type": "module",
-	"dependencies": {
-		"@ctx-core/solid-js": "^1.4.15",
-		"solid-js": "^1.8.1"
-	},
-	"devDependencies": {
-		"bun-types": "latest"
-	},
-	"peerDependencies": {
-		"typescript": "^5.0.0"
-	}
+  "name": "@btakita/ui--server--blog",
+  "type": "module",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@btakita/domain--server": "workspace:*",
+    "@ctx-core/html": "^11.4.0",
+    "@ctx-core/object": "^28.2.0",
+    "@ctx-core/solid-js": "^1.4.15",
+    "@ctx-core/ui-solid": "^17.0.3",
+    "solid-js": "^1.8.1"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "vite": "^4.4.11"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
