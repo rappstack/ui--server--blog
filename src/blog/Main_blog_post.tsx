@@ -5,10 +5,10 @@ import { type ParentProps, Show } from 'solid-js'
 import { FormattedDate } from '../date'
 export function Main_blog_post($p:ParentProps<{
 	ctx?:Ctx
-}&Pick<Post, 'hero_image', 'pub_date', 'updated_date', 'title'>>) {
+}&Pick<Post, 'hero_image', 'pubDate', 'updated_date', 'title'>>) {
 	const ctx = $p.ctx || ctx__Context__use()
 	const hero_image = $p.hero_image
-	const pub_date = $p.pub_date
+	const pubDate = $p.pubDate
 	const updated_date = $p.updated_date
 	const title = $p.title
 	return (
@@ -22,7 +22,7 @@ export function Main_blog_post($p:ParentProps<{
 				<div class="prose">
 					<div class="title">
 						<div class="date">
-							<FormattedDate date={pub_date}/>
+							<FormattedDate date={pubDate}/>
 							<Show when={updated_date}>
 								<div class="last-updated-on">
 									Last updated on

@@ -7,7 +7,7 @@ import { Datetime } from '../date/Datetime.tsx'
 export function Card(
 	$p:VoidProps<{
 		href?:string
-		frontmatter:Pick<Post, 'pub_date', 'description'>
+		frontmatter:Pick<Post, 'pubDate', 'description'>
 		show_heading?:boolean
 		locale?:string
 	}>
@@ -16,7 +16,7 @@ export function Card(
 	const frontmatter = $p.frontmatter
 	const show_heading = $p.show_heading
 	const title = frontmatter.title
-	const pub_date = frontmatter.pub_date
+	const pubDate = frontmatter.pubDate
 	const description = frontmatter.description
 	const h_props = {
 		style: style_({
@@ -34,7 +34,7 @@ export function Card(
 					<h2 {...h_props}>{title}</h2>
 				</Show>
 			</a>
-			<Datetime datetime={pub_date} locale={$p.locale}/>
+			<Datetime datetime={pubDate} locale={$p.locale}/>
 			<p>{description}</p>
 		</li>
 	)

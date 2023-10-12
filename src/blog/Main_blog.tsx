@@ -19,7 +19,7 @@ export function Main_blog($p:VoidProps<{
 									<img width={720} height={360} src={post.data.hero_image} alt=""/>
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={post.data.pub_date}/>
+										<FormattedDate date={post.data.pubDate}/>
 									</p>
 								</a>
 							</li>
