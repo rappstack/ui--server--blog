@@ -13,11 +13,11 @@ import { Hr, LinkButton } from '../html_tag'
 import './Header.css'
 export function Header($p:VoidProps<{
 	ctx?:Ctx
-	'active-nav'?:'posts'|'tags'|'about'|'search'
+	active_nav?:'posts'|'tags'|'about'|'search'
 }
 >) {
 	const ctx = $p.ctx || ctx__Context__use()
-	const active_nav = $p['active-nav']
+	const active_nav = $p['active_nav']
 	return [
 		<ctx__Context.Provider value={ctx}>
 			<header>

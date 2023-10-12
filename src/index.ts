@@ -1,4 +1,5 @@
 export * from './blog'
+export * from './breadcrumb'
 export * from './card'
 export * from './date'
 export * from './header'

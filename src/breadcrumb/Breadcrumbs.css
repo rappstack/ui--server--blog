@@ -1,0 +1,13 @@
+
+.Breadcrumbs ul li {
+	@apply inline;
+}
+.Breadcrumbs ul li a {
+	@apply capitalize opacity-70;
+}
+.Breadcrumbs ul li span {
+	@apply opacity-70;
+}
+.Breadcrumbs ul li:not(:last-child) a {
+	@apply hover:opacity-100;
+}
