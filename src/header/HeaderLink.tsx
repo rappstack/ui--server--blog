@@ -1,5 +1,4 @@
 /// <reference lib="dom" />
-import { blog__ctx__new } from '@btakita/domain--all--blog'
 import { Astro__url__memo } from '@btakita/domain--server'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
@@ -10,7 +9,7 @@ export function HeaderLink($p:ParentProps<JSX.HTMLAttributes<HTMLAnchorElement>&
 	ctx?:Ctx
 	href:string
 }>) {
-	const ctx = $p.ctx || ctx__Context__use() || blog__ctx__new()
+	const ctx = $p.ctx || ctx__Context__use()
 	const href = $p.href
 	const [
 		pick_class_o,

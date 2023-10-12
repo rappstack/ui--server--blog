@@ -33,7 +33,9 @@ export function Main_blog_post($p:ParentProps<{
 						<h1>{title}</h1>
 						<hr/>
 					</div>
-					<div innerHTML={$p.children}></div>
+					<Show when={typeof $p.children === 'string'} fallback={$p.children}>
+						<div innerHTML={$p.children}></div>
+					</Show>
 				</div>
 			</article>
 		</ctx__Context.Provider>
