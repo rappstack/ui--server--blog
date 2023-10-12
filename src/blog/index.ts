@@ -1,2 +1,2 @@
-export * from './Main_blog'
-export * from './Main_blog_post'
+export * from './Main_posts'
+export * from './Main_post'

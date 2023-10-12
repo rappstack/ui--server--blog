@@ -3,7 +3,7 @@ import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { For, type VoidProps } from 'solid-js'
 import { FormattedDate } from '../date'
-export function Main_blog($p:VoidProps<{
+export function Main_posts($p:VoidProps<{
 	ctx?:Ctx
 	posts:Post[]
 }>) {
@@ -15,7 +15,7 @@ export function Main_blog($p:VoidProps<{
 					<ul>
 						<For each={$p.posts}>{post=>
 							<li>
-								<a href={`/blog/${post.slug}/`}>
+								<a href={`/posts/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.hero_image} alt=""/>
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">

@@ -3,7 +3,7 @@ import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { type ParentProps, Show } from 'solid-js'
 import { FormattedDate } from '../date'
-export function Main_blog_post($p:ParentProps<{
+export function Main_post($p:ParentProps<{
 	ctx?:Ctx
 }&Pick<Post, 'hero_image', 'pubDate', 'updated_date', 'title'>>) {
 	const ctx = $p.ctx || ctx__Context__use()
