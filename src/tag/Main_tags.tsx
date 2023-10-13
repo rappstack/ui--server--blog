@@ -12,7 +12,7 @@ export function Main_tags($p:VoidProps<{
 	return (
 		<Main
 			ctx={ctx}
-			class="Main_tag"
+			class="Main_tags"
 			title="Tags"
 			desc="All the tags used in posts."
 		>

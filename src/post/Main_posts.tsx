@@ -11,14 +11,17 @@ export function Main_posts($p:VoidProps<{
 	const ctx = $p.ctx || ctx__Context__use()
 	const posts = $p.posts
 	return (
-		<ctx__Context.Provider value={ctx}>
-			<Main title="Posts" desc="All the articles I've posted.">
-				<ul>
-					<For each={posts}>{post=>
-						<Card href={`/posts/${post__slug_(post)}`} post={post}></Card>
-					}</For>
-				</ul>
-			</Main>
-		</ctx__Context.Provider>
+		<Main
+			ctx={ctx}
+			class="Main_posts"
+			title="Posts"
+			desc="All the articles I've posted."
+		>
+			<ul>
+				<For each={posts}>{post=>
+					<Card href={`/posts/${post__slug_(post)}`} post={post}></Card>
+				}</For>
+			</ul>
+		</Main>
 	)
 }

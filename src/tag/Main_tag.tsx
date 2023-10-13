@@ -15,6 +15,7 @@ export function Main_tag($p:VoidProps<{
 	return (
 		<Main
 			ctx={ctx}
+			class="Main_tag"
 			title={`Tag:${tag}`}
 			desc={`All the articles with the tag "${tag}".`}
 		>
