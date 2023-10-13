@@ -1,5 +1,5 @@
 import { class_ } from '@ctx-core/html'
-import { type ParentProps, Show } from 'solid-js'
+import { type ParentProps } from 'solid-js'
 export function LinkButton($p:ParentProps<{
 	href:string
 	class?:string
@@ -12,6 +12,7 @@ export function LinkButton($p:ParentProps<{
 	const aria_label = $p['aria-label']
 	const title = $p.title
 	const disabled = $p.disabled
+	const children = $p.children
 	return [
 		<a
 			href={disabled ? '#' : href}
@@ -20,11 +21,11 @@ export function LinkButton($p:ParentProps<{
 			aria-label={aria_label}
 			title={title}
 			aria-disabled={disabled}
-			innerHTML={typeof $p.children === 'string' ? $p.children : null}
-		>
-			<Show when={typeof $p.children !== 'string'}>
-				{$p.children}
-			</Show>
-		</a>
+			{...
+				typeof children === 'string'
+					? { innerHTML: children }
+					: { children }
+			}
+		/>
 	]
 }

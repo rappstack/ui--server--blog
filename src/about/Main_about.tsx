@@ -1,6 +1,6 @@
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context__use } from '@ctx-core/solid-js'
-import { type ParentProps, Show } from 'solid-js'
+import { type ParentProps } from 'solid-js'
 import { Main } from '../main'
 export function Main_about($p:ParentProps<{
 	ctx?:Ctx
@@ -21,10 +21,11 @@ export function Main_about($p:ParentProps<{
 			<article
 				id="about"
 				class="mb-28 max-w-3xl prose-img:border-0"
-				innerHTML={typeof children === 'string' ? children : null}
-			>
-				<Show when={children}>{children}</Show>
-			</article>
+				{...typeof children === 'string'
+						? { innerHTML: children }
+						: { children }
+				}
+			></article>
 		</Main>
 	)
 }

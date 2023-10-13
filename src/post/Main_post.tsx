@@ -16,6 +16,7 @@ export function Main_post($p:ParentProps<{
 	const pubDate = data.pubDate
 	const tags = data.tags
 	const title = data.title
+	const children = $p.children
 	return (
 		<ctx__Context.Provider value={ctx}>
 			<Main class="Main_post" title={title}>
@@ -25,16 +26,17 @@ export function Main_post($p:ParentProps<{
 						id="article"
 						role="article"
 						class="prose mx-auto mt-8 max-w-3xl"
-						innerHTML={typeof $p.children === 'string' ? $p.children : null}
 					>
 						<Show when={hero_image}>
 							<div class="hero-image">
 								<img width={1020} height={510} src={hero_image} alt=""/>
 							</div>
 						</Show>
-						<Show when={typeof $p.children !== 'string'}>
-							{$p.children}
-						</Show>
+						<span
+							{...typeof children === 'string'
+								? { innerHTML: children }
+								: { children }}
+						/>
 					</article>
 					<ul class="tags-container my-8">
 						<For each={tags}>{tag=>

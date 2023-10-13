@@ -13,15 +13,13 @@ export function Socials($p:VoidProps<{
 	const centered = $p.centered || false
 	return (
 		<ctx__Context.Provider value={ctx}>
-			<div class={`social-icons ${centered ? 'flex' : ''}`}>
+			<div class={`Socials social-icons ${centered ? 'flex' : ''}`}>
 				<For<Social[]> each={socials__memo(ctx)}>{social=>
 					<LinkButton
 						href={social.href}
 						class="link-button"
 						title={social.link_title}
-					>
-						{social_icons[social.name]}
-					</LinkButton>
+					>{social_icons[social.name]}</LinkButton>
 				}</For>
 			</div>
 		</ctx__Context.Provider>
