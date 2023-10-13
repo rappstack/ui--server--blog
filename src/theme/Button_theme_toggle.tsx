@@ -1,11 +1,13 @@
+import { Button_theme_toggle__onbind } from '@btakita/domain--all--blog'
 export function Button_theme_toggle() {
   return (
 		<button
 			id="theme-btn"
-			class="focus-outline"
+			class="Button_theme_toggle focus-outline"
 			title="Toggles light & dark"
 			aria-label="auto"
 			aria-live="polite"
+			data-onbind={Button_theme_toggle__onbind}
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" id="moon-svg">
 				<path

@@ -6,6 +6,7 @@
   "module": "src/index.ts",
   "types": "src/index.ts",
   "dependencies": {
+    "@btakita/domain--all--blog": "workspace:*",
     "@btakita/domain--server": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@ctx-core/html": "^11.4.0",
