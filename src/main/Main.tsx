@@ -15,12 +15,15 @@ export function Main($p:ParentProps<{
 	return (
 		<ctx__Context.Provider value={ctx}>
 			<Breadcrumbs/>
-			<main id="main" class={class_('Main', $p.class)}>
+			<main
+				id="main"
+				class={class_('Main mx-auto w-full max-w-3xl px-4 pb-12', $p.class)}
+			>
 				<Show when={title}>
-					<h1>{title}</h1>
+					<h1 class="text-2xl font-semibold sm:text-3xl">{title}</h1>
 				</Show>
 				<Show when={desc}>
-					<p>{desc}</p>
+					<p class="mb-6 mt-2 italic">{desc}</p>
 				</Show>
 				{$p.children}
 			</main>

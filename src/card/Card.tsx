@@ -1,4 +1,4 @@
-import { type Post } from '@btakita/domain--all--blog'
+import { type Post } from '@btakita/domain--server--blog'
 import { style_ } from '@ctx-core/html'
 import { slug } from 'github-slugger'
 import { Show, type VoidProps } from 'solid-js'
@@ -7,17 +7,17 @@ import { Datetime } from '../date/Datetime.tsx'
 export function Card(
 	$p:VoidProps<{
 		href?:string
-		frontmatter:Pick<Post, 'pubDate', 'description'>
+		post:Post
 		show_heading?:boolean
 		locale?:string
 	}>
 ) {
 	const href = $p.href
-	const frontmatter = $p.frontmatter
+	const post = $p.post
 	const show_heading = $p.show_heading
-	const title = frontmatter.title
-	const pubDate = frontmatter.pubDate
-	const description = frontmatter.description
+	const title = post.title
+	const pubDate = post.pubDate
+	const description = post.description
 	const h_props = {
 		style: style_({
 			'view-transition-name': slug(title)
