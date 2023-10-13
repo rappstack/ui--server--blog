@@ -1,6 +1,6 @@
 import { Astro__url__pathname__memo } from '@btakita/domain--server/src/astro/Astro__url__pathname.ts'
 import { type Ctx } from '@ctx-core/object'
-import { ctx__Context__use } from '@ctx-core/solid-js'
+import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { createMemo, For, Show, type VoidProps } from 'solid-js'
 import './Breadcrumbs.css'
 export function Breadcrumbs($p:VoidProps<{
@@ -22,20 +22,22 @@ export function Breadcrumbs($p:VoidProps<{
 		return breadcrumb_list
 	})
 	return (
-		<nav class="Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4" aria-label="breadcrumb">
-			<ul>
-				<li>
-					<a href="/">Home</a>
-					<span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
-				</li>
-				<For each={breadcrumb_a_()}>{(breadcrumb, idx_)=>
-					<Show when={idx_() + 1 === breadcrumb_a_().length} fallback={
+		<ctx__Context.Provider value={ctx}>
+			<Show when={breadcrumb_a_().length > 1}>
+				<nav class="Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4" aria-label="breadcrumb">
+					<ul>
 						<li>
-							<a href={`/${breadcrumb}`}>{breadcrumb}</a>
+							<a href="/">Home</a>
 							<span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
 						</li>
-					}>
-						<li>
+						<For each={breadcrumb_a_()}>{(breadcrumb, idx_)=>
+							<Show when={idx_() + 1 === breadcrumb_a_().length} fallback={
+								<li>
+									<a href={`/${breadcrumb}`}>{breadcrumb}</a>
+									<span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
+								</li>
+							}>
+								<li>
 							<span
 								class={`${idx_() > 0 ? 'lowercase' : 'capitalize'}`}
 								aria-current="page"
@@ -43,10 +45,12 @@ export function Breadcrumbs($p:VoidProps<{
 								{/* make the last part lowercase in Home > Tags > some-tag */}
 								{breadcrumb}
 							</span>
-						</li>
-					</Show>
-				}</For>
-			</ul>
-		</nav>
+								</li>
+							</Show>
+						}</For>
+					</ul>
+				</nav>
+			</Show>
+		</ctx__Context.Provider>
 	)
 }
