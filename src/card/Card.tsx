@@ -15,9 +15,10 @@ export function Card(
 	const href = $p.href
 	const post = $p.post
 	const show_heading = $p.show_heading
-	const title = post.title
-	const pubDate = post.pubDate
-	const description = post.description
+	const data = post.data
+	const title = data.title
+	const pubDate = data.pubDate
+	const description = data.description
 	const h_props = {
 		style: style_({
 			'view-transition-name': slug(title)

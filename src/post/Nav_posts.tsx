@@ -1,16 +1,13 @@
-import { type Post } from '@btakita/domain--server--blog'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
-import { createMemo, Show, type VoidProps } from 'solid-js'
+import { Show, type VoidProps } from 'solid-js'
 import { LinkButton } from '../html_tag'
 import './Nav_posts.css'
 export function Nav_posts($p:VoidProps<{
 	ctx?:Ctx
 	page_num:number
 	total_pages:number
-	posts:Post[]
-}
->) {
+}>) {
 	const ctx = $p.ctx || ctx__Context__use()
 	const page_num = $p.page_num
 	const total_pages = $p.total_pages
