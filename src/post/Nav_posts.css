@@ -1,0 +1,6 @@
+.Nav_posts .disabled {
+	@apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;
+}
+.Nav_posts .disabled-svg {
+	@apply group-hover:!fill-skin-base;
+}
