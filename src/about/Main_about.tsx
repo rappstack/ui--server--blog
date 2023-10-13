@@ -13,13 +13,13 @@ export function Main_about($p:ParentProps<{
 	const children = $p.children
 	return (
 		<Main ctx={ctx} class="Main_about" title={title} desc={description}>
-			<section
+			<article
 				id="about"
 				class="prose mb-28 max-w-3xl prose-img:border-0"
 				innerHTML={typeof children === 'string' ? children : null}
 			>
 				<Show when={children}>{children}</Show>
-			</section>
+			</article>
 		</Main>
 	)
 }

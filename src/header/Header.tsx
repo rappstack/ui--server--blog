@@ -19,7 +19,7 @@ export function Header($p:ParentProps<{
 	const active = $p.active
 	return [
 		<ctx__Context.Provider value={ctx}>
-			<header>
+			<header class="Header">
 				<a
 					id="skip-to-content"
 					class="absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4"

@@ -13,17 +13,17 @@ export function Breadcrumbs($p:VoidProps<{
 	// Get url array from path
 	// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
 	const breadcrumb_a_ = createMemo(()=>{
-		const breadcrumb_list = current_url_path_().split('/').slice(1)
+		const breadcrumb_a = current_url_path_().split('/').slice(1)
 		// if breadcrumb is Home > Posts > 1 <etc>
 		// replace Posts with Posts (page number)
-		if (breadcrumb_list[0] === 'posts') {
-			breadcrumb_list.splice(0, 2, `Posts (page ${breadcrumb_list[1] || 1})`)
+		if (breadcrumb_a[0] === 'posts') {
+			breadcrumb_a.splice(0, 2, `Posts (page ${breadcrumb_a[1] || 1})`)
 		}
-		return breadcrumb_list
+		return breadcrumb_a
 	})
 	return (
 		<ctx__Context.Provider value={ctx}>
-			<Show when={breadcrumb_a_().length > 1}>
+			<Show when={breadcrumb_a_().length}>
 				<nav class="Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4" aria-label="breadcrumb">
 					<ul>
 						<li>
@@ -38,13 +38,13 @@ export function Breadcrumbs($p:VoidProps<{
 								</li>
 							}>
 								<li>
-							<span
-								class={`${idx_() > 0 ? 'lowercase' : 'capitalize'}`}
-								aria-current="page"
-							>
-								{/* make the last part lowercase in Home > Tags > some-tag */}
-								{breadcrumb}
-							</span>
+									<span
+										class={`${idx_() > 0 ? 'lowercase' : 'capitalize'}`}
+										aria-current="page"
+									>
+										{/* make the last part lowercase in Home > Tags > some-tag */}
+										{breadcrumb}
+									</span>
 								</li>
 							</Show>
 						}</For>
