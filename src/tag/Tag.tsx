@@ -1,8 +1,8 @@
 import { type VoidProps } from 'solid-js'
 import './Tag.css'
 export function Tag($p:VoidProps<{
-	name:string;
-	size?:'sm'|'lg';
+	name:string
+	size?:'sm'|'lg'
 }>) {
   const name = $p.name
 	const size = $p.size || 'sm'
