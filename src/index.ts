@@ -1,3 +1,4 @@
+export * from './about'
 export * from './breadcrumb'
 export * from './card'
 export * from './date'
