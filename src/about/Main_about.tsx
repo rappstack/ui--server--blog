@@ -12,7 +12,12 @@ export function Main_about($p:ParentProps<{
 	const description = $p.description
 	const children = $p.children
 	return (
-		<Main ctx={ctx} class="Main_about prose" title={title} desc={description}>
+		<Main
+			ctx={ctx}
+			class="Main_about prose"
+			title={title}
+			desc={description}
+		>
 			<article
 				id="about"
 				class="mb-28 max-w-3xl prose-img:border-0"
