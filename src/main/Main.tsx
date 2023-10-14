@@ -1,4 +1,5 @@
 /// <reference lib="dom" />
+import { run } from '@ctx-core/function'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
@@ -18,6 +19,7 @@ export function Main($p:ParentProps<{
 	const title__class = $p.title__class || 'text-2xl font-semibold sm:text-3xl'
 	const desc = $p.desc
 	const dataset = $p.dataset || {}
+	const children = $p.children
 	return (
 		<ctx__Context.Provider value={ctx}>
 			<Breadcrumbs/>
@@ -27,7 +29,7 @@ export function Main($p:ParentProps<{
 				{...Object.entries(dataset).reduce((o, [key, value])=>{
 					o[`data-${key}`] = value
 					return o
-				}, {})}
+				}, {} as Record<string, any>)}
 			>
 				<Show when={title}>
 					<h1 class={title__class}>{title}</h1>
@@ -35,7 +37,9 @@ export function Main($p:ParentProps<{
 				<Show when={desc}>
 					<p class="mb-6 mt-2 italic">{desc}</p>
 				</Show>
-				{typeof $p.children === 'string' ? template($p.children) : $p.children}
+				<Show when={typeof children === 'string'} fallback={children}>
+					{run(template(children))}
+				</Show>
 			</main>
 		</ctx__Context.Provider>
 	)
