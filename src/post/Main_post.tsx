@@ -1,4 +1,4 @@
-import { type Post, str__slug_ } from '@btakita/domain--server--blog'
+import { type Post, str__slug__new } from '@btakita/domain--all--blog'
 import { Datetime } from '@btakita/ui--all--blog'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context__use } from '@ctx-core/solid-js'
@@ -39,7 +39,7 @@ export function Main_post($p:ParentProps<{
 				</article>
 				<ul class="tags-container my-8">
 					<For each={tags}>{tag=>
-						<Tag name={str__slug_(tag)}/>
+						<Tag name={str__slug__new(tag)}/>
 					}</For>
 				</ul>
 			</article>

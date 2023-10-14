@@ -1,4 +1,4 @@
-import { type Post, post__slug_ } from '@btakita/domain--server--blog'
+import { type Post, post__slug__new } from '@btakita/domain--all--blog'
 import { Card } from '@btakita/ui--all--blog'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context__use } from '@ctx-core/solid-js'
@@ -21,7 +21,7 @@ export function Main_tag($p:VoidProps<{
 		>
 			<ul>
 				<For each={posts}>{post=>
-					<Card href={`/posts/${post__slug_(post)}`} post__data={post.data}/>
+					<Card href={`/posts/${post__slug__new(post)}`} post__data={post.data}/>
 				}</For>
 			</ul>
 		</Main>

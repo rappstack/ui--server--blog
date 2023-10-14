@@ -6,16 +6,16 @@ import './Nav_posts.css'
 export function Nav_posts($p:VoidProps<{
 	ctx?:Ctx
 	page_num:number
-	total_pages:number
+	page_count:number
 }>) {
 	const ctx = $p.ctx || ctx__Context__use()
 	const page_num = $p.page_num
-	const total_pages = $p.total_pages
+	const page_count = $p.page_count
 	const prev = page_num > 1 ? '' : 'disabled'
-	const next = page_num < total_pages ? '' : 'disabled'
+	const next = page_num < page_count ? '' : 'disabled'
 	return (
 		<ctx__Context.Provider value={ctx}>
-			<Show when={total_pages > 1}>
+			<Show when={page_count > 1}>
 				<nav
 					class="Nav_posts pagination-wrapper mb-8 mt-auto flex justify-center"
 					aria-label="Pagination"
