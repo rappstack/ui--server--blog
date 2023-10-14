@@ -2,7 +2,6 @@ import { run } from '@ctx-core/function'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context__use } from '@ctx-core/solid-js'
 import { type ParentProps, Show } from 'solid-js'
-import { template } from 'solid-js/web'
 import { Main } from '../main'
 export function Main_about($p:ParentProps<{
 	ctx?:Ctx
@@ -25,7 +24,7 @@ export function Main_about($p:ParentProps<{
 				class="mb-28 max-w-3xl prose-img:border-0"
 			>
 				<Show when={typeof children === 'string'} fallback={children}>
-					{template(run(children))}
+					<template>{children}</template>
 				</Show>
 			</article>
 		</Main>

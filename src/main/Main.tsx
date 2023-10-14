@@ -4,7 +4,6 @@ import { class_, dataset__data_attrs_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { type ParentProps, Show } from 'solid-js'
-import { template } from 'solid-js/web'
 import { Breadcrumbs } from '../breadcrumb'
 export function Main($p:ParentProps<{
 	ctx?:Ctx
@@ -35,7 +34,7 @@ export function Main($p:ParentProps<{
 					<p class="mb-6 mt-2 italic">{desc}</p>
 				</Show>
 				<Show when={typeof children === 'string'} fallback={children}>
-					{run(template(children))}
+					<template>{children}</template>
 				</Show>
 			</main>
 		</ctx__Context.Provider>
