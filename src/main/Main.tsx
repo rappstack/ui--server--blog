@@ -1,6 +1,6 @@
 /// <reference lib="dom" />
 import { run } from '@ctx-core/function'
-import { class_ } from '@ctx-core/html'
+import { class_, dataset__data_attrs_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { type ParentProps, Show } from 'solid-js'
@@ -26,10 +26,7 @@ export function Main($p:ParentProps<{
 			<main
 				id="main"
 				class={class_('Main mx-auto w-full max-w-3xl px-4 pb-12', $p.class)}
-				{...Object.entries(dataset).reduce((o, [key, value])=>{
-					o[`data-${key}`] = value
-					return o
-				}, {} as Record<string, any>)}
+				{...dataset__data_attrs_(dataset)}
 			>
 				<Show when={title}>
 					<h1 class={title__class}>{title}</h1>
