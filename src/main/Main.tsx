@@ -11,13 +11,13 @@ export function Main($p:ParentProps<{
 	class?:string
 	title?:string
 	title__class?:string
-	desc?:string
+	description?:string
 	dataset?:Record<string, any>
 }>) {
 	const ctx = $p.ctx || ctx__Context__use()
 	const title = $p.title
 	const title__class = $p.title__class || 'text-2xl font-semibold sm:text-3xl'
-	const desc = $p.desc
+	const desc = $p.description
 	const dataset = $p.dataset || {}
 	const children = $p.children
 	return (

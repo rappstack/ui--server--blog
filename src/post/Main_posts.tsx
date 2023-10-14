@@ -15,7 +15,7 @@ export function Main_posts($p:VoidProps<{
 			ctx={ctx}
 			class="Main_posts"
 			title="Posts"
-			desc="All the articles I've posted."
+			description="All the articles I've posted."
 		>
 			<ul>
 				<For each={posts}>{post=>

@@ -14,7 +14,7 @@ export function Main_tags($p:VoidProps<{
 			ctx={ctx}
 			class="Main_tags"
 			title="Tags"
-			desc="All the tags used in posts."
+			description="All the tags used in posts."
 		>
 			<ul>
 				<For each={tags}>{tag=>
