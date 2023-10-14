@@ -13,7 +13,7 @@ export function Main_search($p:ParentProps<{
 		<Main
 			ctx={ctx}
 			title="Search"
-			desc="Search any article ..."
+			desc="Search any article…"
 			dataset={{
 				onbind: Main_search__onbind,
 				search_item_a: JSON.stringify($p.search_item_a),
