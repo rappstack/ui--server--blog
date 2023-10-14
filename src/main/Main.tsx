@@ -1,7 +1,10 @@
+/// <reference lib="dom" />
+import { type id__dom__handler_T } from '@ctx-core/dom/src/dom__bind'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { type ParentProps, Show } from 'solid-js'
+import { template } from 'solid-js/web'
 import { Breadcrumbs } from '../breadcrumb'
 export function Main($p:ParentProps<{
 	ctx?:Ctx
@@ -9,6 +12,7 @@ export function Main($p:ParentProps<{
 	title?:string
 	title__class?:string
 	desc?:string
+	'data-onbind'?:id__dom__handler_T<HTMLElement>
 }>) {
 	const ctx = $p.ctx || ctx__Context__use()
 	const title = $p.title
@@ -20,6 +24,7 @@ export function Main($p:ParentProps<{
 			<main
 				id="main"
 				class={class_('Main mx-auto w-full max-w-3xl px-4 pb-12', $p.class)}
+				data-onbind={$p['data-onbind']}
 			>
 				<Show when={title}>
 					<h1 class={title__class}>{title}</h1>
@@ -27,7 +32,7 @@ export function Main($p:ParentProps<{
 				<Show when={desc}>
 					<p class="mb-6 mt-2 italic">{desc}</p>
 				</Show>
-				{$p.children}
+				{typeof $p.children === 'string' ? template($p.children) : $p.children}
 			</main>
 		</ctx__Context.Provider>
 	)

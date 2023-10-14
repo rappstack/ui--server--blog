@@ -1,8 +1,8 @@
 import { type Post, str__slug_ } from '@btakita/domain--server--blog'
+import { Datetime } from '@btakita/ui--all--blog'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context__use } from '@ctx-core/solid-js'
 import { For, type ParentProps, Show } from 'solid-js'
-import { Datetime } from '../date/Datetime.tsx'
 import { Main } from '../main'
 import { Tag } from '../tag'
 export function Main_post($p:ParentProps<{
