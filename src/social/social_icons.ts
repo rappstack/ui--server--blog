@@ -1,4 +1,4 @@
-import type { SocialIcons } from '../types'
+import { type SocialIcons } from '@btakita/domain--server--blog'
 export const social_icons:SocialIcons = {
 	Github: `<svg
     xmlns="http://www.w3.org/2000/svg"

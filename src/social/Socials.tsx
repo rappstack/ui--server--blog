@@ -1,4 +1,4 @@
-import { type Social, socials__memo } from '@btakita/domain--server--blog'
+import { socials__memo } from '@btakita/domain--server--blog'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { For, type VoidProps } from 'solid-js'
@@ -14,7 +14,7 @@ export function Socials($p:VoidProps<{
 	return (
 		<ctx__Context.Provider value={ctx}>
 			<div class={`Socials social-icons ${centered ? 'flex' : ''}`}>
-				<For<Social[]> each={socials__memo(ctx)}>{social=>
+				<For each={socials__memo(ctx)}>{social=>
 					<LinkButton
 						href={social.href}
 						class="link-button"
