@@ -33,7 +33,7 @@ export function Header($p:ParentProps<{
 								fallback={site__title__memo(ctx)}
 							>
 								<img
-									src={`/assets/${logo_image__svg__memo(ctx) ? 'logo.svg' : 'logo.png'}`}
+									src={`/assets/images/${logo_image__svg__memo(ctx) ? 'logo.svg' : 'logo.png'}`}
 									alt={site__title__memo(ctx)}
 									width={logo_image__width__memo(ctx)}
 									height={logo_image__height__memo(ctx)}
