@@ -14,7 +14,6 @@ export function Tag($p:VoidProps<{
 		>
 			<a
 				href={`/tags/${name.toLowerCase()}`}
-				transition:name={name.toLowerCase()}
 				class={`${size === 'sm' ? 'text-sm' : 'text-lg'} pr-2 group`}
 			>
 				<svg
