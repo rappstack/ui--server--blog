@@ -1,6 +1,7 @@
 export * from './about'
 export * from './anchor'
 export * from './breadcrumb'
+export * from './chidren'
 export * from './header'
 export * from './html_tag'
 export * from './main'

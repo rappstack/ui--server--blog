@@ -1,10 +1,10 @@
 /// <reference lib="dom" />
-import { run } from '@ctx-core/function'
 import { class_, dataset__data_attrs_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { type ParentProps, Show } from 'solid-js'
 import { Breadcrumbs } from '../breadcrumb'
+import { Raw } from '../chidren'
 export function Main($p:ParentProps<{
 	ctx?:Ctx
 	class?:string
@@ -18,7 +18,6 @@ export function Main($p:ParentProps<{
 	const title__class = $p.title__class || 'text-2xl font-semibold sm:text-3xl'
 	const desc = $p.description
 	const dataset = $p.dataset || {}
-	const children = $p.children
 	return (
 		<ctx__Context.Provider value={ctx}>
 			<Breadcrumbs/>
@@ -33,9 +32,7 @@ export function Main($p:ParentProps<{
 				<Show when={desc}>
 					<p class="mb-6 mt-2 italic">{desc}</p>
 				</Show>
-				<Show when={typeof children === 'string'} fallback={children}>
-					<template>{children}</template>
-				</Show>
+				<Raw>{$p.children}</Raw>
 			</main>
 		</ctx__Context.Provider>
 	)
