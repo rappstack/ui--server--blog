@@ -19,7 +19,7 @@ export function Main_posts($p:VoidProps<{
 		>
 			<ul>
 				<For each={posts}>{post=>
-					<Card href={`/posts/${post__slug__new(post)}`} post__data={post.data}></Card>
+					<Card href={`/posts/${post__slug__new(post)}`} post={post}/>
 				}</For>
 			</ul>
 		</Main>

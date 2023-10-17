@@ -1,4 +1,5 @@
 export * from './about'
+export * from './anchor'
 export * from './breadcrumb'
 export * from './header'
 export * from './html_tag'

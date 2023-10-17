@@ -1,4 +1,5 @@
 import { Astro__url__pathname__memo } from '@btakita/domain--server/src/astro/Astro__url__pathname.ts'
+import { isNumber_ } from '@ctx-core/number'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { createMemo, For, Show, type VoidProps } from 'solid-js'
@@ -16,7 +17,7 @@ export function Breadcrumbs($p:VoidProps<{
 		const breadcrumb_a = current_url_path_().split('/').slice(1)
 		// if breadcrumb is Home > Posts > 1 <etc>
 		// replace Posts with Posts (page number)
-		if (breadcrumb_a[0] === 'posts') {
+		if (breadcrumb_a[0] === 'posts' && isNumber_(breadcrumb_a[1])) {
 			breadcrumb_a.splice(0, 2, `Posts (page ${breadcrumb_a[1] || 1})`)
 		}
 		return breadcrumb_a

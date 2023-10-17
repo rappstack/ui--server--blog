@@ -21,7 +21,7 @@ export function Main_tag($p:VoidProps<{
 		>
 			<ul>
 				<For each={posts}>{post=>
-					<Card href={`/posts/${post__slug__new(post)}`} post__data={post.data}/>
+					<Card href={`/posts/${post__slug__new(post)}`} post={post}/>
 				}</For>
 			</ul>
 		</Main>
