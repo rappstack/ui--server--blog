@@ -1,2 +1,2 @@
 # ui--server--blog
-solid.js server components for blogs
+UI library targeting the server for blogs

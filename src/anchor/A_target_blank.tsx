@@ -13,7 +13,6 @@ export function A_target_blank($p:ParentProps<
 			target="_blank"
 		>
 			<Raw>{$p.children}</Raw>
-			&nbsp;
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 				class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
 				<path fill-rule="evenodd"
