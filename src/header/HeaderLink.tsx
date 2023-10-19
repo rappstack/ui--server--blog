@@ -5,7 +5,7 @@ import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { Style_ } from '@ctx-core/ui-solid'
 import { createMemo, type JSX, type ParentProps, splitProps } from 'solid-js'
-export function HeaderLink($p:ParentProps<JSX.HTMLAttributes<HTMLAnchorElement>&{
+export function HeaderLink($p:ParentProps<JSX.HTMLElementTags['a']&{
 	ctx?:Ctx
 	href:string
 }>) {

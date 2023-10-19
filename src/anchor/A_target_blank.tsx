@@ -4,7 +4,7 @@ import { type JSX, type ParentProps } from 'solid-js'
 import { Raw } from '../chidren'
 import './A_target_blank.css'
 export function A_target_blank($p:ParentProps<
-	JSX.HTMLAttributes<HTMLAnchorElement>
+	&JSX.HTMLElementTags['a']
 >) {
 	return (
 		<a
@@ -12,6 +12,8 @@ export function A_target_blank($p:ParentProps<
 			class={class_('A_target_blank', $p.class)}
 			target="_blank"
 		>
+			{$p.innerText}
+			<Raw>{$p.innerHTML}</Raw>
 			<Raw>{$p.children}</Raw>
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 				class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -23,3 +25,4 @@ export function A_target_blank($p:ParentProps<
 		</a>
 	)
 }
+export const Atb = A_target_blank
