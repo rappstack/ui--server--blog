@@ -10,18 +10,18 @@
     "@btakita/domain--server": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--all--blog": "workspace:*",
-    "@ctx-core/function": "^21.20.1",
-    "@ctx-core/html": "^11.5.0",
-    "@ctx-core/number": "^8.6.23",
-    "@ctx-core/object": "^28.2.0",
-    "@ctx-core/solid-js": "^1.4.16",
-    "@ctx-core/ui-solid": "^17.0.3",
+    "@ctx-core/function": "^21.20.2",
+    "@ctx-core/html": "^11.5.1",
+    "@ctx-core/number": "^8.6.24",
+    "@ctx-core/object": "^28.2.1",
+    "@ctx-core/solid-js": "^1.4.17",
+    "@ctx-core/ui-solid": "^17.0.4",
     "github-slugger": "^2.0.0",
-    "solid-js": "^1.8.1"
+    "solid-js": "^1.8.3"
   },
   "devDependencies": {
     "bun-types": "latest",
-    "vite": "^4.4.11"
+    "vite": "^4.5.0"
   },
   "peerDependencies": {
     "typescript": "^5.2.2"
