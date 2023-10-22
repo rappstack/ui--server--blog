@@ -1,4 +1,3 @@
-export * from './about'
 export * from './anchor'
 export * from './breadcrumb'
 export * from './chidren'
