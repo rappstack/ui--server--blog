@@ -4,7 +4,7 @@ import { ctx__Context__use } from '@ctx-core/solid-js'
 import { createMemo, type ParentProps } from 'solid-js'
 import { renderToString } from 'solid-js/web'
 import { _citation__handle__html_id__new, _citation__html_id__new } from './_citation__html_id.ts'
-export function Cite($p:ParentProps<{
+export function Footnote($p:ParentProps<{
 	ctx?:Ctx
 	id:string, // handle Astrojs progressive rendering
 	innerHTML?:string

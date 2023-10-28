@@ -1,2 +1,2 @@
-export * from './Citation_list.tsx'
-export * from './Cite'
+export * from './Footnote_list.tsx'
+export * from './Footnote.tsx'

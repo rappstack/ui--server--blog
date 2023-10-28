@@ -3,7 +3,7 @@ import { type Ctx } from '@ctx-core/object'
 import { ctx__Context__use } from '@ctx-core/solid-js'
 import { For, Show, type VoidProps } from 'solid-js'
 import { _citation__html_id__new } from './_citation__html_id.ts'
-export function Citation_list($p:VoidProps<{
+export function Footnote_list($p:VoidProps<{
 	ctx?:Ctx
 }>) {
 	const ctx = $p.ctx || ctx__Context__use()
