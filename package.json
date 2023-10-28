@@ -15,7 +15,7 @@
     "@ctx-core/number": "^8.6.24",
     "@ctx-core/object": "^28.2.1",
     "@ctx-core/solid-js": "^1.4.20",
-    "@ctx-core/ui-solid": "^17.0.9",
+    "@ctx-core/ui-solid": "^17.0.10",
     "github-slugger": "^2.0.0",
     "solid-js": "^1.8.4"
   },
