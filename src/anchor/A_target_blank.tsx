@@ -14,7 +14,8 @@ export function A_target_blank($p:ParentProps<
 			target="_blank"
 		>
 			<Matcha whenthen={[
-				[$p.children, ()=><Raw>{$p.children}</Raw>],
+				[$p.children && typeof $p.children === 'string', ()=><Raw>{$p.children}</Raw>],
+				[$p.children, ()=>$p.children],
 				[$p.innerHTML, ()=><Raw>{$p.innerHTML}</Raw>],
 				[$p.innerText, ()=>$p.innerText],
 				[true, ()=>$p.href]
