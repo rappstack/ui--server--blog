@@ -17,6 +17,8 @@
     "@ctx-core/solid-js": "^1.4.20",
     "@ctx-core/ui-solid": "^17.0.10",
     "github-slugger": "^2.0.0",
+    "htmlparser2": "^9.0.0",
+    "parse5": "^7.1.2",
     "solid-js": "^1.8.4"
   },
   "devDependencies": {
