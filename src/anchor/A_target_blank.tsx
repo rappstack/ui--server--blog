@@ -1,23 +1,17 @@
 /// <reference lib="dom" />
 import { class_ } from '@ctx-core/html'
-import { Matcha } from '@ctx-core/ui-solid'
 import { type JSX, type ParentProps } from 'solid-js'
-import { Raw } from '../chidren'
+import { Matcha_html_children } from '../matcha'
 import './A_target_blank.css'
-export function A_target_blank($p:ParentProps<
-	&JSX.HTMLElementTags['a']
->) {
+export function A_target_blank($p:ParentProps<JSX.HTMLElementTags['a']>) {
 	return (
 		<a
 			{...$p}
 			class={class_('A_target_blank', $p.class)}
+			rel={`noopener noreferrer` + $p.rel ? ` ${$p.rel}` : ''}
 			target="_blank"
 		>
-			<Matcha whenthen={[
-				[$p.children && typeof $p.children === 'string', ()=><Raw>{$p.children}</Raw>],
-				[$p.children, ()=>$p.children],
-				[$p.innerHTML, ()=><Raw>{$p.innerHTML}</Raw>],
-				[$p.innerText, ()=>$p.innerText],
+			<Matcha_html_children {...$p} whenthen={[
 				[true, ()=>$p.href]
 			]}/>
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

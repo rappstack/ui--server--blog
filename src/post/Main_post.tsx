@@ -4,8 +4,9 @@ import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context__use } from '@ctx-core/solid-js'
 import * as htmlparser2 from 'htmlparser2'
-import { createMemo, For, type ParentProps, Show } from 'solid-js'
+import { createMemo, For, type JSX, type ParentProps, Show } from 'solid-js'
 import { Raw } from '../chidren'
+import { Footnote_list } from '../citation'
 import { Main } from '../main'
 import { Tag } from '../tag'
 export function Main_post($p:ParentProps<{
@@ -79,6 +80,7 @@ export function Main_post($p:ParentProps<{
 						<Show when={children__is_string} fallback={children}>
 							<Raw>{children}</Raw>
 						</Show>
+						<Footnote_list ctx={ctx}/>
 					</article>
 					<ul class="tags-container my-8">
 						<For each={tags}>{tag=>

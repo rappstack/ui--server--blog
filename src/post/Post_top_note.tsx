@@ -1,6 +1,5 @@
-import { Matcha } from '@ctx-core/ui-solid'
 import { type ParentProps } from 'solid-js'
-import { Raw } from '../chidren'
+import { Matcha_html_children } from '../matcha'
 export function Post_top_note($p:ParentProps<{
 	innerHTML?:string
 	innerText?:string
@@ -8,11 +7,8 @@ export function Post_top_note($p:ParentProps<{
   return (
 		<p>
 			<em>
-				<Matcha whenthen={[
-					[$p.children && typeof $p.children === 'string', ()=><Raw>{$p.children}</Raw>],
-					[$p.children, ()=>$p.children],
-					[$p.innerHTML, ()=><Raw>{$p.innerHTML}</Raw>],
-					[$p.innerText, ()=>$p.innerText],
+				<Matcha_html_children whenthen={[
+					[true, ()=>'']
 				]}/>
 			</em>
 		</p>
