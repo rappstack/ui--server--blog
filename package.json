@@ -10,16 +10,18 @@
     "@btakita/domain--server": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--all--blog": "workspace:*",
+    "@ctx-core/dom": "^14.3.0",
     "@ctx-core/function": "^21.20.2",
     "@ctx-core/html": "^11.5.1",
     "@ctx-core/number": "^8.6.24",
     "@ctx-core/object": "^28.2.1",
-    "@ctx-core/solid-js": "^1.4.20",
-    "@ctx-core/ui-solid": "^17.0.10",
+    "@ctx-core/solid-js": "^1.4.21",
+    "@ctx-core/ui-solid": "^17.0.11",
     "github-slugger": "^2.0.0",
     "htmlparser2": "^9.0.0",
+    "mini-van-plate": "workspace:*",
     "parse5": "^7.1.2",
-    "solid-js": "^1.8.4"
+    "solid-js": "^1.8.5"
   },
   "devDependencies": {
     "bun-types": "latest",
