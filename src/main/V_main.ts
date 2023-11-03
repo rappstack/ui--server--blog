@@ -1,10 +1,10 @@
 import { H_ } from '@btakita/domain--all--blog'
-import { V_fragment, V_raw } from '@btakita/ui--all--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
 import { class_, dataset__data_attrs_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
-import type { ChildDom, PlateVan } from 'van-type-delegate'
+import type { ChildDom, VanShape } from 'van-type-delegate'
 import { V_breadcrumbs } from '../breadcrumb'
-export function V_main<V extends PlateVan>({
+export function V_main<V extends VanShape>({
 	ctx,
 	title,
 	title__class,
