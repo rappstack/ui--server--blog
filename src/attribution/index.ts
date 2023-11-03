@@ -1,1 +1,2 @@
-export * from './Attribution.tsx'
+export * from './Attribution'
+export * from './V_attribution'

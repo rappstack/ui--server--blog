@@ -16,7 +16,7 @@ export function Main($p:ParentProps<{
 	const ctx = $p.ctx || ctx__Context__use()
 	const title = $p.title
 	const title__class = $p.title__class || 'text-2xl font-semibold sm:text-3xl'
-	const desc = $p.description
+	const description = $p.description
 	const dataset = $p.dataset || {}
 	return (
 		<ctx__Context.Provider value={ctx}>
@@ -29,8 +29,8 @@ export function Main($p:ParentProps<{
 				<Show when={title}>
 					<h1 class={title__class}>{title}</h1>
 				</Show>
-				<Show when={desc}>
-					<p class="mb-6 mt-2 italic">{desc}</p>
+				<Show when={description}>
+					<p class="mb-6 mt-2 italic">{description}</p>
 				</Show>
 				<Raw>{$p.children}</Raw>
 			</main>

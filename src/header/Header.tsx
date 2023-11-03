@@ -1,22 +1,17 @@
 import {
-	logo_image__enable__memo,
-	logo_image__height__memo,
-	logo_image__svg__memo,
-	logo_image__width__memo,
-	site__title__memo
+	logo_image__enable_,
+	logo_image__height_,
+	logo_image__svg_,
+	logo_image__width_,
+	site__title_,
 } from '@btakita/domain--server--blog'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
 import { type ParentProps, Show } from 'solid-js'
 import { Hr } from '../html_tag'
 import './Header.css'
-export function Header($p:ParentProps<{
-	ctx?:Ctx
-	active?:string
-}
->) {
+export function Header($p:ParentProps<{ ctx?:Ctx }>) {
 	const ctx = $p.ctx || ctx__Context__use()
-	const active = $p.active
 	return [
 		<ctx__Context.Provider value={ctx}>
 			<header class="Header">
@@ -29,14 +24,14 @@ export function Header($p:ParentProps<{
 					<div class="top-nav-wrap relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8">
 						<a href="/" class="logo whitespace-nowrap absolute py-1 text-xl font-semibold sm:static sm:text-2xl">
 							<Show
-								when={logo_image__enable__memo(ctx)}
-								fallback={site__title__memo(ctx)}
+								when={logo_image__enable_(ctx)}
+								fallback={site__title_(ctx)}
 							>
 								<img
-									src={`/assets/images/${logo_image__svg__memo(ctx) ? 'logo.svg' : 'logo.png'}`}
-									alt={site__title__memo(ctx)}
-									width={logo_image__width__memo(ctx)}
-									height={logo_image__height__memo(ctx)}
+									src={`/assets/images/${logo_image__svg_(ctx) ? 'logo.svg' : 'logo.png'}`}
+									alt={site__title_(ctx)}
+									width={logo_image__width_(ctx)}
+									height={logo_image__height_(ctx)}
 								/>
 							</Show>
 						</a>

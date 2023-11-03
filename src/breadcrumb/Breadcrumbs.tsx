@@ -1,4 +1,4 @@
-import { Astro__url__pathname__memo } from '@btakita/domain--server/src/astro/Astro__url__pathname.ts'
+import { Astro__url__pathname_ } from '@btakita/domain--server'
 import { isNumber_ } from '@ctx-core/number'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
@@ -10,7 +10,7 @@ export function Breadcrumbs($p:VoidProps<{
 	const ctx = $p.ctx || ctx__Context__use()
 	// Remove current url path and remove trailing slash if exists
 	const current_url_path_ = createMemo(()=>
-		Astro__url__pathname__memo(ctx).replace(/\/+$/, ''))
+		Astro__url__pathname_(ctx).replace(/\/+$/, ''))
 	// Get url array from path
 	// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
 	const breadcrumb_a_ = createMemo(()=>{

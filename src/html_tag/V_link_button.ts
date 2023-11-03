@@ -1,33 +1,33 @@
-import { van_ } from '@btakita/domain--all--blog'
-import { Raw } from '@btakita/ui--all--blog'
+import { H_ } from '@btakita/domain--all--blog'
+import { V_raw } from '@btakita/ui--all--blog'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
-import type { ChildDom, VanShape } from 'mini-van-plate/shared'
+import type { ChildDom, VanShape } from 'van-type-delegate'
 export function V_link_button<V extends VanShape>($p:{
 	ctx:Ctx
 	href:string
 	class?:string
-	ariaLabel?:string
+	'aria-label'?:string
 	title?:string
 	disabled?:boolean
 }, ...children:ChildDom<V>[]) {
 	const {
-		ariaLabel,
 		ctx,
 		href,
 		title,
 		disabled
 	} = $p
-	const van = van_(ctx)
-	const H = van.tags
+	const H = H_(ctx)
 	return (
 		H.a({
 			href: disabled ? '#' : href,
 			tabindex: disabled ? '-1' : '0',
 			class: class_('group inline-block hover:text-skin-accent', $p.class),
-			ariaLabel,
+			'aria-label': $p['aria-label'],
 			title,
 		}, ...children.map(child=>
-			child))
-	)
+			typeof child === 'string'
+				? V_raw({ ctx, html: child })
+				: child))
+	) as ChildDom<V>
 }

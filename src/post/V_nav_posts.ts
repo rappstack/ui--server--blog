@@ -1,4 +1,5 @@
-import { van_ } from '@btakita/domain--all--blog'
+import { H_, S_ } from '@btakita/domain--all--blog'
+import { V_raw } from '@btakita/ui--all--blog'
 import { type Ctx } from '@ctx-core/object'
 import { V_link_button } from '../html_tag'
 export function V_nav_posts({
@@ -8,9 +9,8 @@ export function V_nav_posts({
 	page_num:number
 	page_count:number
 }) {
-	const van = van_(ctx)
-	const H = van.tags
-	const S = van.tagsNS('http://www.w3.org/2000/svg')
+	const H = H_(ctx)
+	const S = S_(ctx)
 	const prev = page_num > 1 ? '' : 'disabled'
 	const next = page_num < page_count ? '' : 'disabled'
 	if (page_count <= 1) return
@@ -24,7 +24,7 @@ export function V_nav_posts({
 					disabled: prev === 'disabled',
 					href: `/posts${page_num - 1 !== 1 ? '/' + (page_num - 1) : ''}`,
 					class: `mr-4 select-none ${prev}`,
-					ariaLabel: 'Previous'
+					'aria-label': 'Previous'
 				},
 				S.svg({ xmlns: 'http://www.w3.org/2000/svg', class: `${prev}-svg` },
 					S.path({ d: 'M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z' })),
@@ -34,7 +34,7 @@ export function V_nav_posts({
 					disabled: next === 'disabled',
 					href: `/posts/${page_num + 1}`,
 					class: `ml-4 select-none ${next}`,
-					ariaLabel: 'Next'
+					'aria-label': 'Next'
 				},
 				'Next',
 				S.svg({ xmlns: 'http://www.w3.org/2000/svg', class: `${next}-svg` },

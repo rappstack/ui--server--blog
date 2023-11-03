@@ -1,5 +1,5 @@
 /// <reference lib="dom" />
-import { Astro__url__memo } from '@btakita/domain--server'
+import { Astro__url_ } from '@btakita/domain--server'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { ctx__Context, ctx__Context__use } from '@ctx-core/solid-js'
@@ -16,7 +16,7 @@ export function HeaderLink($p:ParentProps<JSX.HTMLElementTags['a']&{
 		omit_class_o
 	] = splitProps($p, ['class', 'href'])
 	const pathname_ = createMemo(()=>
-		Astro__url__memo(ctx)?.pathname)
+		Astro__url_(ctx)?.pathname)
 	const active_ = createMemo(()=>
 		href === pathname_() || href === pathname_()?.replace(/\/$/, ''))
 	return (
