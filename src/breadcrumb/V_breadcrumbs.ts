@@ -1,10 +1,10 @@
-import { H_, van_ } from '@btakita/domain--all--blog'
+import { H_ } from '@btakita/domain--all--blog'
 import { Astro__url__pathname_ } from '@btakita/domain--server'
 import { isNumber_ } from '@ctx-core/number'
 import { type Ctx } from '@ctx-core/object'
-import type { ChildDom, PlateVan, VanShape } from 'van-type-delegate'
+import type { ChildDom, VanShape } from 'van-type-delegate'
 import './Breadcrumbs.css'
-export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }) {
+export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }):ChildDom<V> {
 	// Remove current url path and remove trailing slash if exists
 	const current_url_path = Astro__url__pathname_(ctx).replace(/\/+$/, '')
 	// Get url array from path
@@ -15,7 +15,6 @@ export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }) {
 	if (breadcrumb_a[0] === 'posts' && isNumber_(breadcrumb_a[1])) {
 		breadcrumb_a.splice(0, 2, `Posts (page ${breadcrumb_a[1] || 1})`)
 	}
-	return breadcrumb_a
 	if (!breadcrumb_a.length) return
 	const H = H_<V>(ctx)
 	return (

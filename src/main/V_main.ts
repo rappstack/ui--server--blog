@@ -27,8 +27,8 @@ export function V_main<V extends VanShape>({
 				class: class_('Main mx-auto w-full max-w-3xl px-4 pb-12', $p.class),
 				...dataset__data_attrs_(dataset || {})
 			},
-			title && H.h1({ class: title__class }, title),
-			description && H.p({ class: 'mb-6 mt-2 italic' }, description),
+			title ? H.h1({ class: title__class }, title) : null,
+			description ? H.p({ class: 'mb-6 mt-2 italic' }, description) : null,
 			...children
 		))
 }
