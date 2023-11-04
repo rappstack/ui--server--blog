@@ -1,5 +1,5 @@
 import { estimate_read_time_html__new, H_, type Post, str__slug__new, van_ } from '@btakita/domain--all--blog'
-import { Main_post__onbind, V_datetime, V_fragment, V_raw } from '@btakita/ui--all--blog'
+import { V_datetime, V_fragment, V_raw } from '@btakita/ui--all--blog'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import * as htmlparser2 from 'htmlparser2'
