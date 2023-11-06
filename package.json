@@ -10,13 +10,13 @@
     "@btakita/domain--server": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--all--blog": "workspace:*",
-    "@ctx-core/dom": "^15.0.0",
+    "@ctx-core/dom": "^15.0.2",
     "@ctx-core/function": "^21.20.2",
-    "@ctx-core/html": "^11.5.2",
+    "@ctx-core/html": "^11.5.3",
     "@ctx-core/number": "^8.6.24",
-    "@ctx-core/object": "^28.2.2",
-    "@ctx-core/solid-js": "^1.4.22",
-    "@ctx-core/ui-solid": "^17.0.12",
+    "@ctx-core/object": "^29.0.0",
+    "@ctx-core/solid-js": "^1.4.23",
+    "@ctx-core/ui-solid": "^18.0.0",
     "github-slugger": "^2.0.0",
     "htmlparser2": "^9.0.0",
     "mini-van-plate": "^0.5.3",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "bun-types": "latest",
+    "van-type-delegate": "^1.1.1",
     "vite": "^4.5.0"
   },
   "peerDependencies": {

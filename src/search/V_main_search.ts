@@ -1,6 +1,7 @@
 import { H_, type SearchItem } from '@btakita/domain--all--blog'
-import { Main_search__onbind, V_raw } from '@btakita/ui--all--blog'
+import { Main_search__onbind } from '@btakita/ui--all--blog'
 import { type Ctx } from '@ctx-core/object'
+import { V_raw } from '@ctx-core/vanjs'
 import type { ChildDom, PlateVan } from 'van-type-delegate'
 import { V_main } from '../main'
 export function V_main_search<V extends PlateVan>(
@@ -20,7 +21,7 @@ export function V_main_search<V extends PlateVan>(
 				// search_item_a: JSON.stringify(search_item_a),
 			}
 		}, H.tempate({ id: 'V_main_search__search_item_a', style: 'display: none;' },
-				V_raw({ ctx, html: JSON.stringify(search_item_a) })),
+				V_raw(ctx, JSON.stringify(search_item_a))),
 			...children)
 	)
 }

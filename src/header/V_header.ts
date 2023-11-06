@@ -11,8 +11,8 @@ import type { ChildDom, VanShape } from 'van-type-delegate'
 import { V_hr } from '../html_tag'
 import './Header.css'
 export function V_header<V extends VanShape>({ ctx }:{ ctx:Ctx }, ...children:ChildDom<V>[]) {
-	const H = H_<V>(ctx)
-	const S = S_<V>(ctx)
+	const H = H_(ctx)
+	const S = S_(ctx)
 	return (
 		H.header({ class: 'Header' },
 			H.a({

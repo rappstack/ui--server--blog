@@ -6,7 +6,7 @@ import type { ChildDom, VanShape } from 'van-type-delegate'
 import './Breadcrumbs.css'
 export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }):ChildDom<V> {
 	// Remove current url path and remove trailing slash if exists
-	const current_url_path = Astro__url__pathname_(ctx).replace(/\/+$/, '')
+	const current_url_path:string = Astro__url__pathname_(ctx).replace(/\/+$/, '')
 	// Get url array from path
 	// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
 	const breadcrumb_a = current_url_path.split('/').slice(1)
@@ -16,7 +16,7 @@ export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }):ChildDom<
 		breadcrumb_a.splice(0, 2, `Posts (page ${breadcrumb_a[1] || 1})`)
 	}
 	if (!breadcrumb_a.length) return
-	const H = H_<V>(ctx)
+	const H = H_(ctx)
 	return (
 		H.nav({ class: 'Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4', 'aria-label': 'breadcrumb' },
 			H.ul(
