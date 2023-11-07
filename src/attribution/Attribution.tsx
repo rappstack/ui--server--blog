@@ -1,7 +1,7 @@
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
 import { type JSX, type ParentProps } from 'solid-js'
-import { Footnote } from '../citation'
+import { Footnote } from '../footnote'
 import { Matcha_html_children } from '../matcha'
 export function Attribution($p:ParentProps<
 	JSX.HTMLElementTags['p']
