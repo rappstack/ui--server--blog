@@ -10,7 +10,7 @@
     "@btakita/domain--server": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--all--blog": "workspace:*",
-    "@ctx-core/dom": "^15.0.2",
+    "@ctx-core/dom": "^15.0.3",
     "@ctx-core/function": "^21.20.2",
     "@ctx-core/html": "^11.5.3",
     "@ctx-core/number": "^8.6.24",
