@@ -1,6 +1,7 @@
-import { H_, type Post, post__slug__new } from '@btakita/domain--all--blog'
+import { type Post, post__slug__new } from '@btakita/domain--all--blog'
 import { V_card } from '@btakita/ui--all--blog'
 import { type Ctx } from '@ctx-core/object'
+import { H_ } from '@ctx-core/vanjs'
 import type { VanShape } from 'van-type-delegate'
 import { V_main } from '../main'
 export function V_main_tag<V extends VanShape>({ ctx, tag, posts }:{

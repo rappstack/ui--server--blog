@@ -15,13 +15,14 @@
     "@ctx-core/html": "^11.5.3",
     "@ctx-core/number": "^8.6.24",
     "@ctx-core/object": "^29.0.0",
-    "@ctx-core/solid-js": "^1.4.23",
-    "@ctx-core/ui-solid": "^18.0.0",
+    "@ctx-core/solid-js": "^1.4.24",
+    "@ctx-core/ui-solid": "^18.0.1",
     "github-slugger": "^2.0.0",
     "htmlparser2": "^9.0.0",
     "mini-van-plate": "^0.5.3",
     "parse5": "^7.1.2",
-    "solid-js": "^1.8.5"
+    "solid-js": "^1.8.5",
+    "@ctx-core/vanjs": "2.1.0"
   },
   "devDependencies": {
     "bun-types": "latest",

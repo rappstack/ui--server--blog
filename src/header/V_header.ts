@@ -1,4 +1,3 @@
-import { H_, S_ } from '@btakita/domain--all--blog'
 import {
 	logo_image__enable_,
 	logo_image__height_,
@@ -7,6 +6,7 @@ import {
 	site__title_
 } from '@btakita/domain--server--blog'
 import { type Ctx } from '@ctx-core/object'
+import { H_, S_ } from '@ctx-core/vanjs'
 import type { ChildDom, VanShape } from 'van-type-delegate'
 import { V_hr } from '../html_tag'
 import './Header.css'

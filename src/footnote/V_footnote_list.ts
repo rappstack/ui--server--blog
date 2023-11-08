@@ -1,6 +1,5 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { footnote_o_ } from '@btakita/domain--server--blog'
-import { V_fragment, V_raw } from '@ctx-core/vanjs'
+import { H_, V_fragment, V_raw } from '@ctx-core/vanjs'
 import { type Ctx } from '@ctx-core/object'
 import type { ChildDom, PlateVan } from 'van-type-delegate'
 import { _footnote__html_id__new } from './_footnote__html_id'

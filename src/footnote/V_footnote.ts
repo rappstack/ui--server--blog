@@ -1,8 +1,7 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { footnote } from '@btakita/domain--server--blog'
 import { has_dom } from '@ctx-core/dom'
 import { type Ctx } from '@ctx-core/object'
-import { V_fragment } from '@ctx-core/vanjs'
+import { H_, V_fragment } from '@ctx-core/vanjs'
 import type { ChildDom, CoreVan, PlateVan, VanShape } from 'van-type-delegate'
 import { _footnote__handle__html_id__new, _footnote__html_id__new } from './_footnote__html_id.ts'
 export function V_footnote<V extends VanShape>(

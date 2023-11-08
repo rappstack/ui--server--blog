@@ -1,7 +1,7 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { Astro__url__pathname_ } from '@btakita/domain--server'
 import { isNumber_ } from '@ctx-core/number'
 import { type Ctx } from '@ctx-core/object'
+import { H_ } from '@ctx-core/vanjs'
 import type { ChildDom, VanShape } from 'van-type-delegate'
 import './Breadcrumbs.css'
 export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }):ChildDom<V> {

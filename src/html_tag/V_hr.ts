@@ -1,5 +1,5 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { type Ctx } from '@ctx-core/object'
+import { H_ } from '@ctx-core/vanjs'
 import type { VanShape } from 'van-type-delegate'
 export function V_hr<V extends VanShape>($p:{
 	ctx:Ctx

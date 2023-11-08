@@ -1,7 +1,7 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { socials_ } from '@btakita/domain--server--blog'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
+import { H_ } from '@ctx-core/vanjs'
 import type { VanShape } from 'van-type-delegate'
 import { V_link_button } from '../html_tag'
 import { social_icons } from './social_icons'

@@ -1,7 +1,7 @@
-import { H_, type SearchItem } from '@btakita/domain--all--blog'
+import { type SearchItem } from '@btakita/domain--all--blog'
 import { Main_search__onbind } from '@btakita/ui--all--blog'
 import { type Ctx } from '@ctx-core/object'
-import { V_raw } from '@ctx-core/vanjs'
+import { H_, V_raw } from '@ctx-core/vanjs'
 import type { ChildDom, PlateVan } from 'van-type-delegate'
 import { V_main } from '../main'
 export function V_main_search<V extends PlateVan>(

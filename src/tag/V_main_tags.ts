@@ -1,5 +1,5 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { type Ctx } from '@ctx-core/object'
+import { H_ } from '@ctx-core/vanjs'
 import type { VanShape } from 'van-type-delegate'
 import { V_main } from '../main'
 import { V_tag } from './V_tag.ts'

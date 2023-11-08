@@ -1,7 +1,6 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { class_, dataset__data_attrs_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
-import { V_fragment } from '@ctx-core/vanjs'
+import { H_, V_fragment } from '@ctx-core/vanjs'
 import type { ChildDom, VanShape } from 'van-type-delegate'
 import { V_breadcrumbs } from '../breadcrumb'
 export function V_main<V extends VanShape>({

@@ -1,5 +1,5 @@
-import { H_, S_ } from '@btakita/domain--all--blog'
 import { type Ctx } from '@ctx-core/object'
+import { H_, S_ } from '@ctx-core/vanjs'
 import { V_link_button } from '../html_tag'
 export function V_nav_posts({
 	ctx, page_num, page_count

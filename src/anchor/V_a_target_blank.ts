@@ -1,6 +1,6 @@
-import { H_, S_ } from '@btakita/domain--all--blog'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from '@ctx-core/object'
+import { H_, S_ } from '@ctx-core/vanjs'
 import type { ChildDom, VanShape } from 'van-type-delegate'
 import { V_matcha_html_children } from '../matcha'
 import './A_target_blank.css'

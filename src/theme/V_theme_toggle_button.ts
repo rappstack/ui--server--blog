@@ -1,5 +1,6 @@
-import { Button_theme_toggle__onbind, H_, S_ } from '@btakita/domain--all--blog'
+import { Button_theme_toggle__onbind } from '@btakita/domain--all--blog'
 import { type Ctx } from '@ctx-core/object'
+import { H_, S_ } from '@ctx-core/vanjs'
 export function V_theme_toggle_button({ ctx }:{ ctx:Ctx }) {
 	const H = H_(ctx)
 	const S = S_(ctx)
