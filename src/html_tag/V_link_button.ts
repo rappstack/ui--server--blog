@@ -1,24 +1,23 @@
 import { class_ } from '@ctx-core/html'
-import { type Ctx } from '@ctx-core/object'
-import { H_, V_raw } from '@ctx-core/vanjs'
-import type { ChildDom, VanShape } from 'van-type-delegate'
-export function V_link_button<V extends VanShape>($p:{
+import { type Ctx } from 'ctx-core/object'
+import { type Node_T, raw_, type relement_env_T, type tag__dom_T } from 'relementjs'
+import { a_ } from 'relementjs/html'
+export function V_link_button<env_T extends relement_env_T>($p:{
 	ctx:Ctx
 	href:string
 	class?:string
 	'aria-label'?:string
 	title?:string
 	disabled?:boolean
-}, ...children:ChildDom<V>[]) {
+}, ...children:tag__dom_T<env_T>[]) {
 	const {
 		ctx,
 		href,
 		title,
 		disabled
 	} = $p
-	const H = H_(ctx)
 	return (
-		H.a({
+		a_({
 			href: disabled ? '#' : href,
 			tabindex: disabled ? '-1' : '0',
 			class: class_('group inline-block hover:text-skin-accent', $p.class),
@@ -26,7 +25,7 @@ export function V_link_button<V extends VanShape>($p:{
 			title,
 		}, ...children.map(child=>
 			typeof child === 'string'
-				? V_raw(ctx, child)
+				? raw_(ctx, child)
 				: child))
-	) as ChildDom<V>
+	) as Node_T<env_T, HTMLElementTagNameMap['a']>
 }

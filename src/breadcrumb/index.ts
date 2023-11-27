@@ -1,2 +1,1 @@
-export * from './Breadcrumbs'
-export * from './V_breadcrumbs'
+export * from './V_breadcrumbs.js'

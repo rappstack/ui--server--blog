@@ -1,2 +1,1 @@
-export * from './Repost'
-export * from './V_repost'
+export * from './V_repost.js'

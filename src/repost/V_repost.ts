@@ -1,10 +1,10 @@
-import { type Ctx } from '@ctx-core/object'
-import { H_ } from '@ctx-core/vanjs'
-import type { VanShape } from 'van-type-delegate'
-import { V_atb } from '../anchor'
-export function V_repost<V extends VanShape>({ ctx, href }:{ ctx:Ctx, href:string }) {
-	const H = H_<V>(ctx)
+import { type Ctx } from 'ctx-core/object'
+import { type Node_T, type relement_env_T } from 'relementjs'
+import { em_, p_ } from 'relementjs/html'
+import { V_atb } from '../anchor/index.js'
+export function V_repost<env_T extends relement_env_T>({ ctx, href }:{ ctx:Ctx, href:string }) {
 	return (
-		H.p(
-			H.em('Repost from ', V_atb<V>({ ctx, href }))))
+		p_(
+			em_('Repost from ', V_atb<env_T>({ ctx, href })))
+	) as Node_T<env_T, HTMLElementTagNameMap['p']>
 }

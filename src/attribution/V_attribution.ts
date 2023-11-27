@@ -1,24 +1,23 @@
 import { class_ } from '@ctx-core/html'
-import { type Ctx } from '@ctx-core/object'
-import { H_ } from '@ctx-core/vanjs'
-import type { ChildDom, VanShape } from 'van-type-delegate'
-import { V_footnote } from '../footnote'
-import { V_matcha_html_children } from '../matcha'
-export function V_attribution<V extends VanShape>(
+import { type Ctx } from 'ctx-core/object'
+import { type relement_env_T, type tag__dom_T } from 'relementjs'
+import { span_ } from 'relementjs/html'
+import { V_footnote } from '../footnote/index.js'
+import { V_matcha_html_children } from '../matcha/index.js'
+export function V_attribution<env_T extends relement_env_T>(
 	{ ctx, attribution_id, ...props }:{ ctx:Ctx, attribution_id:string, class?:string },
-	...children:ChildDom<V>[]
+	...children:tag__dom_T<env_T>[]
 ) {
-	const H = H_<V>(ctx)
 	return (
-		V_footnote<V>({ ctx, id: attribution_id },
-			H.span(	{
+		V_footnote<env_T>({ ctx, id: attribution_id },
+			span_(	{
 				...props,
 				class: class_('P_attribution', props.class),
 				'data-attribution_id': attribution_id
 			},
-				V_matcha_html_children<V>({
+				V_matcha_html_children<env_T>({
 					ctx,
-					whenthen: [[true, ()=>'' as ChildDom<V>]]
-				}, ...children) as ChildDom<V>))
+					whenthen: [[true, ()=>'' as tag__dom_T<env_T>]]
+				}, ...children) as tag__dom_T<env_T>))
 	)
 }

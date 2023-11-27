@@ -1,9 +1,9 @@
 import { class_, dataset__data_attrs_ } from '@ctx-core/html'
-import { type Ctx } from '@ctx-core/object'
-import { H_, V_fragment } from '@ctx-core/vanjs'
-import type { ChildDom, VanShape } from 'van-type-delegate'
-import { V_breadcrumbs } from '../breadcrumb'
-export function V_main<V extends VanShape>({
+import { type Ctx } from 'ctx-core/object'
+import { fragment_, type relement_env_T, type tag__dom_T } from 'relementjs'
+import { h1_, main_, p_ } from 'relementjs/html'
+import { V_breadcrumbs } from '../breadcrumb/index.js'
+export function V_main<env_T extends relement_env_T>({
 	ctx,
 	title,
 	title__class,
@@ -17,17 +17,15 @@ export function V_main<V extends VanShape>({
 	title__class?:string
 	description?:string
 	dataset?:Record<string, any>
-}, ...children:ChildDom<V>[]) {
-	const H = H_<V>(ctx)
-	return V_fragment<V>({ ctx },
-		V_breadcrumbs<V>({ ctx }),
-		H.main({
+}, ...children:tag__dom_T<env_T>[]) {
+	return fragment_<env_T>({ ctx },
+		V_breadcrumbs<env_T>({ ctx }),
+		main_({
 				id: 'main',
 				class: class_('Main mx-auto w-full max-w-3xl px-4 pb-12', $p.class),
 				...dataset__data_attrs_(dataset || {})
 			},
-			title ? H.h1({ class: title__class }, title) : null,
-			description ? H.p({ class: 'mb-6 mt-2 italic' }, description) : null,
-			...children
-		))
+			title ? h1_({ class: title__class }, title) : null,
+			description ? p_({ class: 'mb-6 mt-2 italic' }, description) : null,
+			...children))
 }

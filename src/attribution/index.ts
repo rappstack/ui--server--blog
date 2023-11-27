@@ -1,2 +1,1 @@
-export * from './Attribution'
-export * from './V_attribution'
+export * from './V_attribution.js'

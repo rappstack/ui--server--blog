@@ -1,23 +1,22 @@
-import { type Ctx } from '@ctx-core/object'
-import { V_raw } from '@ctx-core/vanjs'
-import type { ChildDom, VanShape } from 'van-type-delegate'
-import { V_matcha } from './V_matcha'
-export function V_matcha_html_children<V extends VanShape>(
+import { type Ctx } from 'ctx-core/object'
+import { raw_, type relement_env_T, type tag__dom_T } from 'relementjs'
+import { V_matcha } from './V_matcha.js'
+export function V_matcha_html_children<env_T extends relement_env_T>(
 	{ ctx, whenthen, innerHTML, innerText }:{
 		ctx:Ctx
-		whenthen:[any, ()=>ChildDom<V>][]
+		whenthen:[any, ()=>tag__dom_T<env_T>][]
 		innerHTML?:string
 		innerText?:number|string
 	},
-	...children:ChildDom<V>[]
-):ChildDom<V> {
+	...children:tag__dom_T<env_T>[]
+):tag__dom_T<env_T> {
 	if (children.length) {
 		return children.map(child=>
 			typeof child === 'string'
-				? V_raw<V>(ctx, child)
-				: child) as ChildDom<V>
+				? raw_<env_T>(ctx, child)
+				: child) as tag__dom_T<env_T>
 	}
-	if (innerHTML) return V_raw<V>(ctx, innerHTML) as ChildDom<V>
+	if (innerHTML) return raw_<env_T>(ctx, innerHTML)
 	if (innerText) return innerText
-	return V_matcha<V>({ whenthen })
+	return V_matcha<env_T>({ whenthen })
 }

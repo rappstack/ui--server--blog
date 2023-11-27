@@ -1,2 +1,1 @@
-export * from './Main'
-export * from './V_main'
+export * from './V_main.js'

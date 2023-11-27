@@ -1,3 +1,2 @@
-export * from './social_icons'
-export * from './Socials'
-export * from './V_socials'
+export * from './social_icons.js'
+export * from './V_socials.js'

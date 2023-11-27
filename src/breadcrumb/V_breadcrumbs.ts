@@ -1,10 +1,10 @@
 import { Astro__url__pathname_ } from '@btakita/domain--server'
-import { isNumber_ } from '@ctx-core/number'
-import { type Ctx } from '@ctx-core/object'
-import { H_ } from '@ctx-core/vanjs'
-import type { ChildDom, VanShape } from 'van-type-delegate'
+import { isNumber_ } from 'ctx-core/number'
+import { type Ctx } from 'ctx-core/object'
+import { type Node_T, type relement_env_T } from 'relementjs'
+import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
 import './Breadcrumbs.css'
-export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }):ChildDom<V> {
+export function V_breadcrumbs<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }) {
 	// Remove current url path and remove trailing slash if exists
 	const current_url_path:string = Astro__url__pathname_(ctx).replace(/\/+$/, '')
 	// Get url array from path
@@ -16,21 +16,20 @@ export function V_breadcrumbs<V extends VanShape>({ ctx }:{ ctx:Ctx }):ChildDom<
 		breadcrumb_a.splice(0, 2, `Posts (page ${breadcrumb_a[1] || 1})`)
 	}
 	if (!breadcrumb_a.length) return
-	const H = H_(ctx)
 	return (
-		H.nav({ class: 'Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4', 'aria-label': 'breadcrumb' },
-			H.ul(
-				H.li(
-					H.a({ href: '/' }, 'Home'),
-					H.span({ 'aria-hidden': true }, ' > ')),
+		nav_({ class: 'Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4', 'aria-label': 'breadcrumb' },
+			ul_(
+				li_(
+					a_({ href: '/' }, 'Home'),
+					span_({ 'aria-hidden': true }, ' > ')),
 				...breadcrumb_a.map((breadcrumb, idx)=>
-					H.li(
+					li_(
 						idx + 1 === breadcrumb_a.length
-							? H.span({ class: idx > 0 ? 'lowercase' : 'capitalize', 'aria-current': 'page' },
+							? span_({ class: idx > 0 ? 'lowercase' : 'capitalize', 'aria-current': 'page' },
 								breadcrumb)
-							: <ChildDom<V>>[
-								H.a({ href: `/${breadcrumb}` }, breadcrumb),
-								H.span({ 'aria-hidden': true }, ' > ')
-							])),
-			)))
+							: [
+								a_({ href: `/${breadcrumb}` }, breadcrumb),
+								span_({ 'aria-hidden': true }, ' > ')
+							]))))
+	) as Node_T<env_T, HTMLElementTagNameMap['nav']>
 }

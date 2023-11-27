@@ -1,16 +1,16 @@
 import { footnote } from '@btakita/domain--server--blog'
 import { has_dom } from '@ctx-core/dom'
-import { type Ctx } from '@ctx-core/object'
-import { H_, V_fragment } from '@ctx-core/vanjs'
-import type { ChildDom, CoreVan, PlateVan, VanShape } from 'van-type-delegate'
+import { type Ctx } from 'ctx-core/object'
+import { fragment_, type Node_T, type relement_env_T, type tag__dom_T } from 'relementjs'
+import { a_, div_, sup_ } from 'relementjs/html'
 import { _footnote__handle__html_id__new, _footnote__html_id__new } from './_footnote__html_id.ts'
-export function V_footnote<V extends VanShape>(
+export function V_footnote<env_T extends relement_env_T>(
 	{ ctx, id, innerHTML }:{
 		ctx:Ctx
 		id:string, // handle Astrojs progressive rendering
 		innerHTML?:string
 	},
-	...children:ChildDom<V>[]
+	...children:tag__dom_T<env_T>[]
 ) {
 	const citation =
 		footnote(
@@ -19,15 +19,13 @@ export function V_footnote<V extends VanShape>(
 			innerHTML
 				? innerHTML
 				: has_dom
-					? (H_<CoreVan>(ctx).div(...children as ChildDom<CoreVan>[]) as HTMLDivElement).innerHTML
-					: V_fragment<PlateVan>({ ctx }, ...children as ChildDom<PlateVan>[]).render())
-	const H = H_<V>(ctx)
+					? div_<'browser'>(...children).innerHTML
+					: fragment_<'server'>({ ctx }, ...children).render())
 	return (
-		H.sup(
-			H.a({
-					id: _footnote__handle__html_id__new(citation),
-					href: `#${(_footnote__html_id__new(citation))}`
-				},
-				`[${citation.seq}]`))
-	)
+		sup_(
+			a_({
+				id: _footnote__handle__html_id__new(citation),
+				href: `#${(_footnote__html_id__new(citation))}`
+			}, `[${citation.seq}]`))
+	) as Node_T<env_T, HTMLElementTagNameMap['sup']>
 }
