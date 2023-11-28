@@ -2,10 +2,10 @@ import { class_ } from '@ctx-core/html'
 import { type Node_T, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-import { V_matcha_html_children } from '../matcha/index.js'
-import './A_target_blank.css'
-export function V_a_target_blank<env_T extends relement_env_T>(
-	$p:V_target_blank__props_T,
+import { matcha_html_children_ } from '../matcha/index.js'
+import './a_target_blank.css'
+export function a_target_blank_<env_T extends relement_env_T>(
+	$p:a_target_blank__props_T,
 	...children:tag__dom_T<env_T>[]
 ) {
 	return (
@@ -15,7 +15,7 @@ export function V_a_target_blank<env_T extends relement_env_T>(
 				rel: `noopener noreferrer` + $p.rel ? ` ${$p.rel}` : '',
 				target: '_blank',
 			},
-			V_matcha_html_children<env_T>({
+			matcha_html_children_<env_T>({
 				...$p,
 				whenthen: [[true, ()=>$p.href]]
 			}, ...children),
@@ -37,13 +37,13 @@ export function V_a_target_blank<env_T extends relement_env_T>(
 				})))
 	) as Node_T<env_T, HTMLElementTagNameMap['a']>
 }
-export function V_atb<env_T extends relement_env_T>(
-	$p:V_target_blank__props_T,
+export function atb_<env_T extends relement_env_T>(
+	$p:a_target_blank__props_T,
 	...children:tag__dom_T<env_T>[]
 ) {
-	return V_a_target_blank<env_T>($p, ...children)
+	return a_target_blank_<env_T>($p, ...children)
 }
-type V_target_blank__props_T = {
+type a_target_blank__props_T = {
 	href:string
 	innerText?:string|number
 	innerHTML?:string

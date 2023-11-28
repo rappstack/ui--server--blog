@@ -1,9 +1,9 @@
-import { Button_theme_toggle__onbind } from '@btakita/domain--all--blog'
+import { theme__toggle_button__onbind } from '@btakita/domain--all--blog'
 import { type Ctx } from 'ctx-core/object'
 import { type Node_T, type relement_env_T } from 'relementjs'
 import { button_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-export function V_theme_toggle_button<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }) {
+export function theme__toggle_button_c_<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }) {
 	return (
 		button_({
 				id: 'theme-btn',
@@ -11,7 +11,7 @@ export function V_theme_toggle_button<env_T extends relement_env_T>({ ctx }:{ ct
 				title: 'Toggles light & dark',
 				'aria-label': 'auto',
 				'aria-live': 'polite',
-				'data-onbind': '' + Button_theme_toggle__onbind,
+				'data-onbind': '' + theme__toggle_button__onbind,
 			},
 			svg_({ xmlns: 'http://www.w3.org/2000/svg', id: 'moon-svg' },
 				path_({

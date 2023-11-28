@@ -1,8 +1,7 @@
 import { class_ } from '@ctx-core/html'
-import { type Ctx } from 'ctx-core/object'
 import { type Node_T, raw_, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_ } from 'relementjs/html'
-export function V_link_button<env_T extends relement_env_T>($p:{
+export function link_button_c_<env_T extends relement_env_T>($p:{
 	href:string
 	class?:string
 	'aria-label'?:string

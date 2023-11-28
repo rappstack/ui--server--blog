@@ -2,8 +2,8 @@ import { class_, dataset__data_attrs_ } from '@ctx-core/html'
 import { type Ctx } from 'ctx-core/object'
 import { fragment_, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { h1_, main_, p_ } from 'relementjs/html'
-import { V_breadcrumbs } from '../breadcrumb/index.js'
-export function V_main<env_T extends relement_env_T>({
+import { breadcrumbs_c_ } from '../breadcrumb/index.js'
+export function blog__main_c_<env_T extends relement_env_T>({
 	ctx,
 	title,
 	title__class,
@@ -19,7 +19,7 @@ export function V_main<env_T extends relement_env_T>({
 	dataset?:Record<string, any>
 }, ...children:tag__dom_T<env_T>[]) {
 	return fragment_<env_T>(
-		V_breadcrumbs<env_T>({ ctx }),
+		breadcrumbs_c_<env_T>({ ctx }),
 		main_({
 				id: 'main',
 				class: class_('Main mx-auto w-full max-w-3xl px-4 pb-12', $p.class),

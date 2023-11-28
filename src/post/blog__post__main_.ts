@@ -1,15 +1,15 @@
 import { estimate_read_time_html__new, type Post, str__slug__new } from '@btakita/domain--all--blog'
-import { V_datetime } from '@btakita/ui--all--blog'
+import { blog__datetime_c_ } from '@btakita/ui--all--blog'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from 'ctx-core/object'
 import * as htmlparser2 from 'htmlparser2'
 import { fragment_, memo_, raw_, type tag__dom_T } from 'relementjs'
 import { article_, div_, em_, img_, ul_ } from 'relementjs/html'
-import { V_footnote_list } from '../footnote/index.js'
-import { V_main } from '../main/index.js'
-import { V_repost } from '../repost/index.js'
-import { V_tag } from '../tag/index.js'
-export function V_main_post({ ctx, post }:{
+import { footnote_list_c_ } from '../footnote/index.js'
+import { blog__main_c_ } from '../main/index.js'
+import { repost_c_ } from '../repost/index.js'
+import { blog__tag_c_ } from '../tag/index.js'
+export function blog__post__main_({ ctx, post }:{
 	ctx:Ctx
 	post:Post
 }, ...children:tag__dom_T<'server'>[]) {
@@ -36,17 +36,17 @@ export function V_main_post({ ctx, post }:{
 	const estimate_read_time_html$ = memo_(()=>
 		estimate_read_time_html__new(children__text$()))
 	return (
-		V_main<'server'>({
+		blog__main_c_<'server'>({
 				ctx,
 				class: 'Main_post',
 				title,
 				dataset: {
-					// onbind: Main_post__onbind
+					// onbind: blog__post__main__onbind
 				}
 			},
-			div_({ class: 'Main_post__content' },
+			div_({ class: 'blog__post__main__content' },
 				div_({ class: 'datetime_A_estimate_read_time flex opacity-80' },
-					V_datetime<'server'>({
+					blog__datetime_c_<'server'>({
 						ctx,
 						class: 'my-2 flex-grow',
 						datetime: pubDate,
@@ -64,11 +64,11 @@ export function V_main_post({ ctx, post }:{
 				&& div_({ class: 'hero-image' },
 					img_({ width: 1020, height: 510, src: hero_image, alt: '' })),
 				canonical_url
-				&& V_repost<'server'>({ ctx, href: canonical_url }),
+				&& repost_c_<'server'>({ href: canonical_url }),
 				...children,
-				V_footnote_list<'server'>({ ctx })),
+				footnote_list_c_<'server'>({ ctx })),
 			ul_({ class: 'tags-container my-8' },
 				...tags.map(tag=>
-					V_tag<'server'>({ ctx, name: str__slug__new(tag) }))))
+					blog__tag_c_<'server'>({ name: str__slug__new(tag) }))))
 	)
 }

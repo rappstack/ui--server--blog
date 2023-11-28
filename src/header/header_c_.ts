@@ -9,9 +9,9 @@ import { type Ctx } from 'ctx-core/object'
 import { type Node_T, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_, button_, div_, header_, img_, nav_, ul_ } from 'relementjs/html'
 import { line_, svg_ } from 'relementjs/svg'
-import { V_hr } from '../html_tag/index.js'
-import './Header.css'
-export function V_header<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }, ...children:tag__dom_T<env_T>[]) {
+import { hr_c_ } from '../html_tag/index.js'
+import './header_c.css'
+export function header_c_<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }, ...children:tag__dom_T<env_T>[]) {
 	return (
 		header_({ class: 'Header' },
 			a_({
@@ -68,6 +68,6 @@ export function V_header<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }, ...c
 							id: 'menu-items',
 							class: 'display-none sm:flex mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0'
 						}, ...children)))),
-			V_hr({ ctx }))
+			hr_c_({ ctx }))
 	) as Node_T<env_T, HTMLElementTagNameMap['header']>
 }

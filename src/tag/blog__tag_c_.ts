@@ -1,11 +1,9 @@
 import { class_ } from '@ctx-core/html'
-import { type Ctx } from 'ctx-core/object'
 import { type Node_T, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_, code_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-import './Tag.css'
-export function V_tag<env_T extends relement_env_T>({ ctx, name, ...$p }:{
-	ctx:Ctx
+import './blog__tag__main_c.css'
+export function blog__tag_c_<env_T extends relement_env_T>({ name, ...$p }:{
 	name:string
 	size?:'sm'|'lg'
 }):tag__dom_T<env_T> {
@@ -13,7 +11,7 @@ export function V_tag<env_T extends relement_env_T>({ ctx, name, ...$p }:{
 	return (
 		li_({
 				class: class_(
-					'Tag inline-block',
+					'blog__tag_c inline-block',
 					size === 'sm' ? 'my-1 underline-offset-4' : 'my-3 mx-1 underline-offset-8')
 			},
 			a_({

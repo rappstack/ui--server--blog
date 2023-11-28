@@ -1,14 +1,14 @@
 import { type Ctx } from 'ctx-core/object'
 import { type relement_env_T } from 'relementjs'
 import { ul_ } from 'relementjs/html'
-import { V_main } from '../main/index.js'
-import { V_tag } from './V_tag.js'
-export function V_main_tags<env_T extends relement_env_T>({ ctx, tags }:{
+import { blog__main_c_ } from '../main/index.js'
+import { blog__tag_c_ } from './blog__tag_c_.js'
+export function blog__tags__main_c_<env_T extends relement_env_T>({ ctx, tags }:{
 	ctx:Ctx
 	tags:string[]
 }) {
 	return (
-		V_main<env_T>({
+		blog__main_c_<env_T>({
 				ctx,
 				class: 'Main_tags',
 				title: 'Tags',
@@ -16,6 +16,6 @@ export function V_main_tags<env_T extends relement_env_T>({ ctx, tags }:{
 			},
 			ul_(
 				...tags.map(tag=>
-					V_tag<env_T>({ ctx, name: tag, size: 'lg' }))))
+					blog__tag_c_<env_T>({ name: tag, size: 'lg' }))))
 	)
 }

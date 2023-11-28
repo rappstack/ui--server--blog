@@ -3,7 +3,7 @@ import { type Ctx } from 'ctx-core/be'
 import { type Node_T, raw_, type relement_env_T } from 'relementjs'
 import { div_, em_, p_ } from 'relementjs/html'
 import { _footnote__html_id__new } from './_footnote__html_id.js'
-export function V_footnote_list<env_T extends relement_env_T>({ ctx, ...$p }:{
+export function footnote_list_c_<env_T extends relement_env_T>({ ctx, ...$p }:{
 	ctx:Ctx
 	class?:string
 }) {
