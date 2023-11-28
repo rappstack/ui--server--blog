@@ -20,7 +20,7 @@ export function V_main_search<env_T extends relement_env_T>(
 				// search_item_a: JSON.stringify(search_item_a),
 			}
 		}, template_({ id: 'V_main_search__search_item_a', style: 'display: none;' },
-				raw_(ctx, JSON.stringify(search_item_a))),
+				raw_(JSON.stringify(search_item_a))),
 			...children)
 	)
 }

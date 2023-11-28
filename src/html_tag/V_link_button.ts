@@ -3,7 +3,6 @@ import { type Ctx } from 'ctx-core/object'
 import { type Node_T, raw_, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_ } from 'relementjs/html'
 export function V_link_button<env_T extends relement_env_T>($p:{
-	ctx:Ctx
 	href:string
 	class?:string
 	'aria-label'?:string
@@ -11,7 +10,6 @@ export function V_link_button<env_T extends relement_env_T>($p:{
 	disabled?:boolean
 }, ...children:tag__dom_T<env_T>[]) {
 	const {
-		ctx,
 		href,
 		title,
 		disabled
@@ -25,7 +23,7 @@ export function V_link_button<env_T extends relement_env_T>($p:{
 			title,
 		}, ...children.map(child=>
 			typeof child === 'string'
-				? raw_(ctx, child)
+				? raw_(child)
 				: child))
 	) as Node_T<env_T, HTMLElementTagNameMap['a']>
 }

@@ -16,7 +16,6 @@ export function V_attribution<env_T extends relement_env_T>(
 				'data-attribution_id': attribution_id
 			},
 				V_matcha_html_children<env_T>({
-					ctx,
 					whenthen: [[true, ()=>'' as tag__dom_T<env_T>]]
 				}, ...children) as tag__dom_T<env_T>))
 	)

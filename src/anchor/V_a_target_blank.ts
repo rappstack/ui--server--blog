@@ -1,12 +1,11 @@
 import { class_ } from '@ctx-core/html'
-import { type Ctx } from 'ctx-core/object'
 import { type Node_T, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
 import { V_matcha_html_children } from '../matcha/index.js'
 import './A_target_blank.css'
 export function V_a_target_blank<env_T extends relement_env_T>(
-	{ ctx, ...$p }:V_target_blank__props_T,
+	$p:V_target_blank__props_T,
 	...children:tag__dom_T<env_T>[]
 ) {
 	return (
@@ -18,7 +17,6 @@ export function V_a_target_blank<env_T extends relement_env_T>(
 			},
 			V_matcha_html_children<env_T>({
 				...$p,
-				ctx,
 				whenthen: [[true, ()=>$p.href]]
 			}, ...children),
 			svg_({
@@ -46,7 +44,6 @@ export function V_atb<env_T extends relement_env_T>(
 	return V_a_target_blank<env_T>($p, ...children)
 }
 type V_target_blank__props_T = {
-	ctx:Ctx
 	href:string
 	innerText?:string|number
 	innerHTML?:string

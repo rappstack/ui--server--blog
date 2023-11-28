@@ -15,7 +15,6 @@ export function V_socials<env_T extends relement_env_T>({ ctx, ...$p }:{
 		div_({ class: class_('Socials social-icons', centered ? 'flex' : '') },
 			...socials_(ctx).map(social=>
 				V_link_button<env_T>({
-					ctx,
 					href: social.href,
 					class: 'link-button',
 					title: social.link_title

@@ -1,12 +1,10 @@
-import { type Ctx } from 'ctx-core/object'
 import { type Node_T, type relement_env_T } from 'relementjs'
 import { nav_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
 import { V_link_button } from '../html_tag/index.js'
 export function V_nav_posts<env_T extends relement_env_T>({
-	ctx, page_num, page_count
+	page_num, page_count
 }:{
-	ctx:Ctx
 	page_num:number
 	page_count:number
 }) {
@@ -19,7 +17,6 @@ export function V_nav_posts<env_T extends relement_env_T>({
 				'aria-label': 'Pagination',
 			},
 			V_link_button<env_T>({
-					ctx,
 					disabled: prev === 'disabled',
 					href: `/posts${page_num - 1 !== 1 ? '/' + (page_num - 1) : ''}`,
 					class: `mr-4 select-none ${prev}`,
@@ -29,7 +26,6 @@ export function V_nav_posts<env_T extends relement_env_T>({
 					path_({ d: 'M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z' })),
 				'Prev'),
 			V_link_button<env_T>({
-					ctx,
 					disabled: next === 'disabled',
 					href: `/posts/${page_num + 1}`,
 					class: `ml-4 select-none ${next}`,

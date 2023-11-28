@@ -18,7 +18,7 @@ export function V_main<env_T extends relement_env_T>({
 	description?:string
 	dataset?:Record<string, any>
 }, ...children:tag__dom_T<env_T>[]) {
-	return fragment_<env_T>({ ctx },
+	return fragment_<env_T>(
 		V_breadcrumbs<env_T>({ ctx }),
 		main_({
 				id: 'main',

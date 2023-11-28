@@ -10,12 +10,10 @@ export function V_footnote_list<env_T extends relement_env_T>({ ctx, ...$p }:{
 	const citation_o = footnote_o_(ctx)
 	if (!citation_o) return
 	return (
-		div_({
-				class: $p.class
-			},
+		div_({ class: $p.class },
 			...footnote_o_(ctx).footnote_a.map(footnote=>
 				p_({ id: _footnote__html_id__new(footnote) },
 					`[${footnote.seq}]: `,
-					em_(raw_(ctx, footnote.html)))))
+					em_(raw_(footnote.html)))))
 	) as Node_T<env_T, HTMLElementTagNameMap['div']>
 }

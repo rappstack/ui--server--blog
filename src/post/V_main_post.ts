@@ -21,7 +21,7 @@ export function V_main_post({ ctx, post }:{
 		tags,
 		title
 	} = data
-	const html = fragment_<'server'>(ctx, ...children).render()
+	const html = fragment_<'server'>(...children).render()
 	const children__text$ = memo_(()=>{
 		let children__text = ''
 		const parser = new htmlparser2.Parser({
@@ -58,7 +58,7 @@ export function V_main_post({ ctx, post }:{
 							})
 						},
 						em_({ class: 'estimate_read_time_val text-base italic float-right' },
-							raw_(ctx, estimate_read_time_html$.val))))),
+							raw_(estimate_read_time_html$.val))))),
 			article_({ id: 'article', role: 'article', class: 'prose mx-auto mt-8 max-w-3xl' },
 				hero_image
 				&& div_({ class: 'hero-image' },

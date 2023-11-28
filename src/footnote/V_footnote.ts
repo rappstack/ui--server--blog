@@ -20,7 +20,7 @@ export function V_footnote<env_T extends relement_env_T>(
 				? innerHTML
 				: has_dom
 					? div_<'browser'>(...children).innerHTML
-					: fragment_<'server'>({ ctx }, ...children).render())
+					: fragment_<'server'>(...children).render())
 	return (
 		sup_(
 			a_({
