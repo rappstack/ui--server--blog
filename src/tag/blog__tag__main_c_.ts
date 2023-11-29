@@ -1,5 +1,5 @@
-import { type Post, post__slug__new } from '@btakita/domain--all--blog'
-import { blog__card_c_ } from '@btakita/ui--all--blog'
+import { type Post, post__slug__new } from '@btakita/domain--any--blog'
+import { blog__card_c_ } from '@btakita/ui--any--blog'
 import { type Ctx } from 'ctx-core/object'
 import { type relement_env_T } from 'relementjs'
 import { ul_ } from 'relementjs/html'

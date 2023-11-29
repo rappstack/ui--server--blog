@@ -1,5 +1,5 @@
-import { estimate_read_time_html__new, type Post, str__slug__new } from '@btakita/domain--all--blog'
-import { blog__datetime_c_ } from '@btakita/ui--all--blog'
+import { estimate_read_time_html__new, type Post, str__slug__new } from '@btakita/domain--any--blog'
+import { blog__datetime_c_ } from '@btakita/ui--any--blog'
 import { class_ } from '@ctx-core/html'
 import { type Ctx } from 'ctx-core/object'
 import * as htmlparser2 from 'htmlparser2'

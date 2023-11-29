@@ -1,4 +1,4 @@
-import { theme__toggle_button__onbind } from '@btakita/domain--all--blog'
+import { theme__toggle_button__onbind } from '@btakita/domain--any--blog'
 import { type Ctx } from 'ctx-core/object'
 import { type Node_T, type relement_env_T } from 'relementjs'
 import { button_ } from 'relementjs/html'

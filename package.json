@@ -6,10 +6,10 @@
   "module": "src/index.ts",
   "types": "src/index.ts",
   "dependencies": {
-    "@btakita/domain--all--blog": "workspace:*",
+    "@btakita/domain--any--blog": "workspace:*",
     "@btakita/domain--server": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
-    "@btakita/ui--all--blog": "workspace:*",
+    "@btakita/ui--any--blog": "workspace:*",
     "@ctx-core/dom": "^15.1.33",
     "@ctx-core/html": "^11.6.32",
     "ctx-core": "^4.8.1",

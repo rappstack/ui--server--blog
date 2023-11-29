@@ -1,5 +1,5 @@
-import { type SearchItem } from '@btakita/domain--all--blog'
-import { blog__search__main__onbind } from '@btakita/ui--all--blog'
+import { type SearchItem } from '@btakita/domain--any--blog'
+import { blog__search__main__onbind } from '@btakita/ui--any--blog'
 import { type Ctx } from 'ctx-core/object'
 import { raw_, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { template_ } from 'relementjs/html'
