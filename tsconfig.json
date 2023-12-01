@@ -1,11 +1,9 @@
 {
 	"compilerOptions": {
 		"baseUrl": "src",
-		"jsxImportSource": "solid-js",
-		"jsx": "preserve",
 		"module": "esnext",
 		"target": "esnext",
-		"moduleResolution": "node",
+		"moduleResolution": "nodenext",
 		"moduleDetection": "force",
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
@@ -18,7 +16,7 @@
 		"esModuleInterop": true,
 		"allowJs": true,
 		"types": [
-			"bun-types", // add Bun global
-		],
+			"bun-types" // add Bun global
+		]
 	}
 }

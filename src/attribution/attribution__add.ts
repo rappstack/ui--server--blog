@@ -10,11 +10,11 @@ export function attribution__add<env_T extends relement_env_T>(
 ) {
 	return (
 		footnote_c_<env_T>({ ctx, id: attribution_id },
-			span_(	{
-				...props,
-				class: class_('P_attribution', props.class),
-				'data-attribution_id': attribution_id
-			},
+			span_({
+					...props,
+					class: class_('P_attribution', props.class),
+					'data-attribution_id': attribution_id
+				},
 				matcha_html_children_<env_T>({
 					whenthen: [[true, ()=>'' as tag__dom_T<env_T>]]
 				}, ...children) as tag__dom_T<env_T>))

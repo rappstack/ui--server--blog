@@ -14,7 +14,7 @@ export function blog__search__main_c_<env_T extends relement_env_T>(
 			description: 'Search any article…',
 			class: 'blog__search__main_c',
 			dataset: {
-				onbind: ''+blog__search__main__onbind,
+				onbind: '' + blog__search__main__onbind,
 				search_item_a: JSON.stringify(search_item_a),
 			}
 		}, ...children)
