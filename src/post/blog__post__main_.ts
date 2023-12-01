@@ -21,7 +21,7 @@ export function blog__post__main_({ ctx, post }:{
 		tags,
 		title
 	} = data
-	const html = fragment_<'server'>(...children).render()
+	const html = '' + fragment_<'server'>(...children)
 	const children__text$ = memo_(()=>{
 		let children__text = ''
 		const parser = new htmlparser2.Parser({
