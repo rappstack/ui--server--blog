@@ -27,7 +27,7 @@ export function header_c_<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }, ...
 				div_({ class: 'top-nav-wrap relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8' },
 					a_({
 							href: '/',
-							class: 'logo whitespace-nowrap absolute py-1 text-xl font-semibold sm:static sm:text-2xl'
+							class: 'logo absolute whitespace-nowrap text-xl font-semibold sm:static sm:text-2xl'
 						},
 						logo_image__enable_(ctx)
 							? img_({
@@ -68,6 +68,6 @@ export function header_c_<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }, ...
 							id: 'menu-items',
 							class: 'display-none sm:flex mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0'
 						}, ...children)))),
-			hr_c_({ ctx }))
+			hr_c_())
 	) as Node_T<env_T, HTMLElementTagNameMap['header']>
 }
