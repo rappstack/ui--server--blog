@@ -10,13 +10,13 @@
 		"@btakita/domain--server": "workspace:*",
 		"@btakita/domain--server--blog": "workspace:*",
 		"@btakita/ui--any--blog": "workspace:*",
-		"@ctx-core/dom": "^15.1.36",
-		"@ctx-core/html": "^11.6.35",
-		"ctx-core": "^4.9.1",
+		"@ctx-core/dom": "^15.1.37",
+		"@ctx-core/html": "^11.6.36",
+		"ctx-core": "^4.10.0",
 		"github-slugger": "^2.0.0",
 		"htmlparser2": "^9.0.0",
 		"parse5": "^7.1.2",
-		"relementjs": "^0.20.4"
+		"relementjs": "^0.21.1"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
