@@ -43,7 +43,7 @@ export function atb_<env_T extends relement_env_T>(
 ) {
 	return a_target_blank_<env_T>($p, ...children)
 }
-type a_target_blank__props_T = {
+export type a_target_blank__props_T = {
 	href:string
 	innerText?:string|number
 	innerHTML?:string
