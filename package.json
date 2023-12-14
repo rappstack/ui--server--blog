@@ -10,19 +10,19 @@
 		"@btakita/domain--server": "workspace:*",
 		"@btakita/domain--server--blog": "workspace:*",
 		"@btakita/ui--any--blog": "workspace:*",
-		"@ctx-core/dom": "^15.1.37",
-		"@ctx-core/html": "^11.6.36",
-		"ctx-core": "^4.10.0",
+		"@ctx-core/dom": "^15.1.56",
+		"@ctx-core/html": "^11.6.55",
+		"ctx-core": "^4.19.0",
 		"github-slugger": "^2.0.0",
 		"htmlparser2": "^9.0.0",
 		"parse5": "^7.1.2",
-		"relementjs": "^0.21.1"
+		"relementjs": "^0.29.3"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"vite": "^5.0.5"
+		"vite": "^5.0.9"
 	},
 	"peerDependencies": {
-		"typescript": "^5.3.2"
+		"typescript": "^5.3.3"
 	}
 }
