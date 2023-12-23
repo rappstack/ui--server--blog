@@ -1,11 +1,12 @@
 import { class_ } from '@ctx-core/html'
+import { Ctx_wide_T } from 'ctx-core/be'
 import { type Ctx } from 'ctx-core/object'
 import { type relement_env_T, type tag__dom_T } from 'relementjs'
 import { span_ } from 'relementjs/html'
 import { footnote_c_ } from '../footnote/index.js'
 import { matcha_html_children_ } from '../matcha/index.js'
 export function attribution__add<env_T extends relement_env_T>(
-	{ ctx, attribution_id, ...props }:{ ctx:Ctx, attribution_id:string, class?:string },
+	{ ctx, attribution_id, ...props }:{ ctx:Ctx_wide_T<''>, attribution_id:string, class?:string },
 	...children:tag__dom_T<env_T>[]
 ) {
 	return (

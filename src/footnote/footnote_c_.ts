@@ -1,12 +1,12 @@
 import { footnote__new } from '@btakita/domain--server--blog'
 import { has_dom } from '@ctx-core/dom'
-import { type Ctx } from 'ctx-core/object'
+import { type Ctx_wide_T } from 'ctx-core/be'
 import { fragment_, type Node_T, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_, div_, sup_ } from 'relementjs/html'
 import { _footnote__handle__html_id__new, _footnote__html_id__new } from './_footnote__html_id.js'
 export function footnote_c_<env_T extends relement_env_T>(
 	{ ctx, id, innerHTML }:{
-		ctx:Ctx
+		ctx:Ctx_wide_T<''>
 		id:string, // handle Astrojs progressive rendering
 		innerHTML?:string
 	},

@@ -16,7 +16,7 @@
 		"github-slugger": "^2.0.0",
 		"htmlparser2": "^9.0.0",
 		"parse5": "^7.1.2",
-		"relementjs": "^0.31.11"
+		"relementjs": "^0.33.0"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
