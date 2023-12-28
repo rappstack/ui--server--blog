@@ -1,10 +1,12 @@
 import { Astro__url__pathname_ } from '@btakita/domain--server'
+import { type Ctx_wide_T } from 'ctx-core/be'
 import { isNumber_ } from 'ctx-core/number'
-import { type Ctx } from 'ctx-core/object'
 import { type Node_T, type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
 import './breadcrumbs_c.css'
-export function breadcrumbs_c_<env_T extends relement_env_T>({ ctx }:{ ctx:Ctx }) {
+export function breadcrumbs_c_<env_T extends relement_env_T>({ ctx }:{
+	ctx:Ctx_wide_T<''>
+}) {
 	// Remove current url path and remove trailing slash if exists
 	const current_url_path:string = Astro__url__pathname_(ctx).replace(/\/+$/, '')
 	// Get url array from path

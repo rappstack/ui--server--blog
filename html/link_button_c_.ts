@@ -1,4 +1,4 @@
-import { class_ } from '@ctx-core/html'
+import { class_ } from 'ctx-core/html'
 import { type Node_T, raw_, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_ } from 'relementjs/html'
 export function link_button_c_<env_T extends relement_env_T>($p:{
