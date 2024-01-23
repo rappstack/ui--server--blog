@@ -49,7 +49,7 @@
 		"github-slugger": "^2.0.0",
 		"htmlparser2": "^9.1.0",
 		"parse5": "^7.1.2",
-		"relementjs": "^0.52.4"
+		"relementjs": "^0.53.0"
 	},
 	"devDependencies": {
 		"bun-types": "latest"
