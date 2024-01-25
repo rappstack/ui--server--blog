@@ -44,12 +44,12 @@
 		"@btakita/domain--server": "workspace:*",
 		"@btakita/domain--server--blog": "workspace:*",
 		"@btakita/ui--any--blog": "workspace:*",
-		"@ctx-core/dom": "^15.2.37",
-		"ctx-core": "^5.25.3",
+		"@ctx-core/dom": "^15.3.5",
+		"ctx-core": "^5.29.0",
 		"github-slugger": "^2.0.0",
 		"htmlparser2": "^9.1.0",
 		"parse5": "^7.1.2",
-		"relementjs": "^0.53.1"
+		"relementjs": "^0.54.3"
 	},
 	"devDependencies": {
 		"bun-types": "latest"
