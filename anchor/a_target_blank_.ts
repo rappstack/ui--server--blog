@@ -19,7 +19,7 @@ export function a_target_blank_<env_T extends relement_env_T>(
 			case_aa: [
 				[$p.innerHTML, ()=>raw_($p.innerHTML)],
 				[$p.innerText, ()=>$p.innerText],
-				[true, ()=>$p.href],
+				[!children.length, ()=>$p.href],
 			]
 		}, ...children),
 		svg_({
