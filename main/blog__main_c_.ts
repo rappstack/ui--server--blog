@@ -17,9 +17,9 @@ export function blog__main_c_<env_T extends relement_env_T>({
 	title__class?:string
 	description?:string
 	dataset?:Record<string, unknown>
-}, ...children:tag__dom_T<env_T>[]) {
+}, ...children:tag__dom_T[]) {
 	return fragment_<env_T>(
-		breadcrumbs_c_<env_T>({ ctx }),
+		breadcrumbs_c_({ ctx }),
 		main_({
 			id: 'main',
 			class: class_('Main mx-auto w-full max-w-3xl px-4 pb-12', $p.class),
