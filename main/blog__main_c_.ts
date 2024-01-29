@@ -1,4 +1,4 @@
-import { type Ctx_wide_T } from 'ctx-core/be'
+import { type root_ctx_T } from '@btakita/domain--any--blog'
 import { class_, dataset__data_attrs_ } from 'ctx-core/html'
 import { fragment_, type relement_env_T, type tag__dom_T } from 'relementjs'
 import { h1_, main_, p_ } from 'relementjs/html'
@@ -11,7 +11,7 @@ export function blog__main_c_<env_T extends relement_env_T>({
 	dataset,
 	...$p
 }:{
-	ctx:Ctx_wide_T<''>
+	ctx:root_ctx_T
 	class?:string
 	title?:string
 	title__class?:string

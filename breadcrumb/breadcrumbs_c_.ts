@@ -1,14 +1,17 @@
-import { Astro__url__pathname_ } from '@btakita/domain--server'
-import { type Ctx_wide_T } from 'ctx-core/be'
 import { isNumber_ } from 'ctx-core/number'
-import { type Node_T, type relement_env_T } from 'relementjs'
+import { type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
 import './breadcrumbs_c.css'
-export function breadcrumbs_c_<env_T extends relement_env_T>({ ctx }:{
-	ctx:Ctx_wide_T<''>
+import { type request_ctx_T, request_url_ } from 'relysjs/server'
+export function breadcrumbs_c_<env_T extends relement_env_T>({
+	ctx
+}:{
+	ctx:request_ctx_T
 }) {
 	// Remove current url path and remove trailing slash if exists
-	const current_url_path:string = Astro__url__pathname_(ctx).replace(/\/+$/, '')
+	const current_url_path:string = request_url_(ctx)
+		.pathname
+		.replace(/\/+$/, '')
 	// Get url array from path
 	// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
 	const breadcrumb_a = current_url_path.split('/').slice(1)
@@ -19,7 +22,7 @@ export function breadcrumbs_c_<env_T extends relement_env_T>({ ctx }:{
 	}
 	if (!breadcrumb_a.length) return
 	return (
-		nav_({ class: 'Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4', 'aria-label': 'breadcrumb' },
+		nav_<env_T>({ class: 'Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4', 'aria-label': 'breadcrumb' },
 			ul_(
 				li_(
 					a_({ href: '/' }, 'Home'),
@@ -33,5 +36,5 @@ export function breadcrumbs_c_<env_T extends relement_env_T>({ ctx }:{
 								a_({ href: `/${breadcrumb}` }, breadcrumb),
 								span_({ 'aria-hidden': true }, ' > ')
 							]))))
-	) as Node_T<env_T, HTMLElementTagNameMap['nav']>
+	)
 }
