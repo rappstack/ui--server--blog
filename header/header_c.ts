@@ -1,3 +1,4 @@
+import { type root_ctx_T } from '@btakita/domain--any--blog'
 import {
 	logo_image__enable_,
 	logo_image__height_,
@@ -5,17 +6,16 @@ import {
 	logo_image__width_,
 	site__title_
 } from '@btakita/domain--server--blog'
-import { type Ctx_wide_T } from 'ctx-core/be'
-import { type Node_T, type relement_env_T, type tag__dom_T } from 'relementjs'
+import { type relement_env_T, type tag__dom_T } from 'relementjs'
 import { a_, button_, div_, header_, img_, nav_, ul_ } from 'relementjs/html'
 import { line_, svg_ } from 'relementjs/svg'
 import { hr_c_ } from '../html/index.js'
 import './header_c.css'
 export function header_c_<env_T extends relement_env_T>(
-	{ ctx }:{ ctx:Ctx_wide_T<''> },
-	...children:tag__dom_T<env_T>[]) {
+	{ ctx }:{ ctx:root_ctx_T },
+	...children:tag__dom_T[]) {
 	return (
-		header_({ class: 'Header' },
+		header_<env_T>({ class: 'Header' },
 			a_({
 				id: 'skip-to-content',
 				class: 'absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4',
@@ -71,5 +71,5 @@ export function header_c_<env_T extends relement_env_T>(
 					class: 'display-none sm:flex mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0'
 				}, ...children)))),
 			hr_c_())
-	) as Node_T<env_T, HTMLElementTagNameMap['header']>
+	)
 }
