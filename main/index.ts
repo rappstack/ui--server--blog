@@ -1,1 +1,1 @@
-export * from './blog__main_c_.js'
+export * from './blog__main_fragment.js'

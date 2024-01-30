@@ -1,12 +1,11 @@
-import './socials_c.css'
 import { type root_ctx_T } from '@btakita/domain--any--blog'
 import { socials_ } from '@btakita/domain--server--blog'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { div_ } from 'relementjs/html'
-import { link_button_c_ } from '../html/index.js'
+import { link_button_a_ } from '../anchor/index.js'
 import { social_icons } from './social_icons.js'
-export function socials_c_<env_T extends relement_env_T>({
+export function socials_div_<env_T extends relement_env_T>({
 	ctx,
 	centered,
 	link_button_class,
@@ -18,13 +17,20 @@ export function socials_c_<env_T extends relement_env_T>({
 	return (
 		div_<env_T>({
 			class: class_(
-				'Socials social-icons',
-				centered ? 'flex' : '')
+				'Socials',
+				'social-icons',
+				centered ? 'flex' : null,
+				'flex-wrap',
+				'justify-center',
+				'gap-1')
 		}, ...socials_(ctx).map(social=>
-			link_button_c_<env_T>({
+			link_button_a_<env_T>({
 				href: social.href,
 				class: class_(
 					'link-button',
+					'p-2',
+					'sm:p-1',
+					'hover:rotate-6',
 					link_button_class),
 				title: social.link_title
 			}, social_icons[social.name])))

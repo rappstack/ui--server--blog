@@ -10,7 +10,7 @@
 		"./breadcrumb": "./breadcrumb/index.ts",
 		"./footnote": "./footnote/index.ts",
 		"./header": "./header/index.ts",
-		"./html": "./html/index.ts",
+		"./hr": "./hr/index.ts",
 		"./main": "./main/index.ts",
 		"./post": "./post/index.ts",
 		"./repost": "./repost/index.ts",
@@ -28,7 +28,7 @@
 		"./breadcrumb",
 		"./footnote",
 		"./header",
-		"./html",
+		"hr",
 		"./main",
 		"./post",
 		"./repost",
@@ -41,13 +41,13 @@
 		"@btakita/domain--any--blog": "workspace:*",
 		"@btakita/domain--server--blog": "workspace:*",
 		"@btakita/ui--any--blog": "workspace:*",
-		"@ctx-core/dom": "^15.3.16",
-		"ctx-core": "^5.35.1",
+		"@ctx-core/dom": "^15.3.18",
+		"ctx-core": "^5.36.0",
 		"github-slugger": "^2.0.0",
 		"htmlparser2": "^9.1.0",
 		"parse5": "^7.1.2",
-		"relementjs": "^0.59.1",
-		"relysjs": "^0.62.1"
+		"relementjs": "^0.60.2",
+		"relysjs": "^0.62.4"
 	},
 	"devDependencies": {
 		"bun-types": "latest"

@@ -1,7 +1,7 @@
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { div_, hr_ } from 'relementjs/html'
-export function hr_c_<env_T extends relement_env_T>($p?:{
+export function hr_div_<env_T extends relement_env_T>($p?:{
 	no_padding?:boolean
 	aria_hidden?:boolean
 }) {

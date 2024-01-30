@@ -1,7 +1,0 @@
-.Breadcrumbs ul li {
-	@apply inline;
-	@apply capitalize opacity-80;
-}
-.Breadcrumbs ul li:not(:last-child) {
-	@apply hover:opacity-100;
-}

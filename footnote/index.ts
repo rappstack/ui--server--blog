@@ -1,2 +1,2 @@
-export * from './footnote_c_.js'
-export * from './footnote_list_c_.js'
+export * from './footnote__sup.js'
+export * from './footnote_list__div.js'

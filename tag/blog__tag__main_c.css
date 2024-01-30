@@ -1,6 +1,0 @@
-.blog__tag_c a {
-	@apply relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
-}
-.blog__tag_c a svg {
-	@apply -mr-1 h-6 w-6 scale-95 text-skin-base opacity-80 group-hover:fill-skin-accent;
-}

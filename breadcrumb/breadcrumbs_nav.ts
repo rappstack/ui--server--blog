@@ -1,9 +1,9 @@
+import { class_ } from 'ctx-core/html'
 import { isNumber_ } from 'ctx-core/number'
 import { type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
-import './breadcrumbs_c.css'
 import { type request_ctx_T, request_url_ } from 'relysjs/server'
-export function breadcrumbs_c_<env_T extends relement_env_T>({
+export function breadcrumbs_nav_<env_T extends relement_env_T>({
 	ctx
 }:{
 	ctx:request_ctx_T
@@ -21,20 +21,32 @@ export function breadcrumbs_c_<env_T extends relement_env_T>({
 		breadcrumb_a.splice(0, 2, `Posts (page ${breadcrumb_a[1] || 1})`)
 	}
 	if (!breadcrumb_a.length) return
+	const li_class = class_(
+		'inline',
+		'capitalize',
+		'opacity-80',
+		'[&:not(:last-child)]:hover:opacity-100')
 	return (
 		nav_<env_T>({ class: 'Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4', 'aria-label': 'breadcrumb' },
-			ul_(
-				li_(
+			ul_([
+				li_({
+					class: li_class
+				}, [
 					a_({ href: '/' }, 'Home'),
-					span_({ 'aria-hidden': true }, ' > ')),
+					span_({ 'aria-hidden': true }, ' > ')
+				]),
 				...breadcrumb_a.map((breadcrumb, idx)=>
-					li_(
+					li_({
+						class: li_class
+					},[
 						idx + 1 === breadcrumb_a.length
 							? span_({ class: idx > 0 ? 'lowercase' : 'capitalize', 'aria-current': 'page' },
 								breadcrumb)
 							: [
 								a_({ href: `/${breadcrumb}` }, breadcrumb),
 								span_({ 'aria-hidden': true }, ' > ')
-							]))))
+							]
+					]))
+			]))
 	)
 }

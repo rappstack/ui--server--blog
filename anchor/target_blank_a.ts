@@ -1,17 +1,22 @@
-import { class_ } from 'ctx-core/html'
+import { attr_val_, class_ } from 'ctx-core/html'
 import { raw_, type relement_env_T, switch_, type tag__dom_T } from 'relementjs'
+import { tag_props_T } from 'relementjs/any'
 import { a_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-import './a_target_blank.css'
-export function a_target_blank_<env_T extends relement_env_T>(
-	$p:a_target_blank__props_T,
+export function target_blank_a_<env_T extends relement_env_T>(
+	$p:target_blank_a__props_T,
 	...children:tag__dom_T[]
 ) {
 	return (
 		a_<env_T>({
 			...$p,
-			class: class_('A_target_blank', $p.class),
-			rel: `noopener noreferrer` + $p.rel ? ` ${$p.rel}` : '',
+			class: class_(
+				'a_target_blank',
+				'whitespace-nowrap',
+				$p.class),
+			rel: attr_val_(
+				'noopener noreferrer',
+				$p.rel),
 			target: '_blank',
 		},
 		switch_<env_T>({
@@ -27,7 +32,16 @@ export function a_target_blank_<env_T extends relement_env_T>(
 			width: 16,
 			height: 16,
 			fill: 'currentColor',
-			class: 'bi bi-box-arrow-up-right',
+			class: class_(
+				'bi',
+				'bi-box-arrow-up-right',
+				'relative',
+				'top-0',
+				'h-2.5',
+				'w-2.5',
+				'-mt-3',
+				'ml-1',
+				'inline-block'),
 			viewBox: '0 0 16 16'
 		},
 		path_({
@@ -40,16 +54,18 @@ export function a_target_blank_<env_T extends relement_env_T>(
 		})))
 	)
 }
-export function atb_<env_T extends relement_env_T>(
-	$p:a_target_blank__props_T,
+export function tb_a_<env_T extends relement_env_T>(
+	$p:target_blank_a__props_T,
 	...children:tag__dom_T[]
 ) {
-	return a_target_blank_<env_T>($p, ...children)
+	return target_blank_a_<env_T>($p, ...children)
 }
-export type a_target_blank__props_T = {
+export type target_blank_a__props_T = {
 	href:string
 	innerText?:string|number
 	innerHTML?:string
 	class?:string
+	style?:string
 	rel?:string
-}
+}&tag_props_T<HTMLAnchorElement>
+
