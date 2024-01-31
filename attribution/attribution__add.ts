@@ -1,6 +1,6 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
 import { class_ } from 'ctx-core/html'
-import { type relement_env_T, switch_, type tag__dom_T } from 'relementjs'
+import { type relement_env_T, switch_, type tag_dom_T } from 'relementjs'
 import { span_ } from 'relementjs/html'
 import { footnote__sup_ } from '../footnote/index.js'
 export function attribution__add<env_T extends relement_env_T>({
@@ -11,7 +11,7 @@ export function attribution__add<env_T extends relement_env_T>({
 	ctx:root_ctx_T
 	attribution_id:string
 	class?:string
-}, ...children:tag__dom_T[]) {
+}, ...children:tag_dom_T[]) {
 	return (
 		footnote__sup_<env_T>({
 			ctx,
@@ -22,7 +22,7 @@ export function attribution__add<env_T extends relement_env_T>({
 				'data-attribution_id': attribution_id
 			}, [
 				switch_({
-					case_aa: [[true, ()=>'' as tag__dom_T<env_T>]]
+					case_aa: [[true, ()=>'' as tag_dom_T<env_T>]]
 				}, ...children)
 			])
 		])

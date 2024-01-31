@@ -1,5 +1,5 @@
 import { class_ } from 'ctx-core/html'
-import { type relement_env_T, type tag__dom_T } from 'relementjs'
+import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { a_, code_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
 export function blog_tag__li_<env_T extends relement_env_T>({
@@ -8,7 +8,7 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 }:{
 	name:string
 	size?:'sm'|'lg'
-}):tag__dom_T<env_T> {
+}):tag_dom_T<env_T> {
 	size ??= 'sm'
 	return (
 		li_<env_T>({

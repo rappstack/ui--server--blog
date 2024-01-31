@@ -1,5 +1,5 @@
 import { class_, dataset__data_attrs_ } from 'ctx-core/html'
-import { fragment_, type relement_env_T, type tag__dom_T } from 'relementjs'
+import { fragment_, type relement_env_T, type tag_dom_T } from 'relementjs'
 import { h1_, main_, p_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { breadcrumbs_nav_ } from '../breadcrumb/index.js'
@@ -17,7 +17,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	title__class?:string
 	description?:string
 	dataset?:Record<string, unknown>
-}, ...children:tag__dom_T[]) {
+}, ...children:tag_dom_T[]) {
 	return fragment_<env_T>(
 		breadcrumbs_nav_({ ctx }),
 		main_({

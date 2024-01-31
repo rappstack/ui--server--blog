@@ -1,5 +1,5 @@
 import { class_ } from 'ctx-core/html'
-import { type tag__dom_T } from 'relementjs'
+import { type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { svg_ } from 'relementjs/svg'
 export const blog__header__nav__button__svg_class = class_(
@@ -12,7 +12,7 @@ export function blog__header__nav__button__svg_({
 	...svg_props
 }:{
 	class?:string
-}&tag_props_T<SVGSVGElement>, ...children:tag__dom_T[]) {
+}&tag_props_T<SVGSVGElement>, ...children:tag_dom_T[]) {
 	return (
 		svg_({
 			...svg_props,

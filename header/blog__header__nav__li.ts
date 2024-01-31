@@ -1,5 +1,5 @@
 import { class_ } from 'ctx-core/html'
-import { type tag__dom_T } from 'relementjs'
+import { type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { li_ } from 'relementjs/html'
 export const blog__header__nav__li_class = class_(
@@ -15,7 +15,7 @@ export function blog__header__nav__li_({
 	...li_props
 }:{
 	class?:string
-}&tag_props_T<HTMLLIElement>, ...children:tag__dom_T[]) {
+}&tag_props_T<HTMLLIElement>, ...children:tag_dom_T[]) {
 	return (
 		li_({
 			...li_props,

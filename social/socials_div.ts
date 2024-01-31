@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { socials_ } from '@btakita/domain--server--blog'
+import { social_a1_ } from '@btakita/domain--server--blog'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { div_ } from 'relementjs/html'
@@ -23,8 +23,8 @@ export function socials_div_<env_T extends relement_env_T>({
 				'flex-wrap',
 				'justify-center',
 				'gap-1')
-		}, ...socials_(ctx).map(social=>
-			link_button_a_<env_T>({
+		}, ...social_a1_(ctx).map(social=>
+			link_button_a_({
 				href: social.href,
 				class: class_(
 					'link-button',

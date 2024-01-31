@@ -1,11 +1,11 @@
 import { attr_val_, class_ } from 'ctx-core/html'
-import { raw_, type relement_env_T, switch_, type tag__dom_T } from 'relementjs'
+import { raw_, type relement_env_T, switch_, type tag_dom_T } from 'relementjs'
 import { tag_props_T } from 'relementjs/any'
 import { a_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
 export function target_blank_a_<env_T extends relement_env_T>(
 	$p:target_blank_a__props_T,
-	...children:tag__dom_T[]
+	...children:tag_dom_T[]
 ) {
 	return (
 		a_<env_T>({
@@ -56,7 +56,7 @@ export function target_blank_a_<env_T extends relement_env_T>(
 }
 export function tb_a_<env_T extends relement_env_T>(
 	$p:target_blank_a__props_T,
-	...children:tag__dom_T[]
+	...children:tag_dom_T[]
 ) {
 	return target_blank_a_<env_T>($p, ...children)
 }

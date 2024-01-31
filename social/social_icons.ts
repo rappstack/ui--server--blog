@@ -1,5 +1,5 @@
-import { type SocialIcons } from '@btakita/domain--server--blog'
-export const social_icons:SocialIcons = {
+import { type social_icons_T } from '@btakita/domain--server--blog'
+export const social_icons:social_icons_T = {
 	Github: `<svg
     xmlns="http://www.w3.org/2000/svg"
     class="icon-tabler"

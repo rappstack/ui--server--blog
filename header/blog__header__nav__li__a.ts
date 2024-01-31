@@ -1,5 +1,5 @@
 import { class_ } from 'ctx-core/html'
-import { type tag__dom_T } from 'relementjs'
+import { type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { a_ } from 'relementjs/html'
 export function blog__header__nav__li__a_({
@@ -11,7 +11,7 @@ export function blog__header__nav__li__a_({
 	active:boolean
 	href:string
 	class?:string
-}&tag_props_T<HTMLAnchorElement>, ...children:tag__dom_T[]) {
+}&tag_props_T<HTMLAnchorElement>, ...children:tag_dom_T[]) {
 	return (
 		a_({
 			...a_props,
