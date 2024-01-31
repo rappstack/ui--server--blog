@@ -1,8 +1,9 @@
 import { type dehydrated_post_meta_T, post_date_ } from '@btakita/domain--any--blog'
-import { type site_T } from '@btakita/domain--server--blog'
+import { site_ } from '@btakita/domain--server--blog'
 import { url__join } from 'ctx-core/uri'
 import { fragment_, raw_, type tag_dom_T } from 'relementjs'
 import { type tag_props_val_T, tagsNS } from 'relementjs/server'
+import { type request_ctx_T } from 'relysjs/server'
 const R = tagsNS<'any'>('http://backend.userland.com/rss2')
 const rss_ = rss_tag_('rss')
 const channel_ = rss_tag_('channel')
@@ -14,17 +15,17 @@ const guid_ = rss_tag_('guid')
 const pubDate_ = rss_tag_('pubDate')
 const author_ = rss_tag_('author')
 export function blog__rss_({
-	site,
+	ctx,
 	dehydrated_post_meta_a1,
 }:{
-	site:site_T
+	ctx:request_ctx_T
 	dehydrated_post_meta_a1:dehydrated_post_meta_T[]
 }) {
 	const {
 		title,
 		description,
 		website,
-	} = site
+	} = site_(ctx)!
 	return fragment_([
 		raw_('<?xml version="1.0" encoding="UTF-8"?>'),
 		rss_({ version: '2.0' }, [

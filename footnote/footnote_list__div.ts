@@ -10,11 +10,11 @@ export function footnote_list__div_<env_T extends relement_env_T>({
 	ctx:root_ctx_T
 	class?:string
 }) {
-	const citation_o = footnote_o_(ctx)
-	if (!citation_o) return
+	const footnote_o = footnote_o_(ctx)
+	if (!footnote_o) return
 	return (
 		div_<env_T>({ class: _class },
-			...footnote_o_(ctx).footnote_a.map(footnote=>
+			...footnote_o.footnote_a.map(footnote=>
 				p_({ id: _footnote__html_id__new(footnote) }, [
 					'[' + footnote.seq + ']:',
 					em_(raw_(footnote.html))

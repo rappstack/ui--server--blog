@@ -1,1 +1,1 @@
-export * from './attribution__add.js'
+export * from './attribution__sup.js'

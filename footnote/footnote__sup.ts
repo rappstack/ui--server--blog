@@ -13,15 +13,12 @@ export function footnote__sup_<env_T extends relement_env_T>({
 	id:string, // handle Astrojs progressive rendering
 	innerHTML?:string
 }, ...children:tag_dom_T[]) {
-	const footnote =
-		footnote__new(
-			ctx,
-			id,
-			innerHTML
-				? innerHTML
-				: is_browser_()
-					? div_<'browser'>(...children).innerHTML
-					: '' + fragment_<'server'>(...children))
+	const footnote = footnote__new(ctx, id,
+		innerHTML
+			? innerHTML
+			: is_browser_()
+				? div_<'browser'>(...children).innerHTML
+				: '' + fragment_<'server'>(...children))
 	return (
 		sup_<env_T>(
 			a_({
