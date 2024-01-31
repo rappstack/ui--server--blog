@@ -14,6 +14,7 @@
 		"./main": "./main/index.ts",
 		"./post": "./post/index.ts",
 		"./repost": "./repost/index.ts",
+		"./rss": "./rss/index.ts",
 		"./search": "./search/index.ts",
 		"./social": "./social/index.ts",
 		"./tag": "./tag/index.ts",
@@ -32,6 +33,7 @@
 		"./main",
 		"./post",
 		"./repost",
+		"./rss",
 		"./search",
 		"./social",
 		"./tag",
@@ -45,7 +47,7 @@
 		"github-slugger": "^2.0.0",
 		"htmlparser2": "^9.1.0",
 		"parse5": "^7.1.2",
-		"relementjs": "^0.61.1",
+		"relementjs": "^0.61.2",
 		"relysjs": "^0.62.4"
 	},
 	"devDependencies": {
