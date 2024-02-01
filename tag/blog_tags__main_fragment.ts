@@ -1,11 +1,13 @@
+import { unique_tag_a1_ } from '@btakita/domain--any--blog'
 import { type relement_env_T } from 'relementjs'
 import { ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { blog__main_fragment_ } from '../main/index.js'
 import { blog_tag__li_ } from './blog_tag__li.js'
-export function blog_tags__main_fragment_<env_T extends relement_env_T>({ ctx, tags }:{
+export function blog_tags__main_fragment_<env_T extends relement_env_T>({
+	ctx,
+}:{
 	ctx:request_ctx_T
-	tags:string[]
 }) {
 	return (
 		blog__main_fragment_<env_T>({
@@ -15,8 +17,11 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({ ctx, t
 			description: 'All the tags used in posts.'
 		}, [
 			ul_(
-				...tags.map(tag=>
-					blog_tag__li_<env_T>({ name: tag, size: 'lg' })))
+				...unique_tag_a1_(ctx).map(tag=>
+					blog_tag__li_({
+						name: tag,
+						size: 'lg',
+					})))
 		])
 	)
 }

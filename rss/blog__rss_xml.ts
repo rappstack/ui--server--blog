@@ -1,4 +1,4 @@
-import { type dehydrated_post_meta_T, post_date_ } from '@btakita/domain--any--blog'
+import { post_date_, sorted_dehydrated_post_meta_a1_ } from '@btakita/domain--any--blog'
 import { site_ } from '@btakita/domain--server--blog'
 import { url__join } from 'ctx-core/uri'
 import { fragment_, raw_, type tag_dom_T } from 'relementjs'
@@ -14,26 +14,24 @@ const item_ = rss_tag_('item')
 const guid_ = rss_tag_('guid')
 const pubDate_ = rss_tag_('pubDate')
 const author_ = rss_tag_('author')
-export function blog__rss_({
+export function blog__rss_xml_({
 	ctx,
-	dehydrated_post_meta_a1,
 }:{
 	ctx:request_ctx_T
-	dehydrated_post_meta_a1:dehydrated_post_meta_T[]
 }) {
 	const {
 		title,
 		description,
 		website,
 	} = site_(ctx)!
-	return fragment_([
+	return '' + fragment_([
 		raw_('<?xml version="1.0" encoding="UTF-8"?>'),
 		rss_({ version: '2.0' }, [
 			channel_([
 				title_(title),
 				description_(description),
 				link_(website),
-				...dehydrated_post_meta_a1.map(dehydrated_post_meta=>
+				...sorted_dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
 					item_([
 						title_(dehydrated_post_meta.title),
 						link_(url__join(website, dehydrated_post_meta.slug)),

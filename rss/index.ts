@@ -1,1 +1,1 @@
-export * from './blog__rss.js'
+export * from './blog__rss_xml.js'
