@@ -1,18 +1,20 @@
+import { type root_ctx_T } from '@btakita/domain--any--blog'
+import { page_count_ } from '@btakita/domain--server--blog'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { nav_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
 import { link_button_a_ } from '../anchor/index.js'
 export function blog_posts__nav_<env_T extends relement_env_T>({
+	ctx,
 	page_num,
-	page_count,
 }:{
+	ctx:root_ctx_T
 	page_num:number
-	page_count:number
 }) {
-	if (page_count <= 1) return
+	if (page_count_(ctx) <= 1) return
 	const prev_class = page_num > 1 ? '' : 'disabled'
-	const next_class = page_num < page_count ? '' : 'disabled'
+	const next_class = page_num < page_count_(ctx) ? '' : 'disabled'
 	const link_button_disabled_class = class_(
 		'pointer-events-none',
 		'select-none',
