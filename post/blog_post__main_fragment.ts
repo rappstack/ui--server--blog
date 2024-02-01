@@ -1,31 +1,28 @@
+import { estimate_read_time_html__new, str__slug__new } from '@btakita/domain--any--blog'
 import {
-	dehydrated_post_meta_T,
-	estimate_read_time_html__new,
-	type Post,
-	str__slug__new
-} from '@btakita/domain--any--blog'
+	blog_post__canonical_url_,
+	blog_post__hero_image_,
+	blog_post__pub_date_,
+	blog_post__render,
+	blog_post__tag_a1_,
+	blog_post__title_
+} from '@btakita/domain--server--blog'
 import { blog_datetime__div_ } from '@btakita/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
 import * as htmlparser2 from 'htmlparser2'
-import { fragment_, memo_, raw_, type tag_dom_T } from 'relementjs'
+import { memo_, raw_ } from 'relementjs'
 import { article_, div_, em_, img_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { footnote_list__div_ } from '../footnote/index.js'
 import { blog__main_fragment_ } from '../main/index.ts'
 import { repost_p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
-export function blog_post__main_fragment_({ ctx, dehydrated_post_meta }:{
+export function blog_post__main_fragment_({
+	ctx
+}:{
 	ctx:request_ctx_T
-	dehydrated_post_meta:dehydrated_post_meta_T
-}, ...children:tag_dom_T[]) {
-	const {
-		canonical_url,
-		hero_image,
-		pub_date,
-		tag_a1,
-		title
-	} = dehydrated_post_meta
-	const html = '' + fragment_(...children)
+}) {
+	const html = '' + blog_post__render(ctx)
 	const children__text$ = memo_(()=>{
 		let children__text = ''
 		const parser = new htmlparser2.Parser({
@@ -43,7 +40,7 @@ export function blog_post__main_fragment_({ ctx, dehydrated_post_meta }:{
 		blog__main_fragment_<'server'>({
 			ctx,
 			class: 'Main_post',
-			title,
+			title: blog_post__title_(ctx),
 			dataset: {
 				// onbind: blog__post__main__onbind
 			}
@@ -61,7 +58,7 @@ export function blog_post__main_fragment_({ ctx, dehydrated_post_meta }:{
 						class: class_(
 							'my-2',
 							'flex-grow'),
-						datetime: pub_date,
+						datetime: blog_post__pub_date_(ctx),
 						size: 'lg'
 					}),
 					div_({
@@ -90,27 +87,27 @@ export function blog_post__main_fragment_({ ctx, dehydrated_post_meta }:{
 					'mx-auto',
 					'max-w-3xl')
 			}, [
-				hero_image
+				blog_post__hero_image_(ctx)
 				&& div_({
 					class: 'hero-image'
 				}, [
 					img_({
 						width: 1020,
 						height: 510,
-						src: hero_image,
+						src: blog_post__hero_image_(ctx),
 						alt: ''
 					})
 				]),
-				canonical_url
-				&& repost_p_({ href: canonical_url }),
-				...children,
+				blog_post__canonical_url_(ctx)
+				&& repost_p_({ href: blog_post__canonical_url_(ctx)! }),
+				raw_(html),
 				footnote_list__div_({ ctx })
 			]),
 			ul_({
 				class: class_(
 					'tag_a1-container',
 					'my-8')
-			}, ...tag_a1.map(tag=>
+			}, ...(blog_post__tag_a1_(ctx) ?? []).map(tag=>
 				blog_tag__li_({ name: str__slug__new(tag) })))
 		])
 	)
