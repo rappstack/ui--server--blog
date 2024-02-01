@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { page_count_ } from '@btakita/domain--server--blog'
+import { page_count_, page_num_ } from '@btakita/domain--server--blog'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { nav_ } from 'relementjs/html'
@@ -7,14 +7,12 @@ import { path_, svg_ } from 'relementjs/svg'
 import { link_button_a_ } from '../anchor/index.js'
 export function blog_posts__nav_<env_T extends relement_env_T>({
 	ctx,
-	page_num,
 }:{
 	ctx:root_ctx_T
-	page_num:number
 }) {
 	if (page_count_(ctx) <= 1) return
-	const prev_class = page_num > 1 ? '' : 'disabled'
-	const next_class = page_num < page_count_(ctx) ? '' : 'disabled'
+	const prev_class = page_num_(ctx) > 1 ? '' : 'disabled'
+	const next_class = page_num_(ctx) < page_count_(ctx) ? '' : 'disabled'
 	const link_button_disabled_class = class_(
 		'pointer-events-none',
 		'select-none',
@@ -36,7 +34,7 @@ export function blog_posts__nav_<env_T extends relement_env_T>({
 		}, [
 			link_button_a_<env_T>({
 				disabled: prev_class === 'disabled',
-				href: `/posts${page_num - 1 !== 1 ? '/' + (page_num - 1) : ''}`,
+				href: `/posts${page_num_(ctx) - 1 !== 1 ? '/' + (page_num_(ctx) - 1) : ''}`,
 				class: class_(
 					prev_class,
 					'mr-4',
@@ -59,7 +57,7 @@ export function blog_posts__nav_<env_T extends relement_env_T>({
 			]),
 			link_button_a_<env_T>({
 				disabled: next_class === 'disabled',
-				href: `/posts/${page_num + 1}`,
+				href: `/posts/${page_num_(ctx) + 1}`,
 				class: class_(
 					next_class,
 					'ml-4',
