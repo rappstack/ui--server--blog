@@ -14,7 +14,7 @@ import { memo_, raw_ } from 'relementjs'
 import { article_, div_, em_, img_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { footnote_list__div_ } from '../footnote/index.js'
-import { blog__main_fragment_ } from '../main/index.ts'
+import { blog__main_fragment_ } from '../main/index.js'
 import { repost_p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
 export function blog_post__main_fragment_({
