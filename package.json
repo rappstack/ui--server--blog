@@ -18,7 +18,8 @@
 		"./search": "./search/index.ts",
 		"./social": "./social/index.ts",
 		"./tag": "./tag/index.ts",
-		"./theme": "./theme/index.ts"
+		"./theme": "./theme/index.ts",
+		"./package.json": "./package.json"
 	},
 	"files": [
 		"*.d.ts",
