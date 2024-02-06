@@ -1,5 +1,5 @@
-import { post_date_, sorted_dehydrated_post_meta_a1_ } from '@btakita/domain--any--blog'
-import { site__description_, site__title_, site__website_ } from '@btakita/domain--server--blog'
+import { post_date_, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog'
+import { site__description_, site__title_, site__website_ } from '@rappstack/domain--server--blog'
 import { url__join } from 'ctx-core/uri'
 import { fragment_, raw_, type tag_dom_T } from 'relementjs'
 import { type tag_props_val_T, tagsNS } from 'relementjs/server'

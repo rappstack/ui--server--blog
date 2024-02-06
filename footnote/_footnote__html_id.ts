@@ -1,4 +1,4 @@
-import { type footnote_T } from '@btakita/domain--server--blog'
+import { type footnote_T } from '@rappstack/domain--server--blog'
 export function _footnote__html_id__new(footnote:footnote_T) {
 	return `footnote-${footnote.id}`
 }

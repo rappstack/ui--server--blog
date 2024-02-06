@@ -1,5 +1,5 @@
-import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { footnote__new } from '@btakita/domain--server--blog'
+import { type root_ctx_T } from '@rappstack/domain--any--blog'
+import { footnote__new } from '@rappstack/domain--server--blog'
 import { is_browser_ } from 'ctx-core/env'
 import { fragment_, type relement_env_T, type tag_dom_T } from 'relementjs'
 import { a_, div_, sup_ } from 'relementjs/html'

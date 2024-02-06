@@ -1,5 +1,5 @@
-import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { social_a1_ } from '@btakita/domain--server--blog'
+import { type root_ctx_T } from '@rappstack/domain--any--blog'
+import { social_a1_ } from '@rappstack/domain--server--blog'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { div_ } from 'relementjs/html'

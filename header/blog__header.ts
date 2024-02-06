@@ -1,11 +1,11 @@
-import { type root_ctx_T } from '@btakita/domain--any--blog'
+import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import {
 	logo_image__enable_,
 	logo_image__height_,
 	logo_image__src_,
 	logo_image__width_,
 	site__title_
-} from '@btakita/domain--server--blog'
+} from '@rappstack/domain--server--blog'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'

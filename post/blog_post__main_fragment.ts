@@ -1,4 +1,4 @@
-import { estimate_read_time_html__new, str__slug__new } from '@btakita/domain--any--blog'
+import { estimate_read_time_html__new, str__slug__new } from '@rappstack/domain--any--blog'
 import {
 	blog_post__canonical_url_,
 	blog_post__hero_image_,
@@ -6,8 +6,8 @@ import {
 	blog_post__render,
 	blog_post__tag_a1_,
 	blog_post__title_
-} from '@btakita/domain--server--blog'
-import { blog_datetime__div_ } from '@btakita/ui--any--blog/date'
+} from '@rappstack/domain--server--blog'
+import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
 import * as htmlparser2 from 'htmlparser2'
 import { memo_, raw_ } from 'relementjs'
