@@ -69,7 +69,7 @@
 		"htmlparser2": "^9.1.0",
 		"parse5": "^7.1.2",
 		"relementjs": "^0.64.2",
-		"relysjs": "^1.6.3"
+		"relysjs": "^1.6.4"
 	},
 	"devDependencies": {
 		"bun-types": "latest"
