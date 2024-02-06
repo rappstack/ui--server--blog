@@ -1,4 +1,4 @@
-import { estimate_read_time_html__new, str__slug__new } from '@rappstack/domain--any--blog'
+import { estimate_read_time_html__new, slug__new } from '@rappstack/domain--any--blog'
 import {
 	blog_post__canonical_url_,
 	blog_post__hero_image_,
@@ -108,7 +108,7 @@ export function blog_post__main_fragment_({
 					'tag_a1-container',
 					'my-8')
 			}, ...(blog_post__tag_a1_(ctx) ?? []).map(tag=>
-				blog_tag__li_({ name: str__slug__new(tag) })))
+				blog_tag__li_({ name: slug__new(tag) })))
 		])
 	)
 }
