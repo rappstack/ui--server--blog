@@ -1,9 +1,9 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { social_a1_ } from '@rappstack/domain--server--blog'
+import { button__a_ } from '@rappstack/ui--any/anchor'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { div_ } from 'relementjs/html'
-import { button__a_ } from '../anchor/index.js'
 import { social_icons } from './social_icons.js'
 export function socials__div_<env_T extends relement_env_T>({
 	ctx,
