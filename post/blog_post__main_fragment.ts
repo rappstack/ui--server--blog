@@ -15,7 +15,7 @@ import { article_, div_, em_, img_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { footnote_list__div_ } from '../footnote/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
-import { repost_p_ } from '../repost/index.js'
+import { repost__p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
 export function blog_post__main_fragment_({
 	ctx
@@ -99,7 +99,7 @@ export function blog_post__main_fragment_({
 					})
 				]),
 				blog_post__canonical_url_(ctx)
-				&& repost_p_({ href: blog_post__canonical_url_(ctx)! }),
+				&& repost__p_({ href: blog_post__canonical_url_(ctx)! }),
 				raw_(html),
 				footnote_list__div_({ ctx })
 			]),

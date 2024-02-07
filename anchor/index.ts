@@ -1,2 +1,2 @@
-export * from './link_button_a.js'
-export * from './target_blank_a.js'
+export * from './button__a.js'
+export * from './target_blank__a.js'

@@ -4,7 +4,7 @@ import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { nav_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-import { link_button_a_ } from '../anchor/index.js'
+import { button__a_ } from '../anchor/index.js'
 export function blog_posts__nav_<env_T extends relement_env_T>({
 	ctx,
 }:{
@@ -32,7 +32,7 @@ export function blog_posts__nav_<env_T extends relement_env_T>({
 				'mt-auto'),
 			'aria-label': 'Pagination',
 		}, [
-			link_button_a_<env_T>({
+			button__a_<env_T>({
 				disabled: prev_class === 'disabled',
 				href: `/posts${page_num_(ctx) - 1 !== 1 ? '/' + (page_num_(ctx) - 1) : ''}`,
 				class: class_(
@@ -55,7 +55,7 @@ export function blog_posts__nav_<env_T extends relement_env_T>({
 				]),
 				'Prev'
 			]),
-			link_button_a_<env_T>({
+			button__a_<env_T>({
 				disabled: next_class === 'disabled',
 				href: `/posts/${page_num_(ctx) + 1}`,
 				class: class_(

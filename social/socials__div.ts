@@ -3,9 +3,9 @@ import { social_a1_ } from '@rappstack/domain--server--blog'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { div_ } from 'relementjs/html'
-import { link_button_a_ } from '../anchor/index.js'
+import { button__a_ } from '../anchor/index.js'
 import { social_icons } from './social_icons.js'
-export function socials_div_<env_T extends relement_env_T>({
+export function socials__div_<env_T extends relement_env_T>({
 	ctx,
 	centered,
 	link_button_class,
@@ -24,7 +24,7 @@ export function socials_div_<env_T extends relement_env_T>({
 				'justify-center',
 				'gap-1')
 		}, ...social_a1_(ctx).map(social=>
-			link_button_a_({
+			button__a_({
 				href: social.href,
 				class: class_(
 					'link-button',

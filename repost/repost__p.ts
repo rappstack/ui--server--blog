@@ -1,7 +1,7 @@
 import { type relement_env_T } from 'relementjs'
 import { em_, p_ } from 'relementjs/html'
 import { tb_a_ } from '../anchor/index.js'
-export function repost_p_<env_T extends relement_env_T>({
+export function repost__p_<env_T extends relement_env_T>({
 	href
 }:{ href:string }) {
 	return (

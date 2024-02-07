@@ -3,7 +3,7 @@ import { isNumber_ } from 'ctx-core/number'
 import { type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
 import { type request_ctx_T, request_url_ } from 'relysjs/server'
-export function breadcrumbs_nav_<env_T extends relement_env_T>({
+export function breadcrumbs__nav_<env_T extends relement_env_T>({
 	ctx
 }:{
 	ctx:request_ctx_T

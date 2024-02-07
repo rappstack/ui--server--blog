@@ -2,7 +2,7 @@ import { class_ } from 'ctx-core/html'
 import { raw_, type relement_env_T, type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { a_ } from 'relementjs/html'
-export function link_button_a_<env_T extends relement_env_T>({
+export function button__a_<env_T extends relement_env_T>({
 	href,
 	class:_class,
 	aria_label,

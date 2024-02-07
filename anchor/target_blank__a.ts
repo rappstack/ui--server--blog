@@ -3,7 +3,7 @@ import { raw_, type relement_env_T, switch_, type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { a_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-export function target_blank_a_<env_T extends relement_env_T>(
+export function target_blank__a_<env_T extends relement_env_T>(
 	$p:target_blank_a__props_T,
 	...children:tag_dom_T[]
 ) {
@@ -58,7 +58,7 @@ export function tb_a_<env_T extends relement_env_T>(
 	$p:target_blank_a__props_T,
 	...children:tag_dom_T[]
 ) {
-	return target_blank_a_<env_T>($p, ...children)
+	return target_blank__a_<env_T>($p, ...children)
 }
 export type target_blank_a__props_T = {
 	href:string
