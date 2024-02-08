@@ -2,7 +2,6 @@
 	"name": "@rappstack/ui--server--blog",
 	"type": "module",
 	"version": "0.0.0",
-	"types": "index.ts",
 	"description": "UI library targeting the server for blogs",
 	"keywords": [
 		"rappstack",
@@ -23,6 +22,7 @@
 	},
 	"license": "Apache-2.0",
 	"author": "Brian Takita",
+	"types": "index.ts",
 	"exports": {
 		".": "./index.ts",
 		"./attribution": "./attribution/index.ts",
