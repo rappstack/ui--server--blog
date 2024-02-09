@@ -1,4 +1,3 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import {
 	logo_image__enable_,
 	logo_image__height_,
@@ -7,7 +6,7 @@ import {
 	site__title_
 } from '@rappstack/domain--server--blog'
 import { class_ } from 'ctx-core/html'
-import { type relement_env_T, type tag_dom_T } from 'relementjs'
+import { type relement_env_T, type tag_dom_T, type wide_ctx_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { a_, button_, div_, header_, img_, nav_, ul_ } from 'relementjs/html'
 import { line_, svg_ } from 'relementjs/svg'
@@ -18,7 +17,7 @@ export function blog__header_<env_T extends relement_env_T>({
 	is_open,
 	...header_props
 }:{
-	ctx:root_ctx_T
+	ctx:wide_ctx_T
 	class?:string
 	is_open?:boolean
 }&tag_props_T<HTMLElement>, ...children:tag_dom_T[]) {

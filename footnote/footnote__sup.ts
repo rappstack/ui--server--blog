@@ -1,7 +1,6 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { footnote__new } from '@rappstack/domain--server--blog'
 import { is_browser_ } from 'ctx-core/env'
-import { fragment_, type relement_env_T, type tag_dom_T } from 'relementjs'
+import { fragment_, type relement_env_T, type tag_dom_T, type wide_ctx_T } from 'relementjs'
 import { a_, div_, sup_ } from 'relementjs/html'
 import { _footnote__handle__html_id__new, _footnote__html_id__new } from './_footnote__html_id.js'
 export function footnote__sup_<env_T extends relement_env_T>({
@@ -9,7 +8,7 @@ export function footnote__sup_<env_T extends relement_env_T>({
 	id,
 	innerHTML
 }:{
-	ctx:root_ctx_T
+	ctx:wide_ctx_T
 	id:string, // handle Astrojs progressive rendering
 	innerHTML?:string
 }, ...children:tag_dom_T[]) {

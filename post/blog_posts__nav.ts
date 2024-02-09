@@ -1,14 +1,13 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { page_count_, page_num_ } from '@rappstack/domain--server--blog'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { class_ } from 'ctx-core/html'
-import { type relement_env_T } from 'relementjs'
+import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { nav_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
 export function blog_posts__nav_<env_T extends relement_env_T>({
 	ctx,
 }:{
-	ctx:root_ctx_T
+	ctx:wide_ctx_T
 }) {
 	if (page_count_(ctx) <= 1) return
 	const prev_class = page_num_(ctx) > 1 ? '' : 'disabled'
