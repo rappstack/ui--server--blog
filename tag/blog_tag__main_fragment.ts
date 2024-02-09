@@ -1,5 +1,5 @@
-import { post_slug__new } from '@rappstack/domain--any--blog'
-import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog'
+import { post_slug__new } from '@rappstack/domain--any--blog/slug'
+import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { type relement_env_T } from 'relementjs'
 import { ul_ } from 'relementjs/html'

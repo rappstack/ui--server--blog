@@ -1,4 +1,4 @@
-import { page_count_, page_num_ } from '@rappstack/domain--server--blog'
+import { page_count_, page_num_ } from '@rappstack/domain--server--blog/page'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type wide_ctx_T } from 'relementjs'

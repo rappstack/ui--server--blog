@@ -1,4 +1,4 @@
-import { footnote_o_ } from '@rappstack/domain--server--blog'
+import { footnote_o_ } from '@rappstack/domain--server--blog/footnote'
 import { raw_, type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { div_, em_, p_ } from 'relementjs/html'
 import { _footnote__html_id__new } from './_footnote__html_id.js'

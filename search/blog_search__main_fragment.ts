@@ -1,4 +1,4 @@
-import { dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog'
+import { dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { type request_ctx_T } from 'relysjs/server'
 import { blog__main_fragment_ } from '../main/index.js'

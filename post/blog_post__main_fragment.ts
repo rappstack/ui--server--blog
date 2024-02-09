@@ -1,4 +1,5 @@
-import { estimate_read_time_html__new, slug__new } from '@rappstack/domain--any--blog'
+import { estimate_read_time_html__new } from '@rappstack/domain--any--blog/post'
+import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
 	blog_post__canonical_url_,
 	blog_post__hero_image_,
@@ -6,7 +7,7 @@ import {
 	blog_post__render,
 	blog_post__tag_a1_,
 	blog_post__title_
-} from '@rappstack/domain--server--blog'
+} from '@rappstack/domain--server--blog/post'
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
 import * as htmlparser2 from 'htmlparser2'
