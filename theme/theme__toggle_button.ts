@@ -19,7 +19,7 @@ export function theme__toggle_button_<env_T extends relement_env_T>({
 			title: 'Toggles light & dark',
 			'aria-label': 'auto',
 			'aria-live': 'polite',
-			hy__bind: 'theme_toggle_button',
+			hy_op: 'theme_toggle_button',
 		}, [
 			svg_({
 				xmlns: 'http://www.w3.org/2000/svg',

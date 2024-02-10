@@ -9,7 +9,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	title,
 	title__class,
 	description,
-	hy__bind,
+	hy_op,
 	dataset,
 }:{
 	ctx:request_ctx_T
@@ -17,7 +17,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	title?:string
 	title__class?:string
 	description?:string
-	hy__bind?:string
+	hy_op?:string
 	dataset?:Record<string, unknown>
 }, ...children:tag_dom_T[]) {
 	return fragment_<env_T>(
@@ -32,7 +32,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 				'px-4',
 				'pb-12',
 				_class),
-			hy__bind,
+			hy_op,
 			...dataset__data_attrs_(dataset || {})
 		}, [
 			title ? h1_({ class: title__class }, title) : null,

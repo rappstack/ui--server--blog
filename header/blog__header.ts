@@ -27,7 +27,7 @@ export function blog__header_<env_T extends relement_env_T>({
 			class: class_(
 				'blog_header',
 				_class),
-			hy__bind: 'blog_header',
+			hy_op: 'blog_header',
 		}, [
 			a_({
 				id: 'skip-to-content',

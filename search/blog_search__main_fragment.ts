@@ -11,7 +11,7 @@ export function blog_search__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'blog__search__main_c',
-			hy__bind: 'blog_search__main',
+			hy_op: 'blog_search__main',
 			dataset: {
 				dehydrated_post_meta_a1: encodeURIComponent(JSON.stringify(dehydrated_post_meta_a1_(ctx))),
 			}
