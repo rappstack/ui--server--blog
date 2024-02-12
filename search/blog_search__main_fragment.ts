@@ -10,8 +10,8 @@ export function blog_search__main_fragment_<env_T extends relement_env_T>({
 	return (
 		blog__main_fragment_<env_T>({
 			ctx,
-			class: 'blog__search__main_c',
-			hyop: 'blog_search__main',
+			class: 'blog_search__main_fragment',
+			hyop: 'blog_search__main__hyop',
 			dataset: {
 				dehydrated_post_meta_a1: encodeURIComponent(JSON.stringify(dehydrated_post_meta_a1_(ctx))),
 			}

@@ -13,7 +13,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 	return (
 		blog__main_fragment_<env_T>({
 			ctx,
-			class: 'blog__posts__main_c',
+			class: 'blog_posts__main_fragment',
 			title: 'Posts',
 			description: 'The articles that I have posted to this site…'
 		}, [
