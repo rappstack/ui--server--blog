@@ -1,1 +1,1 @@
-export * from './theme_toggle__button.sw.js'
+export * from './theme_toggle__button.js'
