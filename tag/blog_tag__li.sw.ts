@@ -14,7 +14,16 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 		li_<env_T>({
 			class: class_(
 				'blog__tag_c inline-block',
-				size === 'sm' ? 'my-1 underline-offset-4' : 'my-3 mx-1 underline-offset-8')
+				size === 'sm'
+					? [
+						'my-1',
+						'underline-offset-4'
+					]
+					: [
+						'my-3',
+						'mx-1',
+						'underline-offset-8'
+					])
 		}, [
 			a_({
 				href: `/tags/${name.toLowerCase()}`,

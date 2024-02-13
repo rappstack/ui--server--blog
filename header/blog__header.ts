@@ -27,8 +27,8 @@ export function blog__header_<env_T extends relement_env_T>({
 			class: class_(
 				'blog_header',
 				_class),
-			/** @see {import('@rappstack/ui--browser--blog/header').blog_header__hyop} */
-			hyop: 'blog_header__hyop',
+			/** @see {import('@rappstack/ui--browser--blog/header').blog__header__hyop} */
+			hyop: 'blog__header__hyop',
 		}, [
 			a_({
 				id: 'skip-to-content',

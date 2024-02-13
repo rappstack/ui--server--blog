@@ -3,7 +3,7 @@ import { type relement_env_T } from 'relementjs'
 import { ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { blog__main_fragment_ } from '../main/index.js'
-import { blog_tag__li_ } from './blog_tag__li.js'
+import { blog_tag__li_ } from './blog_tag__li.sw.js'
 export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 	ctx,
 }:{

@@ -14,10 +14,10 @@ export function footnote__sup_<env_T extends relement_env_T>({
 }, ...children:tag_dom_T[]) {
 	const footnote = footnote__new(ctx, id,
 		innerHTML
-			? innerHTML
+			? ' ' + innerHTML
 			: is_browser_()
-				? div_<'browser'>(...children).innerHTML
-				: '' + fragment_<'server'>(...children))
+				? ' ' + div_<'browser'>(...children).innerHTML
+				: ' ' + fragment_<'server'>(...children))
 	return (
 		sup_<env_T>(
 			a_({
