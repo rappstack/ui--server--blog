@@ -11,6 +11,7 @@ export function blog_search__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'blog_search__main_fragment',
+			/** @see {import('@rappstack/ui--browser--blog/search').blog_search__main__hyop} */
 			hyop: 'blog_search__main__hyop',
 			dataset: {
 				dehydrated_post_meta_a1: encodeURIComponent(JSON.stringify(dehydrated_post_meta_a1_(ctx))),

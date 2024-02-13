@@ -19,6 +19,7 @@ export function theme__toggle_button_<env_T extends relement_env_T>({
 			title: 'Toggles light & dark',
 			'aria-label': 'auto',
 			'aria-live': 'polite',
+			/** @see {import('@rappstack/ui--browser--blog/theme').theme__toggle_button__hyop} */
 			hyop: 'theme__toggle_button__hyop',
 		}, [
 			svg_({
