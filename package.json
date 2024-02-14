@@ -63,9 +63,9 @@
 		"@rappstack/domain--server--blog": "workspace:*",
 		"@rappstack/ui--any": "workspace:*",
 		"@rappstack/ui--any--blog": "workspace:*",
-		"ctx-core": "^6.2.1",
-		"relementjs": "^0.72.2",
-		"relysjs": "^1.12.1"
+		"ctx-core": "^6.2.3",
+		"relementjs": "^0.72.3",
+		"relysjs": "^1.12.2"
 	},
 	"devDependencies": {
 		"bun-types": "latest"
