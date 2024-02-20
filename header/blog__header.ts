@@ -3,7 +3,7 @@ import {
 	logo_image__height_,
 	logo_image__src_,
 	logo_image__width_,
-} from '@rappstack/domain--server--blog/logo'
+} from '@rappstack/domain--server/logo'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type tag_dom_T, type wide_ctx_T } from 'relementjs'
