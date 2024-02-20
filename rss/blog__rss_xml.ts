@@ -1,5 +1,5 @@
 import { post_date_, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
-import { site__description_, site__title_, site__website_ } from '@rappstack/domain--server--blog/site'
+import { site__description_, site__title_, site__website_ } from '@rappstack/domain--server/site'
 import { author_, channel_, description_, guid_, item_, link_, pubDate_, rss_, title_ } from '@rappstack/ui--server/rss'
 import { url__join } from 'ctx-core/uri'
 import { fragment_, raw_ } from 'relementjs'

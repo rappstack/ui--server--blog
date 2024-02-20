@@ -60,6 +60,7 @@
 	],
 	"dependencies": {
 		"@rappstack/domain--any--blog": "workspace:*",
+		"@rappstack/domain--server": "workspace:*",
 		"@rappstack/domain--server--blog": "workspace:*",
 		"@rappstack/ui--any": "workspace:*",
 		"@rappstack/ui--any--blog": "workspace:*",
