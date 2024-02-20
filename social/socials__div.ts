@@ -1,4 +1,4 @@
-import { social_a1_ } from '@rappstack/domain--server--blog/social'
+import { social_a1_ } from '@rappstack/domain--server/social'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type wide_ctx_T } from 'relementjs'

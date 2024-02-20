@@ -1,4 +1,4 @@
-import { type social_icons_T } from '@rappstack/domain--server--blog/social'
+import { type social_icons_T } from '@rappstack/domain--server/social'
 export const social_icons:social_icons_T = {
 	Github: `<svg
     xmlns="http://www.w3.org/2000/svg"
