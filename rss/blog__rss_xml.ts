@@ -1,19 +1,9 @@
 import { post_date_, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { site__description_, site__title_, site__website_ } from '@rappstack/domain--server--blog/site'
+import { author_, channel_, description_, guid_, item_, link_, pubDate_, rss_, title_ } from '@rappstack/ui--server/rss'
 import { url__join } from 'ctx-core/uri'
-import { fragment_, raw_, type tag_dom_T } from 'relementjs'
-import { type tag_props_val_T, tagsNS } from 'relementjs/server'
+import { fragment_, raw_ } from 'relementjs'
 import { type request_ctx_T } from 'relysjs/server'
-const R = tagsNS<'any'>('http://backend.userland.com/rss2')
-const rss_ = rss_tag_('rss')
-const channel_ = rss_tag_('channel')
-const title_ = rss_tag_('title')
-const description_ = rss_tag_('description')
-const link_ = rss_tag_('link')
-const item_ = rss_tag_('item')
-const guid_ = rss_tag_('guid')
-const pubDate_ = rss_tag_('pubDate')
-const author_ = rss_tag_('author')
 export function blog__rss_xml_({
 	ctx,
 }:{
@@ -48,10 +38,4 @@ export function blog__rss_xml_({
 			])
 		])
 	])
-}
-function rss_tag_(tag_name:string) {
-	return (
-		props?:Record<string, tag_props_val_T>|tag_dom_T,
-		...children:tag_dom_T[]
-	)=>R[tag_name](props, ...children)
 }
