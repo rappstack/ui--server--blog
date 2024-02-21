@@ -33,6 +33,6 @@ export function socials__div_<env_T extends relement_env_T>({
 				title: social.link_title,
 				target: '_blank',
 				rel: 'noopener noreferrer'
-			}, social.icon_html)))
+			}, social.icon_())))
 	)
 }
