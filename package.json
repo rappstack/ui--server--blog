@@ -35,6 +35,7 @@
 		"./repost": "./repost/index.ts",
 		"./rss": "./rss/index.ts",
 		"./search": "./search/index.ts",
+		"./sitemap": "./sitemap/index.ts",
 		"./social": "./social/index.ts",
 		"./tag": "./tag/index.ts",
 		"./theme": "./theme/index.ts",
@@ -54,6 +55,7 @@
 		"repost",
 		"rss",
 		"search",
+		"sitemap",
 		"social",
 		"tag",
 		"theme"
