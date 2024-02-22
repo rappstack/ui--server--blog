@@ -34,6 +34,7 @@ export const [
 				run(async ()=>{
 					const reader = response.body!.getReader()
 					while (!(await reader.read()).done) {
+						/* empty */
 					}
 				}).then(()=>{
 					blog_post__text$._ = blog_post__text
