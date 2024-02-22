@@ -3,7 +3,7 @@ import { nullish__none_, run } from 'ctx-core/function'
 import { type request_ctx_T } from 'relysjs/server'
 import { id_be_memo_pair_ } from 'rmemo'
 export const [
-	blog_post__html$_,
+	,
 	blog_post__html_,
 ] = id_be_memo_pair_<string|undefined, unknown, request_ctx_T>(
 	'blog_post__html',
@@ -16,7 +16,7 @@ export const [
 				return blog_post__html$.val
 			}))
 export const [
-	blog_post__text$_,
+	,
 	blog_post__text_,
 ] = id_be_memo_pair_<string|undefined, unknown, request_ctx_T>(
 	'blog_post__text',
@@ -42,7 +42,7 @@ export const [
 				return blog_post__text$.val
 			}))
 export const [
-	blog_post__estimate_read_minutes$_,
+	,
 	blog_post__estimate_read_minutes_,
 ] = id_be_memo_pair_(
 	'blog_post__estimate_read_minutes',
