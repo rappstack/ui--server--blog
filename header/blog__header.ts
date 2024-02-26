@@ -105,7 +105,7 @@ export function blog__header_<env_T extends relement_env_T>({
 					}, [
 						button_({
 							class: class_(
-								'hamburger-menu',
+								'menu_handle',
 								'sm:hidden',
 								'self-end',
 								'p-2',
