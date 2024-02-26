@@ -34,15 +34,15 @@ export function blog__header_<env_T extends relement_env_T>({
 				id: 'skip-to-content',
 				class: class_(
 					'absolute',
-					'-top-full',
-					'left-16',
 					'z-50',
-					'bg-skin-accent',
-					'px-3',
+					'-top-full',
+					'focus:top-4',
+					'left-16',
 					'py-2',
+					'px-3',
+					'bg-skin-accent',
 					'text-skin-inverted',
-					'transition-all',
-					'focus:top-4'),
+					'transition-all'),
 				href: '#main'
 			}, 'Skip to content'),
 			div_({
@@ -52,9 +52,9 @@ export function blog__header_<env_T extends relement_env_T>({
 					'flex',
 					'max-w-3xl',
 					'flex-col',
+					'sm:flex-row',
 					'items-center',
-					'justify-between',
-					'sm:flex-row')
+					'justify-between')
 			}, [
 				div_({
 					class: class_(
