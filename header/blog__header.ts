@@ -27,8 +27,6 @@ export function blog__header_<env_T extends relement_env_T>({
 			class: class_(
 				'blog__header',
 				_class),
-			/** @see {import('@rappstack/ui--browser--blog/header').blog__header__hyop} */
-			hyop: 'blog__header__hyop',
 		}, [
 			a_({
 				id: 'skip-to-content',
@@ -89,9 +87,9 @@ export function blog__header_<env_T extends relement_env_T>({
 							: site__title_(ctx)
 					]),
 					nav_({
-						id: 'blog_header__handle_nav',
+						id: 'blog__header__handle__nav',
 						class: class_(
-							'group/blog_header__handle_nav',
+							'group/blog__header__handle__nav',
 							is_open ? 'is-open' : null,
 							'flex',
 							'w-full',
@@ -102,6 +100,8 @@ export function blog__header_<env_T extends relement_env_T>({
 							'sm:ml-2',
 							'sm:py-0',
 							'sm:space-x-4'),
+						/** @see {import('@rappstack/ui--browser--blog/header').blog__header__handle__nav__hyop} */
+						hyop: 'blog__header__handle__nav__hyop'
 					}, [
 						button_({
 							class: class_(
@@ -112,7 +112,9 @@ export function blog__header_<env_T extends relement_env_T>({
 								'focus-outline'),
 							'aria-label': 'Open Menu',
 							'aria-expanded': false,
-							'aria-controls': 'menu-items'
+							'aria-controls': 'menu-items',
+							/** @see {import('@rappstack/ui--browser--blog/header').blog__header__handle__nav__button__hyop} */
+							hyop: 'blog__header__handle__nav__button__hyop'
 						}, [
 							svg_({
 								xmlns: 'http://www.w3.org/2000/svg',
@@ -141,7 +143,7 @@ export function blog__header_<env_T extends relement_env_T>({
 									y2: '12',
 									class: class_(
 										'line',
-										'group-[.is-open]/blog_header__handle_nav:opacity-0')
+										'group-[.is-open]/blog__header__handle__nav:opacity-0')
 								}),
 								line_({
 									x1: '3',
@@ -150,7 +152,7 @@ export function blog__header_<env_T extends relement_env_T>({
 									y2: '6',
 									class: class_(
 										'line',
-										'group-[.is-open]/blog_header__handle_nav:opacity-0')
+										'group-[.is-open]/blog__header__handle__nav:opacity-0')
 								}),
 								line_({
 									x1: '12',
@@ -159,7 +161,7 @@ export function blog__header_<env_T extends relement_env_T>({
 									y2: '18',
 									class: class_(
 										'line',
-										'group-[.is-open]/blog_header__handle_nav:opacity-0')
+										'group-[.is-open]/blog__header__handle__nav:opacity-0')
 								}),
 								line_({
 									x1: '18',
@@ -169,7 +171,7 @@ export function blog__header_<env_T extends relement_env_T>({
 									class: class_(
 										'close',
 										'opacity-0',
-										'group-[.is-open]/blog_header__handle_nav:opacity-100')
+										'group-[.is-open]/blog__header__handle__nav:opacity-100')
 								}),
 								line_({
 									x1: '6',
@@ -179,7 +181,7 @@ export function blog__header_<env_T extends relement_env_T>({
 									class: class_(
 										'close',
 										'opacity-0',
-										'group-[.is-open]/blog_header__handle_nav:opacity-100')
+										'group-[.is-open]/blog__header__handle__nav:opacity-100')
 								})
 							])
 						]),
@@ -187,7 +189,7 @@ export function blog__header_<env_T extends relement_env_T>({
 							id: 'menu-items',
 							class: class_(
 								'hidden',
-								'group-[.is-open]/blog_header__handle_nav:flex',
+								'group-[.is-open]/blog__header__handle__nav:flex',
 								'sm:flex',
 								'flex-col',
 								'sm:flex-row',
