@@ -8,7 +8,7 @@ export function repost__p_<env_T extends relement_env_T>({
 		p_<env_T>([
 			em_([
 				'Repost from ',
-				tb_a_({ href })
+				tb_a_({ href, nofollow: true })
 			])
 		])
 	)
