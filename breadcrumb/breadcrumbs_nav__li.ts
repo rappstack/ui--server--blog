@@ -32,18 +32,28 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 				li_({
 					class: li_class
 				}, [
-					a_({ href: '/' }, 'Home'),
+					a_({
+						href: '/',
+						class: class_(
+							'underline',
+							'decoration-dashed')
+					}, 'Home'),
 					span_({ 'aria-hidden': true }, ' > ')
 				]),
 				...breadcrumb_a.map((breadcrumb, idx)=>
 					li_({
 						class: li_class
-					},[
+					}, [
 						idx + 1 === breadcrumb_a.length
 							? span_({ class: idx > 0 ? 'lowercase' : 'capitalize', 'aria-current': 'page' },
 								breadcrumb)
 							: [
-								a_({ href: `/${breadcrumb}` }, breadcrumb),
+								a_({
+									href: `/${breadcrumb}`,
+									class: class_(
+										'underline',
+										'decoration-dashed')
+								}, breadcrumb),
 								span_({ 'aria-hidden': true }, ' > ')
 							]
 					]))
