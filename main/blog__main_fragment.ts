@@ -6,7 +6,7 @@ import { breadcrumbs__nav_ } from '../breadcrumb/index.js'
 export function blog__main_fragment_<env_T extends relement_env_T>({
 	ctx,
 	class: _class,
-	title,
+	h1_text,
 	title__class,
 	description,
 	hyop,
@@ -14,7 +14,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 }:{
 	ctx:request_ctx_T
 	class?:string
-	title?:string
+	h1_text?:string
 	title__class?:string
 	description?:string
 	hyop?:string
@@ -35,7 +35,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 			hyop,
 			...dataset__data_attrs_(dataset || {})
 		}, [
-			title ? h1_({ class: title__class }, title) : null,
+			h1_text ? h1_({ class: title__class }, h1_text) : null,
 			description
 				? p_({
 					class: class_(

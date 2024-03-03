@@ -14,7 +14,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'Main_tag',
-			title: 'Tag:' + tag_(ctx),
+			h1_text: 'Tag:' + tag_(ctx),
 			description: 'All the articles with the tag "' + tag_(ctx) + '".'
 		}, [
 			ul_(

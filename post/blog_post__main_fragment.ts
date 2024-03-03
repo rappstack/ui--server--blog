@@ -26,7 +26,7 @@ export function blog_post__main_fragment_({
 		blog__main_fragment_<'server'>({
 			ctx,
 			class: 'Main_post',
-			title: blog_post__title_(ctx),
+			h1_text: blog_post__title_(ctx),
 		}, [
 			div_({
 				class: 'blog__post__main__content'

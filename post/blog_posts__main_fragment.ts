@@ -14,7 +14,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'blog_posts__main_fragment',
-			title: 'Posts',
+			h1_text: 'Posts',
 			description: 'The articles that I have posted to this site…'
 		}, [
 			ul_(

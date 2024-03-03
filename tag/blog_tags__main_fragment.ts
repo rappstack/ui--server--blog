@@ -13,7 +13,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'Main_tags',
-			title: 'Tags',
+			h1_text: 'Tags',
 			description: 'All the tags used in posts.'
 		}, [
 			ul_(
