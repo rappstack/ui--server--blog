@@ -1,3 +1,4 @@
+import { prose_class } from '@btakita/ui--server--briantakita/prose'
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
 	blog_post__canonical_url_,
@@ -78,7 +79,8 @@ export function blog_post__main_fragment_({
 					'prose',
 					'mt-8',
 					'mx-auto',
-					'max-w-3xl')
+					'max-w-3xl',
+					prose_class)
 			}, [
 				blog_post__hero_image_(ctx)
 				&& div_({

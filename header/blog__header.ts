@@ -188,7 +188,7 @@ export function blog__header_<env_T extends relement_env_T>({
 						ul_({
 							id: 'menu-items',
 							class: class_(
-								'hidden',
+								is_open ? 'flex' : 'hidden',
 								'group-[.is-open]/blog__header__handle__nav:flex',
 								'sm:flex',
 								'flex-col',
