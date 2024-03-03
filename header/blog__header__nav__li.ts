@@ -3,7 +3,7 @@ import { type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { li_ } from 'relementjs/html'
 export const blog__header__nav__li_class = class_(
-	'group/blog_header__nav_li',
+	'group/blog__header__nav__li',
 	'col-span-2',
 	'[nth-last-child(1)]:col-span-1',
 	'[nth-last-child(2)]:col-span-1',

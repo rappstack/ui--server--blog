@@ -29,7 +29,7 @@ export function blog__header__nav__li__a_class_({
 }) {
   return class_(
 		'w-full',
-		'group-[:nth-last-child(2)]/blog_header__nav_li:w-auto',
+		'group-[:nth-last-child(2)]/blog__header__nav__li:w-auto',
 		'py-3',
 		'sm:my-0',
 		'sm:px-2',

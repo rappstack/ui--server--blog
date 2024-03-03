@@ -8,12 +8,14 @@ export function socials__div_<env_T extends relement_env_T>({
 	ctx,
 	centered,
 	link_button_class,
+	link_button_svg_class,
 	class:_class,
 	...div_props
 }:{
 	ctx:wide_ctx_T
 	centered?:boolean
 	link_button_class?:string
+	link_button_svg_class?:string
 	class?:string
 }&tag_props_T<HTMLDivElement>) {
 	return (
@@ -39,6 +41,6 @@ export function socials__div_<env_T extends relement_env_T>({
 				title: social.link_title,
 				target: '_blank',
 				rel: 'noopener noreferrer'
-			}, social.icon_())))
+			}, social.icon_({ class: link_button_svg_class }))))
 	)
 }

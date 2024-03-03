@@ -116,74 +116,14 @@ export function blog__header_<env_T extends relement_env_T>({
 							/** @see {import('@rappstack/ui--browser--blog/header').blog__header__handle__nav__button__hyop} */
 							hyop: 'blog__header__handle__nav__button__hyop'
 						}, [
-							svg_({
-								xmlns: 'http://www.w3.org/2000/svg',
-								width: '24',
-								height: '24',
-								viewBox: '0 0 24 24',
-								fill: 'none',
-								stroke: 'currentColor',
-								'stroke-width': '1.5',
-								'stroke-linecap': 'round',
-								'stroke-linejoin': 'round',
+							menu_icon__svg_({
 								class: class_(
-									'menu-icon',
+									'inline-block',
 									'h-6',
 									'w-6',
-									'scale-125',
 									'fill-skin-base',
-									'transition-opacity',
-									'duration-75',
-									'ease-in-out')
-							}, [
-								line_({
-									x1: '7',
-									y1: '12',
-									x2: '21',
-									y2: '12',
-									class: class_(
-										'line',
-										'group-[.is-open]/blog__header__handle__nav:opacity-0')
-								}),
-								line_({
-									x1: '3',
-									y1: '6',
-									x2: '21',
-									y2: '6',
-									class: class_(
-										'line',
-										'group-[.is-open]/blog__header__handle__nav:opacity-0')
-								}),
-								line_({
-									x1: '12',
-									y1: '18',
-									x2: '21',
-									y2: '18',
-									class: class_(
-										'line',
-										'group-[.is-open]/blog__header__handle__nav:opacity-0')
-								}),
-								line_({
-									x1: '18',
-									y1: '6',
-									x2: '6',
-									y2: '18',
-									class: class_(
-										'close',
-										'opacity-0',
-										'group-[.is-open]/blog__header__handle__nav:opacity-100')
-								}),
-								line_({
-									x1: '6',
-									y1: '6',
-									x2: '18',
-									y2: '18',
-									class: class_(
-										'close',
-										'opacity-0',
-										'group-[.is-open]/blog__header__handle__nav:opacity-100')
-								})
-							])
+									'group-hover:fill-skin-accent')
+							})
 						]),
 						ul_({
 							id: 'menu-items',
@@ -207,6 +147,83 @@ export function blog__header_<env_T extends relement_env_T>({
 				])
 			]),
 			hr_div_()
+		])
+	)
+}
+function menu_icon__svg_({
+	class:_class
+}:{
+	class?:string
+}) {
+  return (
+		svg_({
+			xmlns: 'http://www.w3.org/2000/svg',
+			width: '24',
+			height: '24',
+			viewBox: '0 0 24 24',
+			fill: 'none',
+			stroke: 'currentColor',
+			'stroke-width': '1.5',
+			'stroke-linecap': 'round',
+			'stroke-linejoin': 'round',
+			class: class_(
+				'menu-icon',
+				'h-6',
+				'w-6',
+				'scale-125',
+				'fill-skin-base',
+				'transition-opacity',
+				'duration-75',
+				'ease-in-out',
+				_class)
+		}, [
+			line_({
+				x1: '7',
+				y1: '12',
+				x2: '21',
+				y2: '12',
+				class: class_(
+					'line',
+					'group-[.is-open]/blog__header__handle__nav:opacity-0')
+			}),
+			line_({
+				x1: '3',
+				y1: '6',
+				x2: '21',
+				y2: '6',
+				class: class_(
+					'line',
+					'group-[.is-open]/blog__header__handle__nav:opacity-0')
+			}),
+			line_({
+				x1: '12',
+				y1: '18',
+				x2: '21',
+				y2: '18',
+				class: class_(
+					'line',
+					'group-[.is-open]/blog__header__handle__nav:opacity-0')
+			}),
+			line_({
+				x1: '18',
+				y1: '6',
+				x2: '6',
+				y2: '18',
+				class: class_(
+					'close',
+					'opacity-0',
+					'group-[.is-open]/blog__header__handle__nav:opacity-100')
+			}),
+			line_({
+				x1: '6',
+				y1: '6',
+				x2: '18',
+				y2: '18',
+				class: class_(
+					'close',
+					'opacity-0',
+					'group-[.is-open]/blog__header__handle__nav:opacity-100')
+			})
 		])
 	)
 }

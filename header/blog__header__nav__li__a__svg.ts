@@ -24,5 +24,11 @@ export function blog__header__nav__li__a__svg_class_({
 }:{
 	active:boolean
 }) {
-	return class_(active ? 'fill-skin-accent' : null)
+	return class_(
+		'inline-block',
+		'h-6',
+		'w-6',
+		'fill-skin-base',
+		'group-hover:fill-skin-accent',
+		active ? 'fill-skin-accent' : null)
 }
