@@ -42,10 +42,7 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 				'px-4'),
 			'aria-label': 'breadcrumb',
 		}, [
-			ul_({
-				itemscope: '',
-				itemtype: 'http://schema.org/BreadcrumbList'
-			}, [
+			ul_([
 				li_({
 					class: li_class,
 				}, [
@@ -86,14 +83,14 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 					'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList_home'),
 					position: 1,
 					name: 'Home',
-					item: '/'
+					item: request_url__origin_(ctx)
 				},
 				...breadcrumb_a.map((breadcrumb, idx)=>({
 					'@type': 'ListItem',
 					'@id': url__join(request_url__origin_(ctx), `#BreadcrumbList_${breadcrumb.replaceAll('/', '_')}`),
 					position: idx + 2,
 					name: breadcrumb,
-					item: '/' + breadcrumb
+					item: url__join(request_url__origin_(ctx), breadcrumb)
 				}))
 			]
 		})))
