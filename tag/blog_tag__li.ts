@@ -2,6 +2,7 @@ import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { a_, code_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
+import { tag_class } from './class.js'
 export function blog_tag__li_<env_T extends relement_env_T>({
 	name,
 	size
@@ -13,7 +14,8 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 	return (
 		li_<env_T>({
 			class: class_(
-				'blog__tag_c inline-block',
+				'blog__tag_c',
+				'inline-block',
 				size === 'sm'
 					? [
 						'my-1',
@@ -35,7 +37,8 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 					'underline',
 					'decoration-dashed',
 					'hover:text-skin-accent',
-					size === 'sm' ? 'text-sm' : 'text-lg')
+					size === 'sm' ? 'text-sm' : 'text-lg',
+					tag_class)
 			}, [
 				svg_({
 					xmlns: 'http://www.w3.org/2000/svg',
