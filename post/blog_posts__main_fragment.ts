@@ -1,5 +1,6 @@
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { page_dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/page'
+import { site__author_ } from '@rappstack/domain--server/site'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { type relement_env_T } from 'relementjs'
 import { ul_ } from 'relementjs/html'
@@ -14,7 +15,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'blog_posts__main_fragment',
-			h1_text: 'Posts',
+			h1_text: site__author_(ctx) + '\'s Posts',
 			description: 'The articles that I have posted to this site…'
 		}, [
 			ul_(

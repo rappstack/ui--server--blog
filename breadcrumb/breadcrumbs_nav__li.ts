@@ -36,8 +36,8 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 			class: class_(
 				'Breadcrumbs',
 				'mx-auto',
-				'mb-1',
 				'mt-8',
+				'mb-4',
 				'w-full',
 				'max-w-3xl',
 				'px-4'),

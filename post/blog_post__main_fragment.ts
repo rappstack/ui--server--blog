@@ -1,6 +1,7 @@
 import { prose_class } from '@btakita/ui--server--briantakita/prose'
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
+	blog_post__author_,
 	blog_post__canonical_url_,
 	blog_post__hero_image_,
 	blog_post__pub_date_,
@@ -25,12 +26,19 @@ export function blog_post__main_fragment_({
 	return (
 		blog__main_fragment_<'server'>({
 			ctx,
-			class: 'Main_post',
+			class: class_(
+				'blog_post__main',
+				'text-4xl'),
 			h1_text: blog_post__title_(ctx),
 		}, [
 			div_({
 				class: 'blog__post__main__content'
 			}, [
+				div_({
+					class: class_(
+						'inline-block',
+						'text-base')
+				}, 'Author: ' + blog_post__author_(ctx)),
 				div_({
 					class: class_(
 						'datetime_A_estimate_read_time',
