@@ -2,7 +2,7 @@ import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { div_, hr_ } from 'relementjs/html'
 export function hr_div_<env_T extends relement_env_T>($p?:{
-	no_padding?:boolean
+	class?:string
 	aria_hidden?:boolean
 }) {
 	return (
@@ -10,7 +10,7 @@ export function hr_div_<env_T extends relement_env_T>($p?:{
 			class: class_(
 				'max-w-3xl',
 				'mx-auto',
-				$p?.no_padding ? 'px-0' : 'px-4')
+				$p?.class)
 		}, [
 			hr_({
 				class: 'border-skin-line',

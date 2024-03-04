@@ -1,14 +1,9 @@
-import {
-	logo_image__enable_,
-	logo_image__height_,
-	logo_image__src_,
-	logo_image__width_,
-} from '@rappstack/domain--server/logo'
+import { logo_image_, } from '@rappstack/domain--server/logo'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type tag_dom_T, type wide_ctx_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
-import { a_, button_, div_, header_, img_, nav_, ul_ } from 'relementjs/html'
+import { a_, button_, div_, header_, nav_, ul_ } from 'relementjs/html'
 import { line_, svg_ } from 'relementjs/svg'
 import { hr_div_ } from '../hr/index.js'
 export function blog__header_<env_T extends relement_env_T>({
@@ -77,14 +72,14 @@ export function blog__header_<env_T extends relement_env_T>({
 							'sm:text-2xl',
 							'whitespace-nowrap'),
 					}, [
-						logo_image__enable_(ctx)
-							? img_({
-								src: logo_image__src_(ctx),
-								alt: site__title_(ctx),
-								width: logo_image__width_(ctx),
-								height: logo_image__height_(ctx),
-							})
-							: site__title_(ctx)
+						logo_image_(ctx, {
+							class: class_(
+								'fill-current',
+								'stroke-current',
+								'text-current',
+								'h-5',
+								'w-6')
+						}) ?? site__title_(ctx)
 					]),
 					nav_({
 						id: 'blog__header__handle__nav',
@@ -146,7 +141,9 @@ export function blog__header_<env_T extends relement_env_T>({
 					])
 				])
 			]),
-			hr_div_()
+			hr_div_({
+				class: class_('px-4')
+			})
 		])
 	)
 }

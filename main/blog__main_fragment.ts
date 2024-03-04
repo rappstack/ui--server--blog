@@ -25,12 +25,11 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 		main_({
 			id: 'main',
 			class: class_(
-				'Main',
+				'main',
 				'mx-auto',
 				'w-full',
 				'max-w-3xl',
 				'px-4',
-				'pb-12',
 				_class),
 			hyop,
 			...dataset__data_attrs_(dataset || {})
