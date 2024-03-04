@@ -1,8 +1,11 @@
+import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { class_ } from 'ctx-core/html'
 import { isNumber_ } from 'ctx-core/number'
-import { type relement_env_T } from 'relementjs'
-import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
+import { url__join } from 'ctx-core/uri'
+import { raw_, type relement_env_T } from 'relementjs'
+import { a_, li_, nav_, script_, span_, ul_ } from 'relementjs/html'
 import { type request_ctx_T, request_url_ } from 'relysjs/server'
+import type { BreadcrumbList } from 'schema-dts'
 export function breadcrumbs__nav_<env_T extends relement_env_T>({
 	ctx
 }:{
@@ -17,7 +20,7 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 	const breadcrumb_a = current_url_path.split('/').slice(1)
 	// if breadcrumb is Home > Posts > 1 <etc>
 	// replace Posts with Posts (page number)
-	if (breadcrumb_a[0] === 'posts' && isNumber_(breadcrumb_a[1])) {
+	if (breadcrumb_a[0] === 'posts' && isNumber_(breadcrumb_a[1]) && !breadcrumb_a[1].includes('-')) {
 		breadcrumb_a.splice(0, 2, `Posts (page ${breadcrumb_a[1] || 1})`)
 	}
 	if (!breadcrumb_a.length) return
@@ -26,23 +29,37 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 		'capitalize',
 		'opacity-80',
 		'[&:not(:last-child)]:hover:opacity-100')
-	return (
-		nav_<env_T>({ class: 'Breadcrumbs mx-auto mb-1 mt-8 w-full max-w-3xl px-4', 'aria-label': 'breadcrumb' },
-			ul_([
+	return [
+		nav_<env_T>({
+			id: 'breadcrumb',
+			class: class_(
+				'Breadcrumbs',
+				'mx-auto',
+				'mb-1',
+				'mt-8',
+				'w-full',
+				'max-w-3xl',
+				'px-4'),
+			'aria-label': 'breadcrumb',
+		}, [
+			ul_({
+				itemscope: '',
+				itemtype: 'http://schema.org/BreadcrumbList'
+			}, [
 				li_({
-					class: li_class
+					class: li_class,
 				}, [
 					a_({
 						href: '/',
 						class: class_(
 							'underline',
-							'decoration-dashed')
+							'decoration-dashed'),
 					}, 'Home'),
 					span_({ 'aria-hidden': true }, ' > ')
 				]),
 				...breadcrumb_a.map((breadcrumb, idx)=>
 					li_({
-						class: li_class
+						class: li_class,
 					}, [
 						idx + 1 === breadcrumb_a.length
 							? span_({ class: idx > 0 ? 'lowercase' : 'capitalize', 'aria-current': 'page' },
@@ -52,11 +69,33 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 									href: `/${breadcrumb}`,
 									class: class_(
 										'underline',
-										'decoration-dashed')
+										'decoration-dashed'),
 								}, breadcrumb),
 								span_({ 'aria-hidden': true }, ' > ')
 							]
 					]))
-			]))
-	)
+			])
+		]),
+		script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<BreadcrumbList>{
+			'@context': 'https://schema.org',
+			'@type': 'BreadcrumbList',
+			'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList'),
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList_home'),
+					position: 1,
+					name: 'Home',
+					item: '/'
+				},
+				...breadcrumb_a.map((breadcrumb, idx)=>({
+					'@type': 'ListItem',
+					'@id': url__join(request_url__origin_(ctx), `#BreadcrumbList_${breadcrumb.replaceAll('/', '_')}`),
+					position: idx + 2,
+					name: breadcrumb,
+					item: '/' + breadcrumb
+				}))
+			]
+		})))
+	]
 }
