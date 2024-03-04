@@ -63,6 +63,7 @@ export function blog__header_<env_T extends relement_env_T>({
 				}, [
 					a_({
 						href: '/',
+						title: 'Home | ' + site__title_(ctx),
 						class: class_(
 							'logo',
 							'absolute',
