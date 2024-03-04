@@ -40,12 +40,15 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 				svg_({
 					xmlns: 'http://www.w3.org/2000/svg',
 					class: class_(
+						'inline-block',
 						'-mr-1',
 						'h-6',
 						'w-6',
 						'scale-95',
 						'text-skin-base',
 						'opacity-80',
+						'group-hover:fill-skin-accent',
+						'fill-skin-base',
 						'group-hover:fill-skin-accent',
 						size === 'sm' ? ' scale-75' : 'scale-110')
 				}, [
