@@ -1,3 +1,4 @@
+import { site__title_ } from '@rappstack/domain--server/site'
 import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { class_ } from 'ctx-core/html'
 import { isNumber_ } from 'ctx-core/number'
@@ -77,6 +78,7 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 			'@context': 'https://schema.org',
 			'@type': 'BreadcrumbList',
 			'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList'),
+			name: 'BreadcrumbList | ' + site__title_(ctx),
 			itemListElement: [
 				{
 					'@type': 'ListItem',
