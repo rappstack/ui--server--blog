@@ -25,36 +25,6 @@ export function blog_post__main_fragment_({
 	ctx:request_ctx_T
 }) {
 	return [
-		div_({
-			class: class_(
-				'progress-container',
-				'fixed',
-				'top-0',
-				'z-10',
-				'h-1',
-				'w-full',
-				'bg-skin-fill'),
-		}, [
-			div_({
-				class: class_(
-					'progress-bar',
-					'h-1',
-					'w-0',
-					'bg-skin-accent'),
-				/** @see {import('@rappstack/ui--browser--blog/post').progress_bar__hyop} */
-				hyop: 'progress_bar__hyop'
-			})
-		]),
-		template_({
-			id: 'code_copy_icon__template',
-			class: class_('hidden'),
-			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_icon__template__hyop} */
-			hyop: 'code_copy_icon__template__hyop'
-		}, heroicons_clipboard_document_list_({
-			class: class_(
-				'h-6',
-				'w-6')
-		})),
 		blog__main_fragment_<'server'>({
 			ctx,
 			class: class_(
@@ -147,6 +117,36 @@ export function blog_post__main_fragment_({
 					'my-8')
 			}, ...(blog_post__tag_a1_(ctx) ?? []).map(tag=>
 				blog_tag__li_({ name: slug__new(tag) })))
-		])
+		]),
+		div_({
+			class: class_(
+				'progress-container',
+				'fixed',
+				'top-0',
+				'z-10',
+				'h-1',
+				'w-full',
+				'bg-skin-fill'),
+		}, [
+			div_({
+				class: class_(
+					'progress-bar',
+					'h-1',
+					'w-0',
+					'bg-skin-accent'),
+				/** @see {import('@rappstack/ui--browser--blog/post').progress_bar__hyop} */
+				hyop: 'progress_bar__hyop'
+			})
+		]),
+		template_({
+			id: 'code_copy_icon__template',
+			class: class_('hidden'),
+			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_icon__template__hyop} */
+			hyop: 'code_copy_icon__template__hyop'
+		}, heroicons_clipboard_document_list_({
+			class: class_(
+				'h-6',
+				'w-6')
+		})),
 	]
 }
