@@ -11,9 +11,10 @@ import {
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
-import { article_, div_, em_, img_, span_, ul_ } from 'relementjs/html'
+import { article_, div_, em_, img_, span_, template_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { footnote_list__div_ } from '../footnote/index.js'
+import { heroicons_clipboard_document_list_ } from '../icon/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
 import { repost__p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
@@ -23,16 +24,48 @@ export function blog_post__main_fragment_({
 }:{
 	ctx:request_ctx_T
 }) {
-	return (
+	return [
+		template_({
+			id: 'code_copy_icon__template',
+			class: class_('hidden'),
+			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_icon__template__hyop} */
+			hyop: 'code_copy_icon__template__hyop'
+		}, heroicons_clipboard_document_list_({
+			class: class_(
+				'h-6',
+				'w-6')
+		})),
 		blog__main_fragment_<'server'>({
 			ctx,
 			class: class_(
 				'blog_post__main',
 				'text-4xl'),
 			h1_text: blog_post__title_(ctx),
+			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
+			hyop: 'code_copy_button__hyop'
 		}, [
 			div_({
-				class: 'blog__post__main__content'
+				class: class_(
+					'progress-container',
+					'fixed',
+					'top-0',
+					'z-10',
+					'h-1',
+					'w-full',
+					'bg-skin-fill'),
+			}, [
+				div_({
+					class: class_(
+						'progress-bar',
+						'h-1',
+						'w-0',
+						'bg-skin-accent'),
+					/** @see {import('@rappstack/ui--browser--blog/post').progress_bar__hyop} */
+					hyop: 'progress_bar__hyop'
+				})
+			]),
+			div_({
+				class: 'blog__post__main__content',
 			}, [
 				div_({
 					class: class_(
@@ -115,5 +148,5 @@ export function blog_post__main_fragment_({
 			}, ...(blog_post__tag_a1_(ctx) ?? []).map(tag=>
 				blog_tag__li_({ name: slug__new(tag) })))
 		])
-	)
+	]
 }
