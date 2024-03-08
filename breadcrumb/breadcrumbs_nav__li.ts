@@ -1,3 +1,4 @@
+import { jsonld__add } from '@rappstack/domain--server/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { class_ } from 'ctx-core/html'
@@ -30,6 +31,28 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 		'capitalize',
 		'opacity-80',
 		'[&:not(:last-child)]:hover:opacity-100')
+	jsonld__add(ctx, <BreadcrumbList>{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList'),
+		name: 'BreadcrumbList | ' + site__title_(ctx),
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList_home'),
+				position: 1,
+				name: 'Home',
+				item: request_url__origin_(ctx)
+			},
+			...breadcrumb_a.map((breadcrumb, idx)=>({
+				'@type': 'ListItem',
+				'@id': url__join(request_url__origin_(ctx), `#BreadcrumbList_${breadcrumb.replaceAll('/', '_')}`),
+				position: idx + 2,
+				name: breadcrumb,
+				item: url__join(request_url__origin_(ctx), breadcrumb)
+			}))
+		]
+	})
 	return [
 		nav_<env_T>({
 			id: 'breadcrumb',
@@ -74,27 +97,5 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>({
 					]))
 			])
 		]),
-		script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<BreadcrumbList>{
-			'@context': 'https://schema.org',
-			'@type': 'BreadcrumbList',
-			'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList'),
-			name: 'BreadcrumbList | ' + site__title_(ctx),
-			itemListElement: [
-				{
-					'@type': 'ListItem',
-					'@id': url__join(request_url__origin_(ctx), '#BreadcrumbList_home'),
-					position: 1,
-					name: 'Home',
-					item: request_url__origin_(ctx)
-				},
-				...breadcrumb_a.map((breadcrumb, idx)=>({
-					'@type': 'ListItem',
-					'@id': url__join(request_url__origin_(ctx), `#BreadcrumbList_${breadcrumb.replaceAll('/', '_')}`),
-					position: idx + 2,
-					name: breadcrumb,
-					item: url__join(request_url__origin_(ctx), breadcrumb)
-				}))
-			]
-		})))
 	]
 }
