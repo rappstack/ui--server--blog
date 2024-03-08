@@ -6,7 +6,7 @@ import { url__join } from 'ctx-core/uri'
 import { raw_, type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, script_, span_, ul_ } from 'relementjs/html'
 import { type request_ctx_T, request_url_ } from 'relysjs/server'
-import type { BreadcrumbList } from 'schema-dts'
+import type { BreadcrumbList } from '@btakita/schema-dts'
 export function breadcrumbs__nav_<env_T extends relement_env_T>({
 	ctx
 }:{
