@@ -1,8 +1,10 @@
 import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
-import { WebPage__description__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
-import { schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
+import { WebPage__description__set, WebPage__name__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
+import { schema_org_Article_rdfa } from '@rappstack/domain--server/rdfa'
+import { site__title_ } from '@rappstack/domain--server/site'
+import { schema_org_Article_id__link_, schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
 import { type relement_env_T } from 'relementjs'
-import { ul_ } from 'relementjs/html'
+import { article_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { blog__main_fragment_ } from '../main/index.js'
 import { blog_tag__li_ } from './blog_tag__li.js'
@@ -11,7 +13,9 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 }:{
 	ctx:request_ctx_T
 }) {
+	const title = 'Tags | ' + site__title_(ctx)
 	const description = 'All the tags used in posts.'
+	WebPage__name__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'CollectionPage')
 	return [
@@ -19,15 +23,20 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'Main_tags',
-			h1_text: 'Tags',
+			h1_text: title,
 			description
 		}, [
-			ul_(
-				...unique_tag_a1_(ctx).map(tag=>
-					blog_tag__li_({
-						name: tag,
-						size: 'lg',
-					})))
+			article_({
+				...schema_org_Article_rdfa
+			}, [
+				schema_org_Article_id__link_(ctx),
+				ul_(
+					...unique_tag_a1_(ctx).map(tag=>
+						blog_tag__li_({
+							name: tag,
+							size: 'lg',
+						})))
+			])
 		])
 	]
 }
