@@ -10,7 +10,7 @@ import {
 } from '@rappstack/domain--server--blog/post'
 import { schema_org_Article_rdfa } from '@rappstack/domain--server/rdfa'
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
-import { schema_org_Article_id__link_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article_id__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
 import { article_, div_, em_, img_, span_, template_, ul_ } from 'relementjs/html'
@@ -96,7 +96,7 @@ export function blog_post__main_fragment_({
 					prose_class),
 				...schema_org_Article_rdfa,
 			}, [
-				schema_org_Article_id__link_(ctx),
+				schema_org_Article_id__link_a1_(ctx),
 				blog_post__hero_image_(ctx)
 				&& div_({
 					class: 'hero-image'

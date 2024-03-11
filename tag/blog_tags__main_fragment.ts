@@ -2,7 +2,7 @@ import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
 import { WebPage__description__set, WebPage__name__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_Article_rdfa } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
-import { schema_org_Article_id__link_, schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article_id__link_a1_, schema_org_WebPage_id__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { type relement_env_T } from 'relementjs'
 import { article_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -19,7 +19,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'CollectionPage')
 	return [
-		schema_org_WebPage_id__link_(ctx),
+		schema_org_WebPage_id__link_a1_(ctx),
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'Main_tags',
@@ -29,7 +29,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 			article_({
 				...schema_org_Article_rdfa
 			}, [
-				schema_org_Article_id__link_(ctx),
+				schema_org_Article_id__link_a1_(ctx),
 				ul_(
 					...unique_tag_a1_(ctx).map(tag=>
 						blog_tag__li_({

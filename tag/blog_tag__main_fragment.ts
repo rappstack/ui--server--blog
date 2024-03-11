@@ -3,7 +3,7 @@ import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--
 import { WebPage__description__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_Article_rdfa } from '@rappstack/domain--server/rdfa'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
-import { schema_org_Article_id__link_, schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article_id__link_a1_, schema_org_WebPage_id__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { type relement_env_T } from 'relementjs'
 import { article_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -17,7 +17,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'ItemPage')
 	return [
-		schema_org_WebPage_id__link_(ctx),
+		schema_org_WebPage_id__link_a1_(ctx),
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'Main_tag',
@@ -27,7 +27,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 			article_({
 				...schema_org_Article_rdfa,
 			}, [
-				schema_org_Article_id__link_(ctx),
+				schema_org_Article_id__link_a1_(ctx),
 				ul_(
 					...tag__dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
 						blog_card__li_({
