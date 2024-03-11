@@ -37,7 +37,7 @@ export function server_blog_card__li_({
 			href: url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${href}_CreativeWork`)
 		}),
 		schema_org_rdfa__link_<CreativeWork>({
-			property: 'isPartOf',
+			property: 'about',
 			href: Article_id_(ctx)
 		}),
 	])

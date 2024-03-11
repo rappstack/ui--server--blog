@@ -59,7 +59,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 							href: url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${tag}_CreativeWork`)
 						}),
 						schema_org_rdfa__link_<CreativeWork>({
-							property: 'isPartOf',
+							property: 'about',
 							href: Article_id_(ctx)
 						})
 					])))
