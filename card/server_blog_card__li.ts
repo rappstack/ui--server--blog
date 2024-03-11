@@ -1,10 +1,9 @@
 import type { CreativeWork } from '@btakita/schema-dts'
 import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
-import { Article_id_, schema_org_CreativeWork_rdfa, schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import { schema_org_CreativeWork_rdfa, schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
-import { schema_org_rdfa__link_ } from '@rappstack/ui--server/rdfa'
 import { url__join } from 'ctx-core/uri'
 import { type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
@@ -32,6 +31,8 @@ export function server_blog_card__li_({
 		li_props: {
 			...schema_org_CreativeWork_rdfa,
 			resource: url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${href}_CreativeWork`),
+			/** @see {https://stackoverflow.com/a/46018087/142571} */
+			rev: 'isPartOf',
 			...li_props,
 		},
 		a_props: {
@@ -41,10 +42,5 @@ export function server_blog_card__li_({
 			}
 		},
 		...props
-	}, [
-		schema_org_rdfa__link_<CreativeWork>({
-			property: 'isPartOf',
-			href: Article_id_(ctx)
-		}),
-	], children)
+	}, children)
 }

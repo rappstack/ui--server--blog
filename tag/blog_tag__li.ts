@@ -1,8 +1,6 @@
-import type { CreativeWork } from '@btakita/schema-dts'
-import { Article_id_, schema_org_CreativeWork_rdfa } from '@rappstack/domain--server/rdfa'
+import { schema_org_CreativeWork_rdfa } from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
-import { schema_org_rdfa__link_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
@@ -40,14 +38,13 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 					]),
 			...schema_org_CreativeWork_rdfa,
 			resource: url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${name}_CreativeWork`),
+			/** @see {https://stackoverflow.com/a/46018087/142571} */
+			rev: 'isPartOf',
 			...li_props
 		}, [
-			schema_org_rdfa__link_<CreativeWork>({
-				property: 'isPartOf',
-				href: Article_id_(ctx)
-			}),
 			a_({
 				href: `/tags/${name.toLowerCase()}`,
+				property: 'name',
 				class: class_(
 					'relative',
 					'hover:-top-0.5',

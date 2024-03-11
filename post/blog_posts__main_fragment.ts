@@ -22,7 +22,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 			description: 'The articles that I have posted to this site…'
 		}, [
 			article_({
-				...schema_org_Article_rdfa
+				...schema_org_Article_rdfa,
 			}, [
 				schema_org_Article__link_a1_(ctx),
 				ul_({
