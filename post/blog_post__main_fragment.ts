@@ -1,3 +1,4 @@
+import type { Article } from '@btakita/schema-dts'
 import { prose_class } from '@btakita/ui--server--briantakita/prose'
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
@@ -8,7 +9,7 @@ import {
 	blog_post__tag_a1_,
 	blog_post__title_
 } from '@rappstack/domain--server--blog/post'
-import { schema_org_Article_rdfa } from '@rappstack/domain--server/rdfa'
+import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
@@ -97,23 +98,29 @@ export function blog_post__main_fragment_({
 				...schema_org_Article_rdfa,
 			}, [
 				schema_org_Article__link_a1_(ctx),
-				blog_post__hero_image_(ctx)
-				&& div_({
-					class: 'hero-image'
+				div_({
+					...<schema_org_props_rdfa_T<Article>>{
+						property: 'articleBody'
+					}
 				}, [
-					img_({
-						width: 1020,
-						height: 510,
-						src: blog_post__hero_image_(ctx),
-						alt: ''
-					})
+					blog_post__hero_image_(ctx)
+					&& div_({
+						class: 'hero-image'
+					}, [
+						img_({
+							width: 1020,
+							height: 510,
+							src: blog_post__hero_image_(ctx),
+							alt: ''
+						})
+					]),
+					blog_post__canonical_url_(ctx)
+					&& repost__p_({
+						href: blog_post__canonical_url_(ctx)!
+					}),
+					raw_(blog_post__html_(ctx)),
+					footnote_list__div_({ ctx })
 				]),
-				blog_post__canonical_url_(ctx)
-				&& repost__p_({
-					href: blog_post__canonical_url_(ctx)!
-				}),
-				raw_(blog_post__html_(ctx)),
-				footnote_list__div_({ ctx })
 			]),
 			ul_({
 				class: class_(

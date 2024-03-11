@@ -38,7 +38,6 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 			h1_text: title,
 			description
 		}, [
-			schema_org_Article__link_a1_(ctx),
 			article_({
 				...schema_org_Article_rdfa
 			}, [
