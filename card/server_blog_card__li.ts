@@ -1,5 +1,6 @@
 import type { CreativeWork } from '@btakita/schema-dts'
 import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
+import { WebPage__hasPart_, WebPage__hasPart__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_CreativeWork_rdfa, schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
@@ -25,12 +26,17 @@ export function server_blog_card__li_({
 	show_heading?:boolean
 	locale?:Intl.LocalesArgument
 }, ...children:tag_dom_T[]) {
+	const CreativeWork_id = url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${href}_CreativeWork`)
+	WebPage__hasPart__set(ctx, [
+		...WebPage__hasPart_(ctx) ?? [],
+		{ '@id': CreativeWork_id }
+	])
 	return blog_card__li_({
 		ctx,
 		href,
 		li_props: {
 			...schema_org_CreativeWork_rdfa,
-			resource: url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${href}_CreativeWork`),
+			resource: CreativeWork_id,
 			/** @see {https://stackoverflow.com/a/46018087/142571} */
 			rev: 'isPartOf',
 			...li_props,

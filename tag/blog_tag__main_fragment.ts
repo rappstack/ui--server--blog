@@ -1,7 +1,12 @@
 import type { Article } from '@btakita/schema-dts'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
-import { WebPage__description__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
+import {
+	WebPage__description__set,
+	WebPage__headline_,
+	WebPage__headline__set,
+	WebPage__type__set
+} from '@rappstack/domain--server/jsonld'
 import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
 import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { type relement_env_T } from 'relementjs'
@@ -14,14 +19,16 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 }:{
 	ctx:request_ctx_T
 }) {
+	const h1_text = 'Tag:' + tag_(ctx)
 	const description = 'All the articles with the tag "' + tag_(ctx) + '".'
+	WebPage__headline__set(ctx, h1_text)
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'CollectionPage')
 	return [
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'Main_tag',
-			h1_text: 'Tag:' + tag_(ctx),
+			h1_text,
 			description
 		}, [
 			article_({
