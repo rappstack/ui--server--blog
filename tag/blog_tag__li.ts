@@ -1,14 +1,23 @@
+import type { CreativeWork } from '@btakita/schema-dts'
+import { Article_id_, schema_org_CreativeWork_rdfa } from '@rappstack/domain--server/rdfa'
+import { request_url__pathname_ } from '@rappstack/domain--server/request'
+import { site__website_ } from '@rappstack/domain--server/site'
+import { schema_org_rdfa__link_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
+import { url__join } from 'ctx-core/uri'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { tag_props_T } from 'relementjs/any'
 import { a_, code_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
+import { request_ctx_T } from 'relysjs/server'
 import { tag_class } from './class.js'
 export function blog_tag__li_<env_T extends relement_env_T>({
+	ctx,
 	name,
 	size,
 	li_props,
 }:{
+	ctx:request_ctx_T
 	name:string
 	size?:'sm'|'lg',
 	li_props?:Exclude<tag_props_T<HTMLLIElement>, 'class'>
@@ -17,7 +26,7 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 	return (
 		li_<env_T>({
 			class: class_(
-				'blog__tag_c',
+				'blog_tag__li',
 				'inline-block',
 				size === 'sm'
 					? [
@@ -29,8 +38,14 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 						'mx-1',
 						'underline-offset-8'
 					]),
+			...schema_org_CreativeWork_rdfa,
+			resource: url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${name}_CreativeWork`),
 			...li_props
 		}, [
+			schema_org_rdfa__link_<CreativeWork>({
+				property: 'isPartOf',
+				href: Article_id_(ctx)
+			}),
 			a_({
 				href: `/tags/${name.toLowerCase()}`,
 				class: class_(
@@ -63,6 +78,7 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 						d: 'M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z'
 					})
 				]),
+				' ',
 				code_(`${name.toLowerCase()}`)
 			]),
 			...children

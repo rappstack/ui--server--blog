@@ -127,7 +127,7 @@ export function blog_post__main_fragment_({
 					'tag_a1-container',
 					'my-8')
 			}, ...(blog_post__tag_a1_(ctx) ?? []).map(tag=>
-				blog_tag__li_({ name: slug__new(tag) })))
+				blog_tag__li_({ ctx, name: slug__new(tag) })))
 		]),
 		div_({
 			class: class_(
