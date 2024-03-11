@@ -1,15 +1,18 @@
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
+import { tag_props_T } from 'relementjs/any'
 import { a_, code_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
 import { tag_class } from './class.js'
 export function blog_tag__li_<env_T extends relement_env_T>({
 	name,
-	size
+	size,
+	li_props,
 }:{
 	name:string
-	size?:'sm'|'lg'
-}):tag_dom_T<env_T> {
+	size?:'sm'|'lg',
+	li_props?:Exclude<tag_props_T<HTMLLIElement>, 'class'>
+}, ...children:tag_dom_T[]):tag_dom_T<env_T> {
 	size ??= 'sm'
 	return (
 		li_<env_T>({
@@ -25,7 +28,8 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 						'my-3',
 						'mx-1',
 						'underline-offset-8'
-					])
+					]),
+			...li_props
 		}, [
 			a_({
 				href: `/tags/${name.toLowerCase()}`,
@@ -60,7 +64,8 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 					})
 				]),
 				code_(`${name.toLowerCase()}`)
-			])
+			]),
+			...children
 		])
 	)
 }
