@@ -1,4 +1,4 @@
-import { social_a1_ } from '@rappstack/domain--server/social'
+import { site__social_a1_ } from '@rappstack/domain--server/site'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type wide_ctx_T } from 'relementjs'
@@ -29,7 +29,7 @@ export function socials__div_<env_T extends relement_env_T>({
 				'justify-center',
 				'gap-1',
 				_class)
-		}, ...social_a1_(ctx).map(social=>
+		}, ...(site__social_a1_(ctx) ?? []).map(social=>
 			button__a_({
 				href: social.href,
 				class: class_(
