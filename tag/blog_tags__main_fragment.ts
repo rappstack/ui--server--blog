@@ -1,4 +1,4 @@
-import type { Article } from '@btakita/schema-dts'
+import type { Article } from 'schema-dts'
 import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
 import {
 	WebPage__description__set,

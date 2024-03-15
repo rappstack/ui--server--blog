@@ -1,4 +1,4 @@
-import type { Article } from '@btakita/schema-dts'
+import type { Article } from 'schema-dts'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { page_dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/page'
 import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'

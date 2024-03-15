@@ -1,4 +1,4 @@
-import { CreativeWork } from '@btakita/schema-dts'
+import { CreativeWork } from 'schema-dts'
 import { jsonld__add, WebPage__hasPart_, WebPage__hasPart__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_CreativeWork_rdfa } from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'

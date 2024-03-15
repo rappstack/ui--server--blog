@@ -1,4 +1,4 @@
-import type { Article } from '@btakita/schema-dts'
+import type { Article } from 'schema-dts'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
 import {

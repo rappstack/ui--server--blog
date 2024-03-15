@@ -1,4 +1,4 @@
-import type { Article } from '@btakita/schema-dts'
+import type { Article } from 'schema-dts'
 import { prose_class } from '@btakita/ui--server--briantakita/prose'
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {

@@ -1,4 +1,4 @@
-import type { CreativeWork } from '@btakita/schema-dts'
+import type { CreativeWork } from 'schema-dts'
 import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
 import { WebPage__hasPart_, WebPage__hasPart__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_CreativeWork_rdfa, schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
