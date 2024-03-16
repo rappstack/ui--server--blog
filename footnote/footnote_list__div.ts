@@ -20,7 +20,11 @@ export function footnote_list__div_<env_T extends relement_env_T>({
 					'[' + footnote.seq + ']:',
 					em_(raw_(footnote.html)),
 					' ',
-					sub_([
+					sub_({
+						class: class_(
+							'inline-block',
+							'float-right')
+					},[
 						a_({
 							href: '#' + _footnote__ref__html_id__new(footnote),
 							class: class_(
