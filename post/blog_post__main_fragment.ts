@@ -1,5 +1,3 @@
-import type { Article } from 'schema-dts'
-import { prose_class } from '@btakita/ui--server--briantakita/prose'
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
 	blog_post__author_,
@@ -16,6 +14,7 @@ import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
 import { article_, div_, em_, img_, span_, template_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
+import type { Article } from 'schema-dts'
 import { footnote_list__div_ } from '../footnote/index.js'
 import { heroicons_clipboard_document_list_ } from '../icon/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
@@ -23,16 +22,21 @@ import { repost__p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
 import { blog_post__estimate_read_minutes_, blog_post__html_ } from './blog_post__html.js'
 export function blog_post__main_fragment_({
-	ctx
+	ctx,
+	class:_class,
+	article_class,
 }:{
 	ctx:request_ctx_T
+	class?:string
+	article_class?:string
 }) {
 	return [
 		blog__main_fragment_<'server'>({
 			ctx,
 			class: class_(
 				'blog_post__main',
-				'text-4xl'),
+				'text-4xl',
+				_class),
 			h1_text: blog_post__title_(ctx),
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
 			hyop: 'code_copy_button__hyop'
@@ -94,7 +98,7 @@ export function blog_post__main_fragment_({
 					'mt-8',
 					'mx-auto',
 					'max-w-3xl',
-					prose_class),
+					article_class),
 				...schema_org_Article_rdfa,
 			}, [
 				schema_org_Article__link_a1_(ctx),
