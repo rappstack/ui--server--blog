@@ -1,6 +1,11 @@
 import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
 import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
-import { schema_org_CreativeWork_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import {
+	schema_org_CreativeWork_rdfa,
+	type schema_org_props_rdfa_T,
+	schema_org_rdfa_resource_o_,
+	schema_org_rdfa_rev_o_
+} from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
@@ -26,16 +31,15 @@ export function server_blog_card__li_({
 	show_heading?:boolean
 	locale?:Intl.LocalesArgument
 }, ...children:tag_dom_T[]) {
-	const CreativeWork_id = url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${href}_CreativeWork`)
-	WebPage__hasPart__push(ctx, { '@id': CreativeWork_id })
+	const CreativeWork_id_ref = { '@id': url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${href}_CreativeWork`) }
+	WebPage__hasPart__push(ctx, CreativeWork_id_ref)
 	return blog_card__li_({
 		ctx,
 		href,
 		li_props: {
 			...schema_org_CreativeWork_rdfa,
-			resource: CreativeWork_id,
-			/** @see {https://stackoverflow.com/a/46018087/142571} */
-			rev: 'isPartOf',
+			...schema_org_rdfa_resource_o_(CreativeWork_id_ref),
+			...schema_org_rdfa_rev_o_<CreativeWork>('isPartOf'),
 			...li_props,
 		},
 		a_props: {

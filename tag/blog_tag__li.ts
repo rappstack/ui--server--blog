@@ -1,14 +1,19 @@
 import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
-import { schema_org_CreativeWork_rdfa } from '@rappstack/domain--server/rdfa'
+import {
+	schema_org_CreativeWork_rdfa,
+	schema_org_rdfa_resource_o_,
+	schema_org_rdfa_rev_o_
+} from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
 import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
-import { tag_props_T } from 'relementjs/any'
+import { type tag_props_T } from 'relementjs/any'
 import { a_, code_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-import { request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'relysjs/server'
+import type { CreativeWork } from 'schema-dts'
 import { tag_class } from './class.js'
 export function blog_tag__li_<env_T extends relement_env_T>({
 	ctx,
@@ -22,8 +27,10 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 	li_props?:Exclude<tag_props_T<HTMLLIElement>, 'class'>
 }, ...children:tag_dom_T[]):tag_dom_T<env_T> {
 	size ??= 'sm'
-	const CreativeWork_id = url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${name}_CreativeWork`)
-	WebPage__hasPart__push(ctx, { '@id': CreativeWork_id })
+	const CreativeWork_id_ref = {
+		'@id': url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${name}_CreativeWork`)
+	}
+	WebPage__hasPart__push(ctx, CreativeWork_id_ref)
 	return (
 		li_<env_T>({
 			class: class_(
@@ -40,10 +47,9 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 						'underline-offset-8'
 					]),
 			...schema_org_CreativeWork_rdfa,
-			resource: CreativeWork_id,
-			/** @see {https://stackoverflow.com/a/46018087/142571} */
-			rev: 'isPartOf',
-			...li_props
+			...schema_org_rdfa_resource_o_(CreativeWork_id_ref),
+			...schema_org_rdfa_rev_o_<CreativeWork>('isPartOf'),
+			...li_props,
 		}, [
 			a_({
 				href: `/tags/${name.toLowerCase()}`,
