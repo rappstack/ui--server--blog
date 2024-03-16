@@ -1,11 +1,10 @@
-import { CreativeWork } from 'schema-dts'
-import { jsonld__add, WebPage__hasPart_, WebPage__hasPart__set } from '@rappstack/domain--server/jsonld'
+import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
 import { schema_org_CreativeWork_rdfa } from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
 import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
-import { memo_, type relement_env_T, type tag_dom_T } from 'relementjs'
+import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { tag_props_T } from 'relementjs/any'
 import { a_, code_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
@@ -24,10 +23,7 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 }, ...children:tag_dom_T[]):tag_dom_T<env_T> {
 	size ??= 'sm'
 	const CreativeWork_id = url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${name}_CreativeWork`)
-	WebPage__hasPart__set(ctx, [
-		...WebPage__hasPart_(ctx) ?? [],
-		{ '@id': CreativeWork_id }
-	])
+	WebPage__hasPart__push(ctx, { '@id': CreativeWork_id })
 	return (
 		li_<env_T>({
 			class: class_(
