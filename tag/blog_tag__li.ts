@@ -1,8 +1,8 @@
 import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
 import {
 	schema_org_CreativeWork_rdfa,
-	schema_org_rdfa_resource_o_,
-	schema_org_rdfa_rev_o_
+	schema_org_rdfa_resource_,
+	schema_org_rdfa_rev_
 } from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
@@ -46,9 +46,8 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 						'mx-1',
 						'underline-offset-8'
 					]),
-			...schema_org_CreativeWork_rdfa,
-			...schema_org_rdfa_resource_o_(CreativeWork_id_ref),
-			...schema_org_rdfa_rev_o_<CreativeWork>('isPartOf'),
+			...schema_org_rdfa_rev_<CreativeWork>('isPartOf'),
+			...schema_org_rdfa_resource_<CreativeWork>('CreativeWork', CreativeWork_id_ref),
 			...li_props,
 		}, [
 			a_({

@@ -1,10 +1,9 @@
 import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
 import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
 import {
-	schema_org_CreativeWork_rdfa,
 	type schema_org_props_rdfa_T,
-	schema_org_rdfa_resource_o_,
-	schema_org_rdfa_rev_o_
+	schema_org_rdfa_resource_,
+	schema_org_rdfa_rev_
 } from '@rappstack/domain--server/rdfa'
 import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__website_ } from '@rappstack/domain--server/site'
@@ -37,9 +36,8 @@ export function server_blog_card__li_({
 		ctx,
 		href,
 		li_props: {
-			...schema_org_CreativeWork_rdfa,
-			...schema_org_rdfa_resource_o_(CreativeWork_id_ref),
-			...schema_org_rdfa_rev_o_<CreativeWork>('isPartOf'),
+			...schema_org_rdfa_rev_<CreativeWork>('isPartOf'),
+			...schema_org_rdfa_resource_<CreativeWork>('CreativeWork', CreativeWork_id_ref),
 			...li_props,
 		},
 		a_props: {
