@@ -1,4 +1,3 @@
-import type { Article } from 'schema-dts'
 import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
 import {
 	WebPage__description__set,
@@ -6,12 +5,13 @@ import {
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import { schema_org_id_, type schema_org_props_rdfa_T, schema_org_rdfa_ } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { type relement_env_T } from 'relementjs'
 import { article_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
+import type { Article } from 'schema-dts'
 import { blog__main_fragment_ } from '../main/index.js'
 import { blog_tag__li_ } from './blog_tag__li.js'
 export function blog_tags__main_fragment_<env_T extends relement_env_T>({
@@ -33,7 +33,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 			description
 		}, [
 			article_({
-				...schema_org_Article_rdfa,
+				...schema_org_rdfa_<Article>('Article', schema_org_id_(ctx, 'Article')),
 			}, [
 				schema_org_Article__link_a1_(ctx),
 				ul_({

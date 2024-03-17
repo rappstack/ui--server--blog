@@ -1,17 +1,12 @@
-import type { Article } from 'schema-dts'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
-import {
-	WebPage__description__set,
-	WebPage__headline_,
-	WebPage__headline__set,
-	WebPage__type__set
-} from '@rappstack/domain--server/jsonld'
-import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import { WebPage__description__set, WebPage__headline__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
+import { schema_org_id_, type schema_org_props_rdfa_T, schema_org_rdfa_ } from '@rappstack/domain--server/rdfa'
 import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { type relement_env_T } from 'relementjs'
 import { article_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
+import type { Article } from 'schema-dts'
 import { server_blog_card__li_ } from '../card/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
 export function blog_tag__main_fragment_<env_T extends relement_env_T>({
@@ -32,7 +27,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 			description
 		}, [
 			article_({
-				...schema_org_Article_rdfa,
+				...schema_org_rdfa_<Article>('Article', schema_org_id_(ctx, 'Article')),
 			}, [
 				schema_org_Article__link_a1_(ctx),
 				ul_({

@@ -1,13 +1,6 @@
 import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
-import {
-	schema_org_CreativeWork_rdfa,
-	schema_org_rdfa_resource_,
-	schema_org_rdfa_rev_
-} from '@rappstack/domain--server/rdfa'
-import { request_url__pathname_ } from '@rappstack/domain--server/request'
-import { site__website_ } from '@rappstack/domain--server/site'
+import { schema_org_id_ref_, schema_org_rdfa_, schema_org_rdfa_rev_ } from '@rappstack/domain--server/rdfa'
 import { class_ } from 'ctx-core/html'
-import { url__join } from 'ctx-core/uri'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { a_, code_, li_ } from 'relementjs/html'
@@ -27,9 +20,7 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 	li_props?:Exclude<tag_props_T<HTMLLIElement>, 'class'>
 }, ...children:tag_dom_T[]):tag_dom_T<env_T> {
 	size ??= 'sm'
-	const CreativeWork_id_ref = {
-		'@id': url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${name}_CreativeWork`)
-	}
+	const CreativeWork_id_ref = schema_org_id_ref_(ctx, `${name}_CreativeWork`)
 	WebPage__hasPart__push(ctx, CreativeWork_id_ref)
 	return (
 		li_<env_T>({
@@ -47,7 +38,7 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 						'underline-offset-8'
 					]),
 			...schema_org_rdfa_rev_<CreativeWork>('isPartOf'),
-			...schema_org_rdfa_resource_<CreativeWork>('CreativeWork', CreativeWork_id_ref),
+			...schema_org_rdfa_<CreativeWork>('CreativeWork', CreativeWork_id_ref),
 			...li_props,
 		}, [
 			a_({

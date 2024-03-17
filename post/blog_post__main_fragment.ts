@@ -7,7 +7,11 @@ import {
 	blog_post__tag_a1_,
 	blog_post__title_
 } from '@rappstack/domain--server--blog/post'
-import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import {
+	schema_org_id_,
+	type schema_org_props_rdfa_T,
+	schema_org_rdfa_
+} from '@rappstack/domain--server/rdfa'
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
@@ -99,7 +103,7 @@ export function blog_post__main_fragment_({
 					'mx-auto',
 					'max-w-3xl',
 					article_class),
-				...schema_org_Article_rdfa,
+				...schema_org_rdfa_<Article>('Article', schema_org_id_(ctx, 'Article')),
 			}, [
 				schema_org_Article__link_a1_(ctx),
 				div_({

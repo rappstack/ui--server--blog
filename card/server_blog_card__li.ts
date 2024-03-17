@@ -1,14 +1,12 @@
 import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
 import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
 import {
+	schema_org_id_ref_,
 	type schema_org_props_rdfa_T,
-	schema_org_rdfa_resource_,
+	schema_org_rdfa_,
 	schema_org_rdfa_rev_
 } from '@rappstack/domain--server/rdfa'
-import { request_url__pathname_ } from '@rappstack/domain--server/request'
-import { site__website_ } from '@rappstack/domain--server/site'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
-import { url__join } from 'ctx-core/uri'
 import { type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { type request_ctx_T } from 'relysjs/server'
@@ -30,14 +28,14 @@ export function server_blog_card__li_({
 	show_heading?:boolean
 	locale?:Intl.LocalesArgument
 }, ...children:tag_dom_T[]) {
-	const CreativeWork_id_ref = { '@id': url__join(site__website_(ctx)!, request_url__pathname_(ctx), `#${href}_CreativeWork`) }
+	const CreativeWork_id_ref = schema_org_id_ref_(ctx, `${href}_CreativeWork`)
 	WebPage__hasPart__push(ctx, CreativeWork_id_ref)
 	return blog_card__li_({
 		ctx,
 		href,
 		li_props: {
 			...schema_org_rdfa_rev_<CreativeWork>('isPartOf'),
-			...schema_org_rdfa_resource_<CreativeWork>('CreativeWork', CreativeWork_id_ref),
+			...schema_org_rdfa_<CreativeWork>('CreativeWork', CreativeWork_id_ref),
 			...li_props,
 		},
 		a_props: {
