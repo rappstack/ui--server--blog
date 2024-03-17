@@ -2,8 +2,8 @@ import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
 import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
 import {
 	schema_org_id_ref_,
-	type schema_org_props_rdfa_T,
 	schema_org_rdfa_,
+	schema_org_rdfa_property_,
 	schema_org_rdfa_rev_
 } from '@rappstack/domain--server/rdfa'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
@@ -40,9 +40,7 @@ export function server_blog_card__li_({
 		},
 		a_props: {
 			...a_props,
-			...<schema_org_props_rdfa_T<CreativeWork>>{
-				property: 'name'
-			}
+			...schema_org_rdfa_property_<CreativeWork>('name'),
 		},
 		...props
 	}, children)

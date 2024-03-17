@@ -1,8 +1,12 @@
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
-import { WebPage__description__set, WebPage__headline__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
-import { schema_org_id_, type schema_org_props_rdfa_T, schema_org_rdfa_ } from '@rappstack/domain--server/rdfa'
-import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
+import {
+	WebPage__description__set,
+	WebPage__hasPart__push,
+	WebPage__headline__set,
+	WebPage__type__set
+} from '@rappstack/domain--server/jsonld'
+import { schema_org_id_ref_, schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { type relement_env_T } from 'relementjs'
 import { article_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -19,6 +23,8 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 	WebPage__headline__set(ctx, h1_text)
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'CollectionPage')
+	const Article_id_ref = schema_org_id_ref_(ctx, 'Article')
+	WebPage__hasPart__push(ctx, Article_id_ref)
 	return [
 		blog__main_fragment_<env_T>({
 			ctx,
@@ -27,13 +33,10 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 			description
 		}, [
 			article_({
-				...schema_org_rdfa_<Article>('Article', schema_org_id_(ctx, 'Article')),
+				...schema_org_rdfa_<Article>('Article', Article_id_ref),
 			}, [
-				schema_org_Article__link_a1_(ctx),
 				ul_({
-					...<schema_org_props_rdfa_T<Article>>{
-						property: 'articleBody'
-					}
+					...schema_org_rdfa_property_<Article>('articleBody'),
 				}, ...tag__dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
 					server_blog_card__li_({
 						ctx,
