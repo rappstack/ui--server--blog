@@ -1,9 +1,7 @@
-import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
-import { dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
-import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
 import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
 import {
+	type id_ref_T,
 	jsonld__add,
 	jsonld_id__new,
 	WebPage__description__set,
@@ -21,9 +19,13 @@ import type { Article, ItemList, ListItem } from 'schema-dts'
 import { server_blog_card__li_ } from '../card/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
 export function blog_tag__main_fragment_<env_T extends relement_env_T>({
-	ctx
+	ctx,
+	author_id_ref,
+	image,
 }:{
 	ctx:request_ctx_T
+	author_id_ref?:id_ref_T,
+	image?:string
 }) {
 	const title = 'Tag:' + tag_(ctx)
 	const description = 'All the articles with the tag "' + tag_(ctx) + '".'
@@ -48,9 +50,9 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 		'@id': jsonld_id__new(ctx, 'Article'),
 		'@type': 'Article',
 		about: ItemList_id_ref,
-		author: Person_id_ref_(ctx),
+		author: author_id_ref,
 		headline: title,
-		image: Person_image,
+		image,
 		name: title,
 		description,
 		url: request_url__href_(ctx),

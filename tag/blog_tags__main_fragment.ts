@@ -1,6 +1,6 @@
-import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
 import {
+	type id_ref_T,
 	jsonld__add,
 	jsonld_id__new,
 	WebPage__description__set,
@@ -20,8 +20,12 @@ import { blog__main_fragment_ } from '../main/index.js'
 import { blog_tag__li_ } from './blog_tag__li.js'
 export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 	ctx,
+	author_id_ref,
+	image,
 }:{
 	ctx:request_ctx_T
+	author_id_ref:id_ref_T
+	image:string
 }) {
 	const title = 'Tags | ' + site__title_(ctx)
 	const description = 'All the tags used in posts.'
@@ -47,9 +51,9 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 		'@id': jsonld_id__new(ctx, 'Article'),
 		'@type': 'Article',
 		about: ItemList_id_ref,
-		author: Person_id_ref_(ctx),
+		author: author_id_ref,
 		headline: title,
-		image: Person_image,
+		image,
 		name: title,
 		description,
 		url: request_url__href_(ctx),

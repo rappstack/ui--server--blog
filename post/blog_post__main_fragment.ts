@@ -1,4 +1,3 @@
-import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
 	blog_post__author_,
@@ -9,7 +8,13 @@ import {
 	blog_post__tag_a1_,
 	blog_post__title_
 } from '@rappstack/domain--server--blog/post'
-import { jsonld__add, jsonld_id__new, WebPage__hasPart__push, WebPage_id_ref_ } from '@rappstack/domain--server/jsonld'
+import {
+	type id_ref_T,
+	jsonld__add,
+	jsonld_id__new,
+	WebPage__hasPart__push,
+	WebPage_id_ref_
+} from '@rappstack/domain--server/jsonld'
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
@@ -27,10 +32,14 @@ export function blog_post__main_fragment_({
 	ctx,
 	class:_class,
 	article_class,
+	author_id_ref,
+	image,
 }:{
 	ctx:request_ctx_T
 	class?:string
 	article_class?:string
+	author_id_ref:id_ref_T
+	image:string
 }) {
 	const title = blog_post__title_(ctx)
 	const description = blog_post__description_(ctx)
@@ -139,9 +148,9 @@ export function blog_post__main_fragment_({
 			'@id': jsonld_id__new(ctx, 'Article'),
 			'@type': 'Article',
 			about: WebPage_id_ref_(ctx),
-			author: Person_id_ref_(ctx),
+			author: author_id_ref,
 			headline: title,
-			image: Person_image,
+			image,
 			name: title,
 			description,
 			url: request_url__href_(ctx),

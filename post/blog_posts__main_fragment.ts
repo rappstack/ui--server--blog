@@ -1,7 +1,6 @@
-import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { page_dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/page'
-import { jsonld__add, jsonld_id__new, WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
+import { type id_ref_T, jsonld__add, jsonld_id__new, WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
 import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__author_, site__website_ } from '@rappstack/domain--server/site'
@@ -14,8 +13,12 @@ import { server_blog_card__li_ } from '../card/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
 export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 	ctx,
+	author_id_ref,
+	image,
 }:{
 	ctx:request_ctx_T
+	author_id_ref:id_ref_T
+	image:string
 }) {
 	const title = site__author_(ctx) + '\'s Posts'
 	const description = 'The articles that I have posted to this site…'
@@ -37,9 +40,9 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 		'@id': jsonld_id__new(ctx, 'Article'),
 		'@type': 'Article',
 		about: ItemList_id_ref,
-		author: Person_id_ref_(ctx),
+		author: author_id_ref,
 		headline: title,
-		image: Person_image,
+		image,
 		name: title,
 		description,
 		url: request_url__href_(ctx),
