@@ -1,7 +1,7 @@
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { page_dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/page'
-import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
-import { schema_org_id_ref_, schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
+import { jsonld_id_ref__new, WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
+import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { site__author_ } from '@rappstack/domain--server/site'
 import { type relement_env_T } from 'relementjs'
 import { article_, ul_ } from 'relementjs/html'
@@ -14,7 +14,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 }:{
 	ctx:request_ctx_T
 }) {
-	const Article_id_ref = schema_org_id_ref_(ctx, 'Article')
+	const Article_id_ref = jsonld_id_ref__new(ctx, 'Article')
 	WebPage__hasPart__push(ctx, Article_id_ref)
 	return (
 		blog__main_fragment_<env_T>({

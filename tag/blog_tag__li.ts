@@ -1,10 +1,5 @@
-import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
-import {
-	schema_org_id_ref_,
-	schema_org_rdfa_,
-	schema_org_rdfa_property_,
-	schema_org_rdfa_rev_
-} from '@rappstack/domain--server/rdfa'
+import { jsonld_id_ref__new, WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
+import { schema_org_rdfa_, schema_org_rdfa_property_, schema_org_rdfa_rev_ } from '@rappstack/domain--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
@@ -25,7 +20,7 @@ export function blog_tag__li_<env_T extends relement_env_T>({
 	li_props?:Exclude<tag_props_T<HTMLLIElement>, 'class'>
 }, ...children:tag_dom_T[]):tag_dom_T<env_T> {
 	size ??= 'sm'
-	const CreativeWork_id_ref = schema_org_id_ref_(ctx, `${name}_CreativeWork`)
+	const CreativeWork_id_ref = jsonld_id_ref__new(ctx, `${name}_CreativeWork`)
 	WebPage__hasPart__push(ctx, CreativeWork_id_ref)
 	return (
 		li_<env_T>({

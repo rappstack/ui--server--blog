@@ -7,8 +7,8 @@ import {
 	blog_post__tag_a1_,
 	blog_post__title_
 } from '@rappstack/domain--server--blog/post'
-import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
-import { schema_org_id_ref_, schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
+import { jsonld_id_ref__new, WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
+import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
@@ -130,7 +130,7 @@ export function blog_post__main_fragment_({
 		})),
 	]
 	function blog_post__main__article_() {
-		const Article_id_ref = schema_org_id_ref_(ctx, 'Article')
+		const Article_id_ref = jsonld_id_ref__new(ctx, 'Article')
 		WebPage__hasPart__push(ctx, Article_id_ref)
 	  return (
 			article_({

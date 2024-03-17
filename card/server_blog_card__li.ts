@@ -1,7 +1,6 @@
 import { type dehydrated_post_meta_T } from '@rappstack/domain--any--blog/post'
-import { WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
+import { jsonld_id_ref__new, WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
 import {
-	schema_org_id_ref_,
 	schema_org_rdfa_,
 	schema_org_rdfa_property_,
 	schema_org_rdfa_rev_
@@ -28,7 +27,7 @@ export function server_blog_card__li_({
 	show_heading?:boolean
 	locale?:Intl.LocalesArgument
 }, ...children:tag_dom_T[]) {
-	const CreativeWork_id_ref = schema_org_id_ref_(ctx, `${href}_CreativeWork`)
+	const CreativeWork_id_ref = jsonld_id_ref__new(ctx, `${href}_CreativeWork`)
 	WebPage__hasPart__push(ctx, CreativeWork_id_ref)
 	return blog_card__li_({
 		ctx,
