@@ -52,6 +52,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 		headline: title,
 		image: Person_image,
 		name: title,
+		description,
 		url: request_url__href_(ctx),
 		articleBody:
 			tag__dehydrated_post_meta_a1_(ctx)

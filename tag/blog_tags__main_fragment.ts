@@ -51,6 +51,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 		headline: title,
 		image: Person_image,
 		name: title,
+		description,
 		url: request_url__href_(ctx),
 		articleBody: unique_tag_a1_(ctx).join(' | '),
 	})

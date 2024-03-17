@@ -1,14 +1,16 @@
+import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
 	blog_post__author_,
 	blog_post__canonical_url_,
+	blog_post__description_,
 	blog_post__hero_image_,
 	blog_post__pub_date_,
 	blog_post__tag_a1_,
 	blog_post__title_
 } from '@rappstack/domain--server--blog/post'
-import { jsonld_id_ref__new, WebPage__hasPart__push } from '@rappstack/domain--server/jsonld'
-import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
+import { jsonld__add, jsonld_id__new, WebPage__hasPart__push, WebPage_id_ref_ } from '@rappstack/domain--server/jsonld'
+import { request_url__href_ } from '@rappstack/domain--server/request'
 import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
@@ -20,7 +22,7 @@ import { heroicons_clipboard_document_list_ } from '../icon/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
 import { repost__p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
-import { blog_post__estimate_read_minutes_, blog_post__html_ } from './blog_post__html.js'
+import { blog_post__estimate_read_minutes_, blog_post__html_, blog_post__text_ } from './blog_post__html.js'
 export function blog_post__main_fragment_({
 	ctx,
 	class:_class,
@@ -30,6 +32,8 @@ export function blog_post__main_fragment_({
 	class?:string
 	article_class?:string
 }) {
+	const title = blog_post__title_(ctx)
+	const description = blog_post__description_(ctx)
 	return [
 		blog__main_fragment_<'server'>({
 			ctx,
@@ -37,7 +41,8 @@ export function blog_post__main_fragment_({
 				'blog_post__main',
 				'text-4xl',
 				_class),
-			h1_text: blog_post__title_(ctx),
+			h1_text: title,
+			description,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
 			hyop: 'code_copy_button__hyop'
 		}, [
@@ -130,7 +135,18 @@ export function blog_post__main_fragment_({
 		})),
 	]
 	function blog_post__main__article_() {
-		const Article_id_ref = jsonld_id_ref__new(ctx, 'Article')
+		const Article_id_ref = jsonld__add(ctx, ()=><Article>{
+			'@id': jsonld_id__new(ctx, 'Article'),
+			'@type': 'Article',
+			about: WebPage_id_ref_(ctx),
+			author: Person_id_ref_(ctx),
+			headline: title,
+			image: Person_image,
+			name: title,
+			description,
+			url: request_url__href_(ctx),
+			articleBody: blog_post__text_(ctx),
+		})
 		WebPage__hasPart__push(ctx, Article_id_ref)
 	  return (
 			article_({
@@ -142,11 +158,8 @@ export function blog_post__main_fragment_({
 					'mx-auto',
 					'max-w-3xl',
 					article_class),
-				...schema_org_rdfa_<Article>('Article', Article_id_ref),
 			}, [
-				div_({
-					...schema_org_rdfa_property_<Article>('articleBody'),
-				}, [
+				div_([
 					blog_post__hero_image_(ctx)
 					&& div_({
 						class: 'hero-image'
