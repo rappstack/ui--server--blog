@@ -31,12 +31,16 @@ import { blog_post__estimate_read_minutes_, blog_post__html_, blog_post__text_ }
 export function blog_post__main_fragment_({
 	ctx,
 	class:_class,
+	progress_container_class,
+	progress_class,
 	article_class,
 	author_id_ref,
 	image,
 }:{
 	ctx:request_ctx_T
 	class?:string
+	progress_container_class?:string
+	progress_class?:string
 	article_class?:string
 	author_id_ref:id_ref_T
 	image:string
@@ -118,17 +122,17 @@ export function blog_post__main_fragment_({
 				'progress-container',
 				'fixed',
 				'top-0',
-				'z-10',
+				'z-50',
 				'h-1',
 				'w-full',
-				'bg-skin-fill'),
+				progress_container_class),
 		}, [
 			div_({
 				class: class_(
 					'progress-bar',
 					'h-1',
 					'w-0',
-					'bg-skin-accent'),
+					progress_class),
 				/** @see {import('@rappstack/ui--browser--blog/post').progress_bar__hyop} */
 				hyop: 'progress_bar__hyop'
 			})
