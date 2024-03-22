@@ -15,13 +15,14 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 	ctx,
 	author_id_ref,
 	image,
+	description
 }:{
 	ctx:request_ctx_T
 	author_id_ref:id_ref_T
 	image:string
+	description?:string
 }) {
 	const title = site__author_(ctx) + '\'s Posts'
-	const description = 'The articles that I have posted to this site…'
 	const ItemList_id_ref = jsonld__add(ctx, ()=><ItemList>{
 		'@id': jsonld_id__new(ctx, 'timeline'),
 		'@type': 'ItemList',
