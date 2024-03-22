@@ -70,7 +70,7 @@
 		"@rappstack/ui--any--blog": "workspace:*",
 		"@rappstack/ui--server": "workspace:*",
 		"ctx-core": "^6.6.2",
-		"relementjs": "^0.75.2",
+		"relementjs": "^0.75.5",
 		"relysjs": "^1.17.4"
 	},
 	"devDependencies": {
