@@ -49,6 +49,7 @@ export function blog_post__main_fragment_({
 			class: class_(
 				'blog_post__main',
 				'text-4xl',
+				'prose',
 				_class),
 			h1_text: title,
 			description,
