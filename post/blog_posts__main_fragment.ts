@@ -16,18 +16,20 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 	author_id_ref,
 	image,
 	posts_path,
-	title,
+	h1_text,
+	h1_class,
 	description,
 }:{
 	ctx:request_ctx_T
 	author_id_ref:id_ref_T
 	image:string
 	posts_path?:string
-	title?:string
+	h1_text?:string
+	h1_class?:string
 	description?:string
 }) {
 	posts_path ??= 'posts'
-	title ??= site__author_(ctx) + '\'s Posts'
+	h1_text ??= site__author_(ctx) + '\'s Posts'
 	const ItemList_id_ref = jsonld__add(ctx, ()=><ItemList>{
 		'@id': jsonld_id__new(ctx, 'timeline'),
 		'@type': 'ItemList',
@@ -47,9 +49,9 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 		'@type': 'Article',
 		about: ItemList_id_ref,
 		author: author_id_ref,
-		headline: title,
+		headline: h1_text,
 		image,
-		name: title,
+		name: h1_text,
 		description,
 		url: request_url__href_(ctx),
 		articleBody:
@@ -63,7 +65,8 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 		blog__main_fragment_<env_T>({
 			ctx,
 			class: 'blog_posts__main_fragment',
-			h1_text: title,
+			h1_text,
+			h1_class,
 			description,
 		}, [
 			article_({
