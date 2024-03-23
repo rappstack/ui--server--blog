@@ -15,14 +15,19 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 	ctx,
 	author_id_ref,
 	image,
-	description
+	posts_path,
+	title,
+	description,
 }:{
 	ctx:request_ctx_T
 	author_id_ref:id_ref_T
 	image:string
+	posts_path?:string
+	title?:string
 	description?:string
 }) {
-	const title = site__author_(ctx) + '\'s Posts'
+	posts_path ??= 'posts'
+	title ??= site__author_(ctx) + '\'s Posts'
 	const ItemList_id_ref = jsonld__add(ctx, ()=><ItemList>{
 		'@id': jsonld_id__new(ctx, 'timeline'),
 		'@type': 'ItemList',
@@ -33,7 +38,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 				'@type': 'ListItem',
 				name: dehydrated_post_meta.title,
 				description: dehydrated_post_meta.description,
-				url: url__join(site__website_(ctx)!, 'posts', post_slug)
+				url: url__join(site__website_(ctx)!, posts_path, post_slug)
 			})
 		}),
 	})
@@ -70,7 +75,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 					...page_dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
 						server_blog_card__li_({
 							ctx,
-							href: '/posts/' + post_slug__new(dehydrated_post_meta),
+							href: url__join(posts_path, post_slug__new(dehydrated_post_meta)),
 							dehydrated_post_meta,
 						}))
 				])
