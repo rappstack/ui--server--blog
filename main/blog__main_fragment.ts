@@ -7,7 +7,8 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	ctx,
 	class: _class,
 	h1_text,
-	title__class,
+	h1_class,
+	h2_class,
 	description,
 	hyop,
 	dataset,
@@ -15,7 +16,8 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	ctx:request_ctx_T
 	class?:string
 	h1_text?:string
-	title__class?:string
+	h1_class?:string
+	h2_class?:string
 	description?:string
 	hyop?:string
 	dataset?:Record<string, unknown>
@@ -34,13 +36,14 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 			hyop,
 			...dataset__data_attrs_(dataset || {})
 		}, [
-			h1_text ? h1_({ class: title__class }, h1_text) : null,
+			h1_text ? h1_({ class: h1_class }, h1_text) : null,
 			description
 				? h2_({
 					class: class_(
 						'mb-6',
 						'mt-2',
-						'italic')
+						'italic',
+						h2_class)
 				}, description)
 				: null,
 			...children
