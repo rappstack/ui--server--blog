@@ -187,7 +187,9 @@ export function blog_post__main_fragment_({
 							width: 1020,
 							height: 510,
 							src: blog_post__hero_image_(ctx),
-							alt: ''
+							alt: title,
+							class: class_(
+								'border-none')
 						})
 					]),
 					blog_post__canonical_url_(ctx)
