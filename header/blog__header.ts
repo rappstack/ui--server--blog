@@ -10,12 +10,15 @@ export function blog__header_<env_T extends relement_env_T>({
 	ctx,
 	class: _class,
 	is_open,
+	logo_image_class,
 	...header_props
 }:{
 	ctx:wide_ctx_T
 	class?:string
 	is_open?:boolean
+	logo_image_class?:string
 }&tag_props_T<HTMLElement>, ...children:tag_dom_T[]) {
+	logo_image_class ??= 'w-16 h-10'
 	return (
 		header_<env_T>({
 			...header_props,
@@ -78,8 +81,7 @@ export function blog__header_<env_T extends relement_env_T>({
 								'fill-current',
 								'stroke-current',
 								'text-current',
-								'h-5',
-								'w-8')
+								logo_image_class)
 						}) ?? site__title_(ctx)
 					]),
 					nav_({
