@@ -37,7 +37,7 @@ export function blog_post__main_fragment_({
 	author_id_ref,
 	image,
 	h1_class,
-	h2_class,
+	description_class,
 }:{
 	ctx:request_ctx_T
 	class?:string
@@ -47,7 +47,7 @@ export function blog_post__main_fragment_({
 	author_id_ref:id_ref_T
 	image:string
 	h1_class?:string
-	h2_class?:string
+	description_class?:string
 }) {
 	const title = blog_post__title_(ctx)
 	const description = blog_post__description_(ctx)
@@ -60,7 +60,7 @@ export function blog_post__main_fragment_({
 				_class),
 			h1_text: title,
 			h1_class,
-			h2_class,
+			description_class: description_class,
 			description,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
 			hyop: 'code_copy_button__hyop'

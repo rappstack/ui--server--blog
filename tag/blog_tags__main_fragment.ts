@@ -21,10 +21,12 @@ import { blog_tag__li_ } from './blog_tag__li.js'
 export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 	ctx,
 	author_id_ref,
+	h1_class,
 	image,
 }:{
 	ctx:request_ctx_T
 	author_id_ref:id_ref_T
+	h1_class?:string
 	image:string
 }) {
 	const title = 'Tags | ' + site__title_(ctx)
@@ -65,6 +67,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 			ctx,
 			class: 'Main_tags',
 			h1_text: title,
+			h1_class,
 			description
 		}, [
 			ul_(unique_tag_a1_(ctx).map(tag=>

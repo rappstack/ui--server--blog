@@ -1,6 +1,6 @@
 import { class_, dataset__data_attrs_ } from 'ctx-core/html'
 import { fragment_, type relement_env_T, type tag_dom_T } from 'relementjs'
-import { h1_, h2_, main_ } from 'relementjs/html'
+import { h1_, h2_, main_, p_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { breadcrumbs__nav_ } from '../breadcrumb/index.js'
 export function blog__main_fragment_<env_T extends relement_env_T>({
@@ -8,7 +8,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	class: _class,
 	h1_text,
 	h1_class,
-	h2_class,
+	description_class,
 	description,
 	hyop,
 	dataset,
@@ -17,7 +17,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	class?:string
 	h1_text?:string
 	h1_class?:string
-	h2_class?:string
+	description_class?:string
 	description?:string
 	hyop?:string
 	dataset?:Record<string, unknown>
@@ -38,12 +38,10 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 		}, [
 			h1_text ? h1_({ class: h1_class }, h1_text) : null,
 			description
-				? h2_({
+				? p_({
 					class: class_(
-						'mb-6',
-						'mt-2',
 						'italic',
-						h2_class)
+						description_class)
 				}, description)
 				: null,
 			...children

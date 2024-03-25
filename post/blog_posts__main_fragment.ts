@@ -4,6 +4,7 @@ import { type id_ref_T, jsonld__add, jsonld_id__new, WebPage__hasPart__push } fr
 import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__author_, site__website_ } from '@rappstack/domain--server/site'
+import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
 import { type relement_env_T } from 'relementjs'
 import { article_, ul_ } from 'relementjs/html'
@@ -13,20 +14,24 @@ import { server_blog_card__li_ } from '../card/index.js'
 import { blog__main_fragment_ } from '../main/index.js'
 export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 	ctx,
+	class: _class,
 	author_id_ref,
 	image,
 	posts_path,
 	h1_text,
 	h1_class,
 	description,
+	description_class,
 }:{
 	ctx:request_ctx_T
+	class?:string
 	author_id_ref:id_ref_T
 	image:string
 	posts_path?:string
 	h1_text?:string
 	h1_class?:string
 	description?:string
+	description_class?:string
 }) {
 	posts_path ??= 'posts'
 	h1_text ??= site__author_(ctx) + '\'s Posts'
@@ -64,10 +69,13 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 	return (
 		blog__main_fragment_<env_T>({
 			ctx,
-			class: 'blog_posts__main_fragment',
+			class: class_(
+				'blog_posts__main_fragment',
+				_class),
 			h1_text,
 			h1_class,
 			description,
+			description_class,
 		}, [
 			article_({
 				...schema_org_rdfa_<Article>('Article', Article_id_ref),
