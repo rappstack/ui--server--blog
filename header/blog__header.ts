@@ -79,7 +79,7 @@ export function blog__header_<env_T extends relement_env_T>({
 								'stroke-current',
 								'text-current',
 								'h-5',
-								'w-6')
+								'w-8')
 						}) ?? site__title_(ctx)
 					]),
 					nav_({
