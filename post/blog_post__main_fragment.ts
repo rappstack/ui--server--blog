@@ -60,8 +60,8 @@ export function blog_post__main_fragment_({
 				_class),
 			h1_text: title,
 			h1_class,
-			description_class: description_class,
-			description,
+			hero_p_class: description_class,
+			hero_p_text: description,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
 			hyop: 'code_copy_button__hyop'
 		}, [

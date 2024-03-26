@@ -68,7 +68,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 			class: 'Main_tags',
 			h1_text: title,
 			h1_class,
-			description
+			hero_p_text: description
 		}, [
 			ul_(unique_tag_a1_(ctx).map(tag=>
 				blog_tag__li_({

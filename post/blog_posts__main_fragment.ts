@@ -74,8 +74,8 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>({
 				_class),
 			h1_text,
 			h1_class,
-			description,
-			description_class,
+			hero_p_text: description,
+			hero_p_class: description_class,
 		}, [
 			article_({
 				...schema_org_rdfa_<Article>('Article', Article_id_ref),

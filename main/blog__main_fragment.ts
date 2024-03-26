@@ -9,8 +9,8 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	hero_class,
 	h1_text,
 	h1_class,
-	description_class,
-	description,
+	hero_p_class,
+	hero_p_text,
 	hyop,
 	dataset,
 }:{
@@ -19,8 +19,8 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 	hero_class?:string
 	h1_text?:string
 	h1_class?:string
-	description_class?:string
-	description?:string
+	hero_p_class?:string
+	hero_p_text?:string
 	hyop?:string
 	dataset?:Record<string, unknown>
 }, ...children:tag_dom_T[]) {
@@ -44,12 +44,12 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 					hero_class ?? 'prose mb-8')
 			}, [
 				h1_text ? h1_({ class: h1_class }, h1_text) : null,
-				description
+				hero_p_text
 					? p_({
 						class: class_(
 							'italic',
-							description_class)
-					}, description)
+							hero_p_class)
+					}, hero_p_text)
 					: null,
 			]),
 			...children

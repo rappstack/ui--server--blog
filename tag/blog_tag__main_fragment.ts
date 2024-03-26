@@ -68,7 +68,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>({
 			ctx,
 			class: 'Main_tag',
 			h1_text: title,
-			description
+			hero_p_text: description
 		}, [
 			ul_(tag__dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
 				server_blog_card__li_({
