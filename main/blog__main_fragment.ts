@@ -41,12 +41,13 @@ export function blog__main_fragment_<env_T extends relement_env_T>({
 			div_({
 				class: class_(
 					'hero',
-					hero_class ?? 'prose mb-8')
+					hero_class ?? 'prose')
 			}, [
 				h1_text ? h1_({ class: h1_class }, h1_text) : null,
 				hero_p_text
 					? p_({
 						class: class_(
+							'mt-0',
 							'italic',
 							hero_p_class)
 					}, hero_p_text)

@@ -16,10 +16,11 @@ import {
 	WebPage_id_ref_
 } from '@rappstack/domain--server/jsonld'
 import { request_url__href_ } from '@rappstack/domain--server/request'
-import { blog_datetime__div_ } from '@rappstack/ui--any--blog/date'
+import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
+import { formatted_date_ } from '@rappstack/ui--any--blog/date'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
-import { article_, div_, em_, img_, span_, template_, ul_ } from 'relementjs/html'
+import { article_, div_, img_, span_, template_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import { footnote_list__div_ } from '../footnote/index.js'
@@ -67,53 +68,50 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			hyop: 'code_copy_button__hyop'
 		}, [
 			div_({
-				class: 'blog__post__main__content',
+				class: class_(
+					'blog__post__hero',
+					'flex',
+					'flex-row',
+					'w-full',
+					'mt-8',
+					'text-base'),
 			}, [
-				div_({
+				span_({ class: 'sr-only' }, 'Author:'),
+				img_({
+					src: site__author_img_url_(ctx),
+					alt: site__author_(ctx),
 					class: class_(
 						'inline-block',
-						'text-base')
-				}, 'Author: ' + blog_post__author_(ctx)),
+						'w-12',
+						'h-12',
+						'sm:w-12',
+						'sm:h-12',
+						'rounded-full')
+				}),
 				div_({
 					class: class_(
-						'datetime_A_estimate_read_time',
-						'flex',
-						'opacity-80')
+						'inline-flex',
+						'flex-col',
+						'ml-4')
 				}, [
-					blog_datetime__div_({
-						class: class_(
-							'my-2',
-							'flex-grow'),
-						datetime: blog_post__pub_date_(ctx),
-						size: 'lg'
-					}),
-					div_({
-						class: class_(
-							'estimate_read_time',
-							'mt-2',
-							'flex-grow')
-					}, [
-						em_({
-							class: class_(
-								'estimate_read_time_val',
-								'text-base',
-								'italic',
-								'float-right')
-						}, [
-							'READING TIME',
-							span_({
-								class: class_(
-									'mx-2',
-									'text-gray-300')
-							}, '•'),
-							blog_post__estimate_read_minutes_(ctx),
-							' minute',
-							blog_post__estimate_read_minutes_(ctx) !== 1
-								? 's'
-								: ''
-						])
-					])
-				])
+					blog_post__author_(ctx),
+					div_([
+						span_({ class: 'sr-only' }, 'Posted on:'),
+						formatted_date_({ date: blog_post__pub_date_(ctx) }),
+					]),
+				]),
+				div_({
+					class: class_(
+						'ml-auto',
+						'flex',
+						'items-end')
+				}, [
+					blog_post__estimate_read_minutes_(ctx),
+					' minute',
+					blog_post__estimate_read_minutes_(ctx) !== 1
+						? 's'
+						: ''
+				]),
 			]),
 			blog_post__main__article_(),
 			ul_({
@@ -168,7 +166,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			articleBody: blog_post__text_(ctx),
 		})
 		WebPage__hasPart__push(ctx, Article_id_ref)
-	  return (
+		return (
 			article_({
 				id: 'article',
 				role: 'article',
