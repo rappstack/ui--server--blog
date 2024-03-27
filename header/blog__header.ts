@@ -54,6 +54,7 @@ export function blog__header_<env_T extends relement_env_T>({
 			}, [
 				div_({
 					class: class_(
+						'fouc',
 						'top-nav-wrap',
 						'relative',
 						'flex',

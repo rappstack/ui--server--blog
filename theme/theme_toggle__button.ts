@@ -2,13 +2,12 @@ import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { button_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
-export function theme_toggle__button_<env_T extends relement_env_T>({
-	class:_class,
-	svg_class,
-}:{
+type theme_toggle__button_props_T = {
 	class?:string
 	svg_class?:string
-}) {
+}
+export function theme_toggle__button_<env_T extends relement_env_T>($p:theme_toggle__button_props_T) {
+	const { class:_class, svg_class } = $p
 	return (
 		button_<env_T>({
 			id: 'theme_toggle_button',
