@@ -4,7 +4,8 @@ import {
 	blog_post__description_,
 	blog_post__hero_image_,
 	blog_post__tag_a1_,
-	blog_post__title_, blog_post_mod__meta_
+	blog_post__title_,
+	blog_post_mod__meta_
 } from '@rappstack/domain--server--blog/post'
 import {
 	type id_ref_T,
@@ -60,7 +61,6 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			h1_text: title,
 			h1_class,
 			tween__dom: blog_author_date_reading_time__div_({
-				ctx,
 				dehydrated_post_meta: blog_post_mod__meta_(ctx)!,
 			}),
 			hero_p_class: description_class,
