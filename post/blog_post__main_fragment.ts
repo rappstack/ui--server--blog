@@ -28,17 +28,7 @@ import { blog__main_fragment_ } from '../main/index.js'
 import { repost__p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
 import { blog_post__estimate_read_minutes_, blog_post__html_, blog_post__text_ } from './blog_post__html.js'
-export function blog_post__main_fragment_({
-	ctx,
-	class:_class,
-	progress_container_class,
-	progress_class,
-	article_class,
-	author_id_ref,
-	image,
-	h1_class,
-	description_class,
-}:{
+type blog_post__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
 	progress_container_class?:string
@@ -48,7 +38,18 @@ export function blog_post__main_fragment_({
 	image:string
 	h1_class?:string
 	description_class?:string
-}) {
+}
+export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
+	const {
+		ctx,
+		progress_container_class,
+		progress_class,
+		article_class,
+		author_id_ref,
+		image,
+		h1_class,
+		description_class,
+	} = $p
 	const title = blog_post__title_(ctx)
 	const description = blog_post__description_(ctx)
 	return [
@@ -57,7 +58,7 @@ export function blog_post__main_fragment_({
 			class: class_(
 				'blog_post__main',
 				'text-4xl',
-				_class),
+				$p.class),
 			h1_text: title,
 			h1_class,
 			hero_p_class: description_class,

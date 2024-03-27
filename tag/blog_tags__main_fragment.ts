@@ -11,6 +11,7 @@ import {
 } from '@rappstack/domain--server/jsonld'
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__title_, site__website_ } from '@rappstack/domain--server/site'
+import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
 import { type relement_env_T } from 'relementjs'
 import { ul_ } from 'relementjs/html'
@@ -18,17 +19,20 @@ import { type request_ctx_T } from 'relysjs/server'
 import type { Article, ItemList, ListItem } from 'schema-dts'
 import { blog__main_fragment_ } from '../main/index.js'
 import { blog_tag__li_ } from './blog_tag__li.js'
-export function blog_tags__main_fragment_<env_T extends relement_env_T>({
-	ctx,
-	author_id_ref,
-	h1_class,
-	image,
-}:{
+type blog_tags__main_fragment_props_T = {
 	ctx:request_ctx_T
+	class?:string
 	author_id_ref:id_ref_T
 	h1_class?:string
 	image:string
-}) {
+}
+export function blog_tags__main_fragment_<env_T extends relement_env_T>($p:blog_tags__main_fragment_props_T) {
+	const {
+		ctx,
+		author_id_ref,
+		h1_class,
+		image,
+	} = $p
 	const title = 'Tags | ' + site__title_(ctx)
 	const description = 'All the tags used in posts.'
 	WebPage__name__set(ctx, title)
@@ -65,7 +69,9 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>({
 	return [
 		blog__main_fragment_<env_T>({
 			ctx,
-			class: 'Main_tags',
+			class: class_(
+				'Main_tags',
+				$p.class),
 			h1_text: title,
 			h1_class,
 			hero_p_text: description
