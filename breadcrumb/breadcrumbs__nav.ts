@@ -3,11 +3,11 @@ import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
-export function breadcrumbs__nav_<env_T extends relement_env_T>({
-	ctx
-}:{
+type breadcrumbs__nav_props_T = {
 	ctx:request_ctx_T
-}) {
+}
+export function breadcrumbs__nav_<env_T extends relement_env_T>($p:breadcrumbs__nav_props_T) {
+	const { ctx } = $p
 	if (!breadcrumb_a1_(ctx).length) return
 	const li_class = class_(
 		'inline',
