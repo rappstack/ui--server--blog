@@ -4,7 +4,7 @@ import {
 	blog_post__description_,
 	blog_post__hero_image_,
 	blog_post__tag_a1_,
-	blog_post__title_
+	blog_post__title_, blog_post_mod__meta_
 } from '@rappstack/domain--server--blog/post'
 import {
 	type id_ref_T,
@@ -14,6 +14,7 @@ import {
 	WebPage_id_ref_
 } from '@rappstack/domain--server/jsonld'
 import { request_url__href_ } from '@rappstack/domain--server/request'
+import { blog_author_date_reading_time__div_ } from '@rappstack/ui--any--blog/card'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
 import { article_, div_, img_, template_, ul_ } from 'relementjs/html'
@@ -21,7 +22,7 @@ import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import { footnote_list__div_ } from '../footnote/index.js'
 import { heroicons_clipboard_document_list_ } from '../icon/index.js'
-import { blog__main_fragment_, blog_author_date_reading_time__div_ } from '../main/index.js'
+import { blog__main_fragment_ } from '../main/index.js'
 import { repost__p_ } from '../repost/index.js'
 import { blog_tag__li_ } from '../tag/index.js'
 import { blog_post__html_, blog_post__text_ } from './blog_post__html.js'
@@ -58,7 +59,10 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 				$p.class),
 			h1_text: title,
 			h1_class,
-			tween__dom: blog_author_date_reading_time__div_({ ctx }),
+			tween__dom: blog_author_date_reading_time__div_({
+				ctx,
+				dehydrated_post_meta: blog_post_mod__meta_(ctx)!,
+			}),
 			hero_p_class: description_class,
 			hero_p_text: description,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
