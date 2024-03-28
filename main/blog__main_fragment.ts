@@ -1,3 +1,4 @@
+import { md__inline_raw_, md__raw_ } from '@rappstack/ui--any/md'
 import { class_, dataset__data_attrs_ } from 'ctx-core/html'
 import { fragment_, type relement_env_T, type tag_dom_T } from 'relementjs'
 import { div_, h1_, main_, p_ } from 'relementjs/html'
@@ -55,7 +56,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 							'mt-0',
 							'italic',
 							hero_p_class)
-					}, hero_p_text)
+					}, md__raw_(hero_p_text))
 					: null,
 			]),
 			...children
