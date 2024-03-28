@@ -6,12 +6,14 @@ import { blog__main_fragment_ } from '../main/index.js'
 type blog_search__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
+	hero_class?:string
 	h1_text?:string
 	h1_class?:string
 }
 export function blog_search__main_fragment_<env_T extends relement_env_T>($p:blog_search__main_fragment_props_T, ...children:tag_dom_T[]) {
 	const {
 		ctx,
+		hero_class,
 		h1_text,
 		h1_class,
 	} = $p
@@ -21,6 +23,7 @@ export function blog_search__main_fragment_<env_T extends relement_env_T>($p:blo
 			class: class_(
 				'blog_search__main_fragment',
 				$p.class),
+			hero_class,
 			h1_text,
 			h1_class,
 			/** @see {import('@rappstack/ui--browser--blog/search').blog_search__main__hyop} */

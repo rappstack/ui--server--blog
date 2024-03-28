@@ -56,12 +56,13 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			ctx,
 			class: class_(
 				'blog_post__main',
-				'text-4xl',
+				'mb-0',
 				$p.class),
 			h1_text: title,
 			h1_class,
 			tween__dom: blog_author_date_reading_time__div_({
 				dehydrated_post_meta: blog_post_mod__meta_(ctx)!,
+				class: class_('mb-6')
 			}),
 			hero_p_class: description_class,
 			hero_p_text: description,

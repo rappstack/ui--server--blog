@@ -22,12 +22,14 @@ import { blog__main_fragment_ } from '../main/index.js'
 type blog_tag__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
+	h1_class?:string
 	author_id_ref?:id_ref_T,
 	image?:string
 }
 export function blog_tag__main_fragment_<env_T extends relement_env_T>($p:blog_tag__main_fragment_props_T) {
 	const {
 		ctx,
+		h1_class,
 		author_id_ref,
 		image,
 	} = $p
@@ -74,6 +76,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>($p:blog_t
 				'Main_tag',
 				$p.class),
 			h1_text: title,
+			h1_class,
 			hero_p_text: description
 		}, [
 			ul_(tag__dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
