@@ -14,7 +14,7 @@ export const [
 			blog_post__tag=>{
 				// Need to call blog_post__tag(ctx) in the next microtask to avoid circular dependency
 				// TODO: why?
-				queueMicrotask(()=>blog_post__html$._ = '' + blog_post__tag(ctx))
+				queueMicrotask(()=>blog_post__html$.set('' + blog_post__tag(ctx)))
 				return blog_post__html$.val
 			}))
 export const [
@@ -35,7 +35,7 @@ export const [
 				response__drain(
 					rw.transform(new Response(blog_post__html))
 				).then(()=>{
-					blog_post__text$._ = blog_post__text
+					blog_post__text$.set(blog_post__text)
 				}).catch(err=>console.error(err))
 				return blog_post__text$.val
 			}))
