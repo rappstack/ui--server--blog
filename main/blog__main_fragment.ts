@@ -8,6 +8,7 @@ type blog__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
 	hero_class?:string
+	h1_dom?:tag_dom_T
 	h1_text?:string
 	h1_class?:string
 	tween__dom?:tag_dom_T
@@ -21,6 +22,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 		ctx,
 		class: _class,
 		hero_class,
+		h1_dom,
 		h1_text,
 		h1_class,
 		tween__dom,
@@ -48,7 +50,11 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 					'hero',
 					hero_class ?? 'prose')
 			}, [
-				h1_text ? h1_({ class: h1_class }, h1_text) : null,
+				h1_dom
+					? h1_dom
+					: h1_text
+						? h1_({ class: h1_class }, h1_text)
+						: null,
 				tween__dom,
 				hero_p_text
 					? p_({

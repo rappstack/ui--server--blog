@@ -3,6 +3,7 @@ import {
 	blog_post__canonical_url_,
 	blog_post__description_,
 	blog_post__hero_image_,
+	blog_post__subtitle_,
 	blog_post__tag_a1_,
 	blog_post__title_,
 	blog_post_mod__meta_
@@ -17,8 +18,8 @@ import {
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { blog_author_date_reading_time__div_ } from '@rappstack/ui--any--blog/card'
 import { class_ } from 'ctx-core/html'
-import { raw_ } from 'relementjs'
-import { article_, div_, img_, template_, ul_ } from 'relementjs/html'
+import { raw_, tag_dom_T } from 'relementjs'
+import { article_, div_, h1_, img_, span_, template_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import { footnote_list__div_ } from '../footnote/index.js'
@@ -35,7 +36,9 @@ type blog_post__main_fragment_props_T = {
 	article_class?:string
 	author_id_ref:id_ref_T
 	image:string
+	h1_dom?:tag_dom_T
 	h1_class?:string
+	subtitle_class?:string
 	description_class?:string
 }
 export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
@@ -47,10 +50,24 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 		author_id_ref,
 		image,
 		h1_class,
+		subtitle_class,
 		description_class,
 	} = $p
+	let { h1_dom } = $p
 	const title = blog_post__title_(ctx)
+	const subtitle = blog_post__subtitle_(ctx)
 	const description = blog_post__description_(ctx)
+	h1_dom ??=
+		subtitle
+			? [
+				h1_({
+					class: class_(
+						'inline',
+						h1_class)
+				}, title),
+				span_({ class: subtitle_class }, ': ' + subtitle)
+			]
+			: null
 	return [
 		blog__main_fragment_<'server'>({
 			ctx,
@@ -58,12 +75,15 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 				'blog_post__main',
 				'mb-0',
 				$p.class),
+			h1_dom,
 			h1_text: title,
 			h1_class,
-			tween__dom: blog_author_date_reading_time__div_({
-				dehydrated_post_meta: blog_post_mod__meta_(ctx)!,
-				class: class_('mb-6')
-			}),
+			tween__dom: [
+				blog_author_date_reading_time__div_({
+					dehydrated_post_meta: blog_post_mod__meta_(ctx)!,
+					class: class_('mb-6')
+				})
+			],
 			hero_p_class: description_class,
 			hero_p_text: description,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
