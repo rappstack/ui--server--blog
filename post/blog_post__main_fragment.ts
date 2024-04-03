@@ -1,5 +1,6 @@
 import { slug__new } from '@rappstack/domain--any--blog/slug'
 import {
+	blog_post__author_a1_,
 	blog_post__canonical_url_,
 	blog_post__description_,
 	blog_post__hero_image_,
@@ -8,17 +9,11 @@ import {
 	blog_post__title_,
 	blog_post_mod__meta_
 } from '@rappstack/domain--server--blog/post'
-import {
-	type id_ref_T,
-	jsonld__add,
-	jsonld_id__new,
-	WebPage__hasPart__push,
-	WebPage_id_ref_
-} from '@rappstack/domain--server/jsonld'
+import { jsonld__add, jsonld_id__new, WebPage__hasPart__push, WebPage_id_ref_ } from '@rappstack/domain--server/jsonld'
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { blog_author_date_reading_time__div_ } from '@rappstack/ui--any--blog/card'
 import { class_ } from 'ctx-core/html'
-import { raw_, tag_dom_T } from 'relementjs'
+import { raw_, type tag_dom_T } from 'relementjs'
 import { article_, div_, h1_, img_, span_, template_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
@@ -34,8 +29,7 @@ type blog_post__main_fragment_props_T = {
 	progress_container_class?:string
 	progress_class?:string
 	article_class?:string
-	author_id_ref:id_ref_T
-	image:string
+	image?:string
 	h1_dom?:tag_dom_T
 	h1_class?:string
 	subtitle_class?:string
@@ -47,7 +41,6 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 		progress_container_class,
 		progress_class,
 		article_class,
-		author_id_ref,
 		image,
 		h1_class,
 		subtitle_class,
@@ -133,7 +126,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			'@id': jsonld_id__new(ctx, 'Article'),
 			'@type': 'Article',
 			about: WebPage_id_ref_(ctx),
-			author: author_id_ref,
+			author: blog_post__author_a1_(ctx),
 			headline: title,
 			image,
 			name: title,
