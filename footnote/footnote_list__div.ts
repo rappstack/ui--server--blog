@@ -14,7 +14,9 @@ export function footnote_list__div_<env_T extends relement_env_T>({
 	const footnote_o = footnote_o_(ctx)
 	if (!footnote_o) return
 	return (
-		div_<env_T>({ class: _class }, [
+		div_<env_T>({
+			class: _class,
+		}, [
 			...footnote_o.footnote_a.map(footnote=>[
 				p_({ id: _footnote__html_id__new(footnote) }, [
 					a_({
@@ -22,7 +24,9 @@ export function footnote_list__div_<env_T extends relement_env_T>({
 						class: class_(
 							'inline-block',
 							'relative',
-							'ml-auto')
+							'ml-auto'),
+						/** @see {import('@rappstack/ui--browser--blog/footnote').footnote_list__div__a__hyop} */
+						hyop: 'footnote_list__div__a__hyop'
 					}, [
 						heroicons_uturn_up_({
 							class: class_(

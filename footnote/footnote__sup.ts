@@ -22,7 +22,7 @@ export function footnote__sup_<env_T extends relement_env_T>({
 		sup_<env_T>(
 			a_({
 				id: _footnote__ref__html_id__new(footnote),
-				href: '#' + _footnote__html_id__new(footnote)
+				href: '#' + _footnote__html_id__new(footnote),
 			}, `[${footnote.seq}]`))
 	)
 }
