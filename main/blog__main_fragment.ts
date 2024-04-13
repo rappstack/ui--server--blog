@@ -58,13 +58,20 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 						: null,
 				tween__dom,
 				hero_p_html
-					? p_({
-						class: class_(
-							'mt-0',
-							'italic',
-							hero_p_class)
-					}, raw_(hero_p_html))
-					: hero_p_text,
+					? [
+						div_({
+							class: class_(
+								'italic',
+								'[&>p:first-child]:mt-0')
+						}, raw_(hero_p_html))
+					] : [
+						p_({
+							class: class_(
+								'mt-0',
+								'italic',
+								hero_p_class)
+						}, hero_p_text)
+					]
 			]),
 			...children
 		]))
