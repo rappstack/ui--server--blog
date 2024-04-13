@@ -78,7 +78,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>($p:blog_t
 				$p.class),
 			h1_text: title,
 			h1_class,
-			hero_p_md: description
+			hero_p_text: description
 		}, [
 			ul_(tag__dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
 				server_blog_card__li_({

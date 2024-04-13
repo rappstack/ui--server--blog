@@ -3,7 +3,7 @@ import {
 	blog_post__author_a1_,
 	blog_post__canonical_url_,
 	blog_post__description_,
-	blog_post__description_md_,
+	blog_post__description_html_,
 	blog_post__hero_image_,
 	blog_post__subtitle_,
 	blog_post__tag_a1_,
@@ -51,7 +51,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 	const title = blog_post__title_(ctx)
 	const subtitle = blog_post__subtitle_(ctx)
 	const description = blog_post__description_(ctx)
-	const description_md = blog_post__description_md_(ctx)
+	const description_html = blog_post__description_html_(ctx)
 	h1_dom ??=
 		subtitle
 			? [
@@ -80,7 +80,8 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 				})
 			],
 			hero_p_class: description_class,
-			hero_p_md: description_md || description,
+			hero_p_html: description_html,
+			hero_p_text: description,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
 			hyop: 'code_copy_button__hyop'
 		}, [

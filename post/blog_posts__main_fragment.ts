@@ -20,6 +20,7 @@ type blog_posts__main_fragment_config_T = {
 	h1_text?:string
 	h1_class?:string
 	description?:string
+	description_html?:string
 	description_class?:string
 }
 export function blog_posts__main_fragment_<env_T extends relement_env_T>($p:blog_posts__main_fragment_config_T) {
@@ -31,6 +32,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>($p:blog
 		h1_text,
 		h1_class,
 		description,
+		description_html,
 		description_class,
 	} = $p
 	posts_path ??= 'posts'
@@ -74,7 +76,8 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>($p:blog
 				_class),
 			h1_text,
 			h1_class,
-			hero_p_md: description,
+			hero_p_text: description,
+			hero_p_html: description_html,
 			hero_p_class: description_class,
 		}, [
 			article_({
