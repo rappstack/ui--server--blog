@@ -1,3 +1,4 @@
+import { post_path__new } from '@rappstack/domain--any--blog/post'
 import { page_count_, page_num_ } from '@rappstack/domain--server--blog/page'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { class_ } from 'ctx-core/html'
@@ -33,7 +34,11 @@ export function blog_posts__nav_<env_T extends relement_env_T>({
 		}, [
 			button__a_<env_T>({
 				disabled: prev_class === 'disabled',
-				href: `/posts${page_num_(ctx) - 1 !== 1 ? '/' + (page_num_(ctx) - 1) : ''}`,
+				href: post_path__new(
+					ctx,
+					page_num_(ctx) - 1 !== 1
+						? '/' + (page_num_(ctx) - 1)
+						: ''),
 				class: class_(
 					prev_class,
 					'mr-4',
@@ -60,7 +65,7 @@ export function blog_posts__nav_<env_T extends relement_env_T>({
 			]),
 			button__a_<env_T>({
 				disabled: next_class === 'disabled',
-				href: `/posts/${page_num_(ctx) + 1}`,
+				href: post_path__new(ctx, page_num_(ctx) + 1),
 				class: class_(
 					next_class,
 					'ml-4',

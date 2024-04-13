@@ -1,3 +1,4 @@
+import { post_path__new } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
 import {
@@ -82,7 +83,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>($p:blog_t
 			ul_(tag__dehydrated_post_meta_a1_(ctx).map(dehydrated_post_meta=>
 				server_blog_card__li_({
 					ctx,
-					href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
+					href: post_path__new(ctx, post_slug__new(dehydrated_post_meta)),
 					dehydrated_post_meta,
 				})))
 		])
