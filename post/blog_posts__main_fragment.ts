@@ -74,7 +74,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>($p:blog
 				_class),
 			h1_text,
 			h1_class,
-			hero_p_text: description,
+			hero_p_md: description,
 			hero_p_class: description_class,
 		}, [
 			article_({

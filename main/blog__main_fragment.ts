@@ -13,7 +13,7 @@ type blog__main_fragment_props_T = {
 	h1_class?:string
 	tween__dom?:tag_dom_T
 	hero_p_class?:string
-	hero_p_text?:string
+	hero_p_md?:string
 	hyop?:string
 	dataset?:Record<string, unknown>
 }
@@ -27,7 +27,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 		h1_class,
 		tween__dom,
 		hero_p_class,
-		hero_p_text,
+		hero_p_md,
 		hyop,
 		dataset,
 	} = $p
@@ -56,13 +56,13 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 						? h1_({ class: h1_class }, h1_text)
 						: null,
 				tween__dom,
-				hero_p_text
+				hero_p_md
 					? p_({
 						class: class_(
 							'mt-0',
 							'italic',
 							hero_p_class)
-					}, md__raw_(hero_p_text))
+					}, md__raw_(hero_p_md))
 					: null,
 			]),
 			...children
