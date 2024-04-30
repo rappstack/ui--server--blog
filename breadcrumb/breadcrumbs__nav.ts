@@ -5,6 +5,7 @@ import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 type breadcrumbs__nav_props_T = {
 	ctx:request_ctx_T
+	class?:string
 }
 export function breadcrumbs__nav_<env_T extends relement_env_T>($p:breadcrumbs__nav_props_T) {
 	const { ctx } = $p
@@ -25,7 +26,8 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>($p:breadcrumbs__
 				'mb-4',
 				'w-full',
 				'max-w-3xl',
-				'px-4'),
+				'px-4',
+				$p.class),
 			'aria-label': 'breadcrumb',
 		}, [
 			ul_([
