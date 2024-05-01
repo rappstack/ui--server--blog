@@ -30,7 +30,6 @@ type blog_post__main_fragment_props_T = {
 	progress_container_class?:string
 	progress_class?:string
 	article_class?:string
-	breadcrumbs__nav_class?:string
 	image?:string
 	h1_dom?:tag_dom_T
 	h1_class?:string
@@ -43,7 +42,6 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 		progress_container_class,
 		progress_class,
 		article_class,
-		breadcrumbs__nav_class,
 		image,
 		h1_class,
 		subtitle_class,
@@ -84,7 +82,6 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			hero_p_class: description_class,
 			hero_p_html: description_html,
 			hero_p_text: description,
-			breadcrumbs__nav_class,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
 			hyop: 'code_copy_button__hyop'
 		}, [

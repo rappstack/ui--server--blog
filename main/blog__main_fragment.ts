@@ -14,7 +14,6 @@ type blog__main_fragment_props_T = {
 	hero_p_class?:string
 	hero_p_html?:string
 	hero_p_text?:string
-	breadcrumbs__nav_class?:string
 	hyop?:string
 	dataset?:Record<string, unknown>
 }
@@ -30,12 +29,11 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 		hero_p_class,
 		hero_p_html,
 		hero_p_text,
-		breadcrumbs__nav_class,
 		hyop,
 		dataset,
 	} = $p
 	return fragment_<env_T>(
-		breadcrumbs__nav_({ ctx, class: breadcrumbs__nav_class }),
+		breadcrumbs__nav_({ ctx }),
 		main_({
 			id: 'main',
 			class: class_(

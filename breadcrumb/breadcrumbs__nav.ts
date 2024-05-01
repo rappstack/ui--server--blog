@@ -1,8 +1,18 @@
 import { breadcrumb_a1_, BreadcrumbList_id_ref_ } from '@rappstack/domain--server--blog/breadcrumb'
 import { class_ } from 'ctx-core/html'
-import { type relement_env_T } from 'relementjs'
+import { be_sig_triple_, type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
+export const [
+	,
+	breadcrumbs__nav_hyop_,
+	breadcrumbs__nav_hyop__set,
+] = be_sig_triple_(()=><string|undefined>undefined)
+export const [
+	,
+	breadcrumbs__nav_class_,
+	breadcrumbs__nav_class__set,
+] = be_sig_triple_(()=><string|undefined>undefined)
 type breadcrumbs__nav_props_T = {
 	ctx:request_ctx_T
 	class?:string
@@ -27,8 +37,10 @@ export function breadcrumbs__nav_<env_T extends relement_env_T>($p:breadcrumbs__
 				'w-full',
 				'max-w-3xl',
 				'px-4',
+				breadcrumbs__nav_class_(ctx),
 				$p.class),
 			'aria-label': 'breadcrumb',
+			hyop: breadcrumbs__nav_hyop_(ctx),
 		}, [
 			ul_([
 				li_({
