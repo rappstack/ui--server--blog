@@ -23,6 +23,7 @@ import { blog__main_fragment_ } from '../main/index.js'
 type blog_tag__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
+	description?:string
 	h1_class?:string
 	author_id_ref?:id_ref_T,
 	image?:string
@@ -34,8 +35,9 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>($p:blog_t
 		author_id_ref,
 		image,
 	} = $p
+	let { description } = $p
 	const title = 'Tag:' + tag_(ctx)
-	const description = 'All the articles with the tag "' + tag_(ctx) + '".'
+	description ??= 'All the posts with the tag "' + tag_(ctx) + '".'
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'CollectionPage')
