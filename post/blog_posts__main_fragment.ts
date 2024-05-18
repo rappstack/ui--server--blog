@@ -16,6 +16,7 @@ type blog_posts__main_fragment_config_T = {
 	ctx:request_ctx_T
 	class?:string
 	image?:string
+	main__hyop?:string
 	posts_path?:string
 	h1_text?:string
 	h1_class?:string
@@ -28,6 +29,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>($p:blog
 		ctx,
 		class: _class,
 		image,
+		main__hyop,
 		posts_path,
 		h1_text,
 		h1_class,
@@ -74,6 +76,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>($p:blog
 			class: class_(
 				'blog_posts__main_fragment',
 				_class),
+			hyop: main__hyop,
 			h1_text,
 			h1_class,
 			hero_p_text: description,

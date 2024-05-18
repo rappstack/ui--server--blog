@@ -27,6 +27,8 @@ import { blog_post__html_, blog_post__text_ } from './blog_post__html.js'
 type blog_post__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
+	main__hyop?:string
+	article__hyop?:string
 	progress_container_class?:string
 	progress_class?:string
 	article_class?:string
@@ -39,6 +41,8 @@ type blog_post__main_fragment_props_T = {
 export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 	const {
 		ctx,
+		main__hyop,
+		article__hyop,
 		progress_container_class,
 		progress_class,
 		article_class,
@@ -83,7 +87,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			hero_p_html: description_html,
 			hero_p_text: description,
 			/** @see {import('@rappstack/ui--browser--blog/post').code_copy_button__hyop} */
-			hyop: 'code_copy_button__hyop'
+			hyop: main__hyop ?? 'code_copy_button__hyop',
 		}, [
 			blog_post__main__article_(),
 			ul_({
@@ -148,6 +152,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 					'mx-auto',
 					'max-w-3xl',
 					article_class),
+				hyop: article__hyop,
 			}, [
 				div_([
 					blog_post__hero_image_(ctx)
