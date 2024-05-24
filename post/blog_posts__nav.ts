@@ -5,11 +5,12 @@ import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { nav_ } from 'relementjs/html'
 import { left_arrow_, right_arrow_ } from '../icon/index.js'
-export function blog_posts__nav_<env_T extends relement_env_T>({
-	ctx,
-}:{
+type blog_posts__nav_props_T = {
 	ctx:wide_ctx_T
-}) {
+	class?:string
+}
+export function blog_posts__nav_<env_T extends relement_env_T>($p:blog_posts__nav_props_T) {
+	const { ctx } = $p
 	if (page_count_(ctx) <= 1) return
 	const prev_class = page_num_(ctx) > 1 ? '' : 'disabled'
 	const next_class = page_num_(ctx) < page_count_(ctx) ? '' : 'disabled'
@@ -29,7 +30,8 @@ export function blog_posts__nav_<env_T extends relement_env_T>({
 				'flex',
 				'justify-center',
 				'mb-8',
-				'mt-auto'),
+				'mt-auto',
+				$p.class),
 			'aria-label': 'Pagination',
 		}, [
 			button__a_<env_T>({
