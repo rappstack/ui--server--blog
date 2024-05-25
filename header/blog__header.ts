@@ -37,7 +37,7 @@ export function blog__header_<env_T extends relement_env_T>({
 					'py-2',
 					'px-3',
 					'bg-skin-accent',
-					'text-skin-inverted',
+					'text-skin-invert',
 					'transition-all'),
 				href: '#main'
 			}, 'Skip to content'),
