@@ -1,4 +1,4 @@
-import { post_date_, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
+import { post_date_, post_path_prefix_, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { site__description_, site__title_, site__website_ } from '@rappstack/domain--server/site'
 import { doc__render, xml_doctype } from '@rappstack/ui--server/doc'
 import { author_, channel_, description_, guid_, item_, link_, pubDate_, rss_, title_ } from '@rappstack/ui--server/rss'
@@ -20,12 +20,12 @@ export function blog__rss_xml_({
 					item_([
 						title_(dehydrated_post_meta.title),
 						link_([
-							url__join(site__website_(ctx)!, 'posts', dehydrated_post_meta.slug)
+							url__join(site__website_(ctx)!, post_path_prefix_(ctx), dehydrated_post_meta.slug)
 						]),
 						guid_({
 							isPermaLink: 'true',
 						}, [
-							url__join(site__website_(ctx)!, 'posts', dehydrated_post_meta.slug)
+							url__join(site__website_(ctx)!, post_path_prefix_(ctx), dehydrated_post_meta.slug)
 						]),
 						description_(dehydrated_post_meta.description),
 						pubDate_([
@@ -33,7 +33,8 @@ export function blog__rss_xml_({
 								.toString()
 								.replace(/GMT-.*/, 'GMT')
 						]),
-						author_(dehydrated_post_meta.author),
+						dehydrated_post_meta.author_a1.map(author=>
+							author_(author)),
 					]))
 			])
 		])

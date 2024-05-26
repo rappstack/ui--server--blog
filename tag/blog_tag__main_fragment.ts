@@ -1,4 +1,4 @@
-import { post_path__new } from '@rappstack/domain--any--blog/post'
+import { post_path__new, post_path_prefix_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { tag_, tag__dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/tag'
 import {
@@ -51,7 +51,7 @@ export function blog_tag__main_fragment_<env_T extends relement_env_T>($p:blog_t
 				'@type': 'ListItem',
 				name: dehydrated_post_meta.title,
 				description: dehydrated_post_meta.description,
-				url: url__join(site__website_(ctx)!, 'posts', post_slug)
+				url: url__join(site__website_(ctx)!, post_path_prefix_(ctx), post_slug)
 			})
 		}),
 	})

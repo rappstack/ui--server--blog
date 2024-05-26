@@ -7,11 +7,13 @@ import { type tag_props_T } from 'relementjs/any'
 import { type request_ctx_T } from 'relysjs/server'
 import type { CreativeWork } from 'schema-dts'
 type server_blog_card__li_props_T = {
-	ctx:request_ctx_T,
+	ctx:request_ctx_T
 	class?:string|(()=>string)
 	li_props?:Exclude<tag_props_T<HTMLLIElement>, 'class'>
 	a_class?:string
 	a_props?:Exclude<tag_props_T<HTMLAnchorElement>, 'class'>
+	h2_class?:string
+	h2_props?:Exclude<tag_props_T<HTMLAnchorElement>, 'class'>
 	href?:string
 	dehydrated_post_meta:dehydrated_post_meta_T
 	show_heading?:boolean
