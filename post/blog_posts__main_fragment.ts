@@ -18,6 +18,7 @@ type blog_posts__main_fragment_config_T = {
 	class?:string
 	image?:string
 	main__hyop?:string
+	hero_class?:string
 	h1_text?:string
 	h1_class?:string
 	description?:string
@@ -35,6 +36,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>(
 		class: _class,
 		image,
 		main__hyop,
+		hero_class,
 		h1_text,
 		h1_class,
 		description,
@@ -80,6 +82,7 @@ export function blog_posts__main_fragment_<env_T extends relement_env_T>(
 				'blog_posts__main_fragment',
 				_class),
 			hyop: main__hyop,
+			hero_class,
 			h1_text,
 			h1_class,
 			hero_p_text: description,
