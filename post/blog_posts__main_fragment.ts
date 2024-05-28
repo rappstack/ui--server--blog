@@ -8,7 +8,7 @@ import { site__author_a1_, site__website_ } from '@rappstack/domain--server/site
 import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
-import type { tag_props_T } from 'relementjs/any'
+import { type tag_props_T } from 'relementjs/any'
 import { article_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article, ItemList, ListItem } from 'schema-dts'
