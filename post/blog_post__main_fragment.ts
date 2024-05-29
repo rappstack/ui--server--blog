@@ -64,7 +64,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 						'inline',
 						h1_class)
 				}, title),
-				span_({ class: subtitle_class }, ': ' + subtitle)
+				div_({ class: subtitle_class }, subtitle)
 			]
 			: null
 	return [
