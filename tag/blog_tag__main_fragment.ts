@@ -25,7 +25,7 @@ type blog_tag__main_fragment_props_T = {
 	class?:string
 	description?:string
 	h1_class?:string
-	author_id_ref?:id_ref_T,
+	author_id_ref?:id_ref_T|id_ref_T[],
 	image?:string
 }
 export function blog_tag__main_fragment_<env_T extends relement_env_T>($p:blog_tag__main_fragment_props_T) {

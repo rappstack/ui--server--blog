@@ -22,9 +22,9 @@ import { blog_tag__li_ } from './blog_tag__li.js'
 type blog_tags__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
-	author_id_ref:id_ref_T
+	author_id_ref:id_ref_T|id_ref_T[]
 	h1_class?:string
-	image:string
+	image?:string
 }
 export function blog_tags__main_fragment_<env_T extends relement_env_T>($p:blog_tags__main_fragment_props_T) {
 	const {
