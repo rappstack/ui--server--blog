@@ -46,16 +46,16 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 			hyop,
 			...dataset__data_attrs_(dataset || {})
 		}, [
+			h1_dom
+				? h1_dom
+				: h1_text
+					? h1_({ class: h1_class }, h1_text)
+					: null,
 			div_({
 				class: class_(
 					'hero',
 					hero_class ?? 'prose')
 			}, [
-				h1_dom
-					? h1_dom
-					: h1_text
-						? h1_({ class: h1_class }, h1_text)
-						: null,
 				tween__dom,
 				hero_p_html
 					? [

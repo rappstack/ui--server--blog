@@ -15,7 +15,7 @@ import { request_url__href_ } from '@rappstack/domain--server/request'
 import { blog_author_date_reading_time__div_ } from '@rappstack/ui--any--blog/card'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
-import { article_, div_, h1_, img_, span_, template_, ul_ } from 'relementjs/html'
+import { article_, div_, h1_, img_, template_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import { footnote_list__div_ } from '../footnote/index.js'
@@ -60,9 +60,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 		subtitle
 			? [
 				h1_({
-					class: class_(
-						'inline',
-						h1_class)
+					class: h1_class ?? 'inline',
 				}, title),
 				div_({ class: subtitle_class }, subtitle)
 			]
