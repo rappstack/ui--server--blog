@@ -138,7 +138,6 @@ export function blog__header_<env_T extends relement_env_T>($p:blog__header_prop
 							'sm:mt-0',
 							'sm:ml-0',
 							'gap-x-2',
-							'sm:gap-x-5',
 							'gap-y-2',
 							'sm:gap-y-0')
 					}, ...children)
