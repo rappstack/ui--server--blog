@@ -19,7 +19,7 @@ type props_T = dl_tree_props_T&{
 export function blog_posts__dl_tree_($p:props_T) {
 	let {
 		ctx,
-		div_props,
+		section_props,
 		a_class,
 		a_props,
 		h2_class,
@@ -31,7 +31,7 @@ export function blog_posts__dl_tree_($p:props_T) {
 		dl_tree_({
 			ctx,
 			...dl_tree_props,
-			div_props: { ...schema_org_rdfa_property_<Article>('articleBody'), ...div_props },
+			section_props: { ...schema_org_rdfa_property_<Article>('articleBody'), ...section_props },
 		}, ()=>
 			page_dehydrated_post_meta_a1_(ctx)!.map(dehydrated_post_meta=>{
 				const {

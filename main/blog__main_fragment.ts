@@ -7,6 +7,7 @@ type blog__main_fragment_props_T = {
 	ctx:request_ctx_T
 	class?:string
 	hero_class?:string
+	header_class?:string
 	h1_dom?:tag_dom_T
 	h1_text?:string
 	h1_class?:string
@@ -22,6 +23,7 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 		ctx,
 		class: _class,
 		hero_class,
+		header_class,
 		h1_dom,
 		h1_text,
 		h1_class,
@@ -46,7 +48,9 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 			hyop,
 			...dataset__data_attrs_(dataset || {})
 		}, [
-			header_([
+			header_({
+				class: header_class,
+			}, [
 				h1_dom
 					? h1_dom
 					: h1_text

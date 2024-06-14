@@ -33,6 +33,7 @@ type blog_post__main_fragment_props_T = {
 	progress_class?:string
 	article_class?:string
 	image?:string
+	header_class?:string
 	h1_dom?:tag_dom_T
 	h1_class?:string
 	subtitle_class?:string
@@ -47,6 +48,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 		progress_class,
 		article_class,
 		image,
+		header_class,
 		h1_class,
 		subtitle_class,
 		description_class,
@@ -72,6 +74,7 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 				'blog_post__main',
 				'mb-0',
 				$p.class),
+			header_class,
 			h1_dom,
 			h1_text: title,
 			h1_class,
