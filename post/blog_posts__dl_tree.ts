@@ -7,13 +7,13 @@ import { dl_tree_, type dl_tree_props_T, type dt_dd_pair_T } from '@rappstack/ui
 import { url__join } from 'ctx-core/uri'
 import { raw_ } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
-import { a_, h2_, p_ } from 'relementjs/html'
+import { a_, h1_, p_ } from 'relementjs/html'
 import { type Article } from 'schema-dts'
 type props_T = dl_tree_props_T&{
-	a_class?:string
 	a_props?:Exclude<tag_props_T<HTMLAnchorElement>, 'class'>
-	h2_class?:string
-	h2_props?:Exclude<tag_props_T<HTMLAnchorElement>, 'class'>
+	a_class?:string
+	h1_class?:string
+	h1_props?:Exclude<tag_props_T<HTMLAnchorElement>, 'class'>
 	description_class?:string
 }
 export function blog_posts__dl_tree_($p:props_T) {
@@ -22,8 +22,8 @@ export function blog_posts__dl_tree_($p:props_T) {
 		section_props,
 		a_class,
 		a_props,
-		h2_class,
-		h2_props,
+		h1_class,
+		h1_props,
 		description_class,
 		...dl_tree_props
 	} = $p
@@ -40,10 +40,10 @@ export function blog_posts__dl_tree_($p:props_T) {
 					description_html,
 				} = dehydrated_post_meta
 				return [
-					h2_({
+					h1_({
 						href: url__join(post_path_prefix_(ctx), post_slug__new(dehydrated_post_meta)),
-						class: h2_class,
-						...h2_props,
+						class: h1_class,
+						...h1_props,
 					}, a_({
 						href: url__join(post_path_prefix_(ctx), post_slug__new(dehydrated_post_meta)),
 						class: a_class,
