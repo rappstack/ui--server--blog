@@ -1,6 +1,6 @@
 import { class_, dataset__data_attrs_ } from 'ctx-core/html'
 import { fragment_, raw_, type relement_env_T, type tag_dom_T } from 'relementjs'
-import { div_, h1_, main_, p_ } from 'relementjs/html'
+import { div_, h1_, header_, main_, p_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { breadcrumbs__nav_ } from '../breadcrumb/index.js'
 type blog__main_fragment_props_T = {
@@ -46,32 +46,34 @@ export function blog__main_fragment_<env_T extends relement_env_T>($p:blog__main
 			hyop,
 			...dataset__data_attrs_(dataset || {})
 		}, [
-			h1_dom
-				? h1_dom
-				: h1_text
-					? h1_({ class: h1_class }, h1_text)
-					: null,
-			div_({
-				class: class_(
-					'hero',
-					hero_class ?? 'prose')
-			}, [
-				tween__dom,
-				hero_p_html
-					? [
-						div_({
-							class: class_(
-								'italic',
-								'[&>p:first-child]:mt-0')
-						}, raw_(hero_p_html))
-					] : [
-						p_({
-							class: class_(
-								'mt-0',
-								'italic',
-								hero_p_class)
-						}, hero_p_text)
-					]
+			header_([
+				h1_dom
+					? h1_dom
+					: h1_text
+						? h1_({ class: h1_class }, h1_text)
+						: null,
+				div_({
+					class: class_(
+						'hero',
+						hero_class ?? 'prose')
+				}, [
+					tween__dom,
+					hero_p_html
+						? [
+							div_({
+								class: class_(
+									'italic',
+									'[&>p:first-child]:mt-0')
+							}, raw_(hero_p_html))
+						] : [
+							p_({
+								class: class_(
+									'mt-0',
+									'italic',
+									hero_p_class)
+							}, hero_p_text)
+						]
+				]),
 			]),
 			...children
 		]))
