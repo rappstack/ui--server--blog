@@ -16,7 +16,7 @@ export function footnote_list__div_<env_T extends relement_env_T>($p:props_T) {
 		dl_<env_T>({
 			class: class_(
 				'grid',
-				'grid-cols-[3em_1fr]',
+				'grid-cols-[auto_1fr]',
 				$p.class,
 			),
 		}, [
