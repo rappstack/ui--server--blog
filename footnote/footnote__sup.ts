@@ -1,7 +1,7 @@
 import { footnote__ensure, type footnote_T } from '@rappstack/domain--server--blog/footnote'
-import { is_browser_ } from 'ctx-core/env'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { fragment_, type relement_env_T, type tag_dom_T, type wide_ctx_T } from 'relementjs'
-import { a_, div_, sup_ } from 'relementjs/html'
+import { a_, sup_ } from 'relementjs/html'
 import { _footnote__html_id__new, _footnote__ref__html_id__new } from './_footnote__html_id.js'
 const footnote__sup_M_footnote = new WeakMap<object, footnote_T>
 type footnote__sup__props_T = {
@@ -17,10 +17,13 @@ export function footnote__sup_<env_T extends relement_env_T>($p:footnote__sup__p
 	} = $p
 	const footnote = footnote__ensure(ctx, id,
 		innerHTML
-			? ' ' + innerHTML
-			: is_browser_()
-				? ' ' + div_<'browser'>(...children).innerHTML
-				: ' ' + fragment_<'server'>(...children))
+			? innerHTML
+			: '' + fragment_<'server'>(
+			// @ts-ignore
+			[children].flat(Infinity).map(child=>
+				typeof child === 'string'
+					? md__raw_({ ctx }, child)
+					: child)))
 	const sup = sup_<env_T>(
 		a_({
 			id: _footnote__ref__html_id__new(footnote),
