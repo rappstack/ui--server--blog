@@ -50,6 +50,7 @@ export function footnote_list__div_<env_T extends relement_env_T>($p:props_T) {
 				]),
 				dd_({
 					class: class_(
+						'mt-0',
 						'pl-0',
 						'sm:ps-0',
 						'prose',
