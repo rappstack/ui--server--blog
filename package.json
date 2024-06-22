@@ -69,15 +69,15 @@
 		"@rappstack/ui--any": "workspace:*",
 		"@rappstack/ui--any--blog": "workspace:*",
 		"@rappstack/ui--server": "workspace:*",
-		"ctx-core": "^7.2.22",
-		"relementjs": "^0.80.21",
-		"relysjs": "^1.21.55"
+		"ctx-core": "^7.2.24",
+		"relementjs": "^0.80.23",
+		"relysjs": "^1.21.58"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
 		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
-		"typescript": "^5.4.5"
+		"typescript": "^5.5.2"
 	}
 }
