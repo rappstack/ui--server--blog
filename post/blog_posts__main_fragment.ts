@@ -10,7 +10,7 @@ import { url__join } from 'ctx-core/uri'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
 import { article_ } from 'relementjs/html'
-import { type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 import type { Article, ItemList, ListItem } from 'schema-dts'
 import { blog__main_fragment_ } from '../main/index.js'
 type blog_posts__main_fragment_config_T = {

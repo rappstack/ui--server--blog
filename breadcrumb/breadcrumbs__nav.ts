@@ -2,7 +2,7 @@ import { breadcrumb_a1_, BreadcrumbList_id_ref_ } from '@rappstack/domain--serve
 import { class_ } from 'ctx-core/html'
 import { be_sig_triple_, type relement_env_T } from 'relementjs'
 import { a_, li_, nav_, span_, ul_ } from 'relementjs/html'
-import { type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 export const [
 	,
 	breadcrumbs__nav_hyop_,

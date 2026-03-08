@@ -4,7 +4,7 @@ import { schema_org_rdfa_, schema_org_rdfa_property_, schema_org_rdfa_rev_ } fro
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { type tag_dom_T } from 'relementjs'
 import { type tag_props_T } from 'relementjs/any'
-import { type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 import type { CreativeWork } from 'schema-dts'
 type server_blog_card__li_props_T = {
 	ctx:request_ctx_T

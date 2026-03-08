@@ -1,7 +1,7 @@
 import { class_, dataset__data_attrs_ } from 'ctx-core/html'
 import { fragment_, raw_, type relement_env_T, type tag_dom_T } from 'relementjs'
 import { div_, h1_, header_, main_, p_ } from 'relementjs/html'
-import { type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 import { breadcrumbs__nav_ } from '../breadcrumb/index.js'
 type blog__main_fragment_props_T = {
 	ctx:request_ctx_T
