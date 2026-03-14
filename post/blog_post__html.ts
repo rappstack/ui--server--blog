@@ -2,7 +2,7 @@ import { blog_post__estimate_read_minutes__new } from '@rappstack/domain--any--b
 import { blog_post__tag_ } from '@rappstack/domain--server--blog/post'
 import { response__drain } from '@rappstack/domain--server/response'
 import { nullish__none_ } from 'ctx-core/function'
-import { type request_ctx_T, rmemo__wait } from 'rebuildjs/server'
+import { type request_ctx_T, rmemo__wait } from 'rhonojs/server'
 import { id_be_memo_pair_ } from 'rmemo'
 export const [
 	,

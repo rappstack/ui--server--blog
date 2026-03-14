@@ -1,7 +1,7 @@
 import { dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
-import { type request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rhonojs/server'
 import { blog__main_fragment_ } from '../main/index.js'
 type blog_search__main_fragment_props_T = {
 	ctx:request_ctx_T

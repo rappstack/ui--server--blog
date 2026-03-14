@@ -16,7 +16,7 @@ import { blog_author_date_reading_time__div_ } from '@rappstack/ui--any--blog/ca
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { article_, div_, h1_, img_, template_, ul_ } from 'relementjs/html'
-import { type request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rhonojs/server'
 import type { Article } from 'schema-dts'
 import { footnote_list__div_ } from '../footnote/index.js'
 import { heroicons_clipboard_document_list_ } from '../icon/index.js'

@@ -4,7 +4,7 @@ import { page_dehydrated_post_meta_a1_ } from '@rappstack/domain--server--blog/p
 import { schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { url__join } from 'ctx-core/uri'
 import { ul_ } from 'relementjs/html'
-import { type request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rhonojs/server'
 import type { Article } from 'schema-dts'
 import { server_blog_card__li_ } from '../card/index.js'
 type props_T = {

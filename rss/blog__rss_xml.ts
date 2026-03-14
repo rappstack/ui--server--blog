@@ -3,7 +3,7 @@ import { site__description_, site__title_, site__website_ } from '@rappstack/dom
 import { doc__render, xml_doctype } from '@rappstack/ui--server/doc'
 import { author_, channel_, description_, guid_, item_, link_, pubDate_, rss_, title_ } from '@rappstack/ui--server/rss'
 import { url__join } from 'ctx-core/uri'
-import { type request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rhonojs/server'
 export function blog__rss_xml_({
 	ctx,
 }:{
