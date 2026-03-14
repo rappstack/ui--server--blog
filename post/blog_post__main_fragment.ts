@@ -6,7 +6,7 @@ import {
 	blog_post__description_html_,
 	blog_post__hero_image_,
 	blog_post__subtitle_,
-	blog_post__tag_a1_,
+	blog_post__tags_,
 	blog_post__title_,
 	blog_post_mod__meta_
 } from '@rappstack/domain--server--blog/post'
@@ -93,9 +93,9 @@ export function blog_post__main_fragment_($p:blog_post__main_fragment_props_T) {
 			blog_post__main__article_(),
 			ul_({
 				class: class_(
-					'tag_a1-container',
+					'tags-container',
 					'my-8')
-			}, ...(blog_post__tag_a1_(ctx) ?? []).map(tag=>
+			}, ...(blog_post__tags_(ctx) ?? []).map(tag=>
 				blog_tag__li_({ ctx, name: slug__new(tag) })))
 		]),
 		div_({

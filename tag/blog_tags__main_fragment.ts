@@ -1,4 +1,4 @@
-import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
+import { unique_tags_ } from '@rappstack/domain--any--blog/tag'
 import {
 	type id_ref_T,
 	jsonld__add,
@@ -43,7 +43,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>($p:blog_
 		'@id': jsonld_id__new(ctx, 'timeline'),
 		'@type': 'ItemList',
 		itemListElement:
-			unique_tag_a1_(ctx)
+			unique_tags_(ctx)
 				.map(tag=>
 					jsonld__add(ctx, ()=><ListItem>{
 						'@id': jsonld_id__new(ctx, `${tag}_ListItem`),
@@ -63,7 +63,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>($p:blog_
 		name: title,
 		description,
 		url: request_url__href_(ctx),
-		articleBody: unique_tag_a1_(ctx).join(' | '),
+		articleBody: unique_tags_(ctx).join(' | '),
 	})
 	WebPage__hasPart__push(ctx, Article_id_ref)
 	return [
@@ -76,7 +76,7 @@ export function blog_tags__main_fragment_<env_T extends relement_env_T>($p:blog_
 			h1_class,
 			hero_p_text: description,
 		}, [
-			ul_(unique_tag_a1_(ctx).map(tag=>
+			ul_(unique_tags_(ctx).map(tag=>
 				blog_tag__li_({
 					ctx,
 					name: tag,
