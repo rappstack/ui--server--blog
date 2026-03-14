@@ -1,7 +1,7 @@
 {
 	"name": "@rappstack/ui--server--blog",
 	"type": "module",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "UI library targeting the server for blogs",
 	"keywords": [
 		"rappstack",
@@ -63,12 +63,12 @@
 		"theme"
 	],
 	"dependencies": {
-		"@rappstack/domain--any--blog": "workspace:*",
-		"@rappstack/domain--server": "workspace:*",
-		"@rappstack/domain--server--blog": "workspace:*",
-		"@rappstack/ui--any": "workspace:*",
-		"@rappstack/ui--any--blog": "workspace:*",
-		"@rappstack/ui--server": "workspace:*",
+		"@rappstack/domain--any--blog": "^0.1.0",
+		"@rappstack/domain--server": "^0.1.0",
+		"@rappstack/domain--server--blog": "^0.1.0",
+		"@rappstack/ui--any": "^0.1.0",
+		"@rappstack/ui--any--blog": "^0.1.0",
+		"@rappstack/ui--server": "^0.1.0",
 		"ctx-core": "^7.2.32",
 		"relementjs": "^0.80.31",
 		"rhonojs": "^0.1.1"
