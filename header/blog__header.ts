@@ -24,7 +24,7 @@ export function blog__header_<env_T extends relement_env_T>($p:blog__header_prop
 		logo_image_class,
 		...header_props
 	} = $p
-	logo_image_class ??= 'w-16 h-10'
+	logo_image_class ??= 'w-12 h-7'
 	return (
 		header_<env_T>({
 			...header_props,
@@ -62,7 +62,8 @@ export function blog__header_<env_T extends relement_env_T>($p:blog__header_prop
 						'sm:items-center',
 						'justify-between',
 						'w-full',
-						'p-4',
+						'py-1.5',
+						'px-4',
 					],)
 			}, [
 				a_({
@@ -73,8 +74,8 @@ export function blog__header_<env_T extends relement_env_T>($p:blog__header_prop
 						'absolute',
 						'sm:static',
 						'font-semibold',
-						'text-xl',
-						'sm:text-2xl',
+						'text-base',
+						'sm:text-lg',
 						'whitespace-nowrap'),
 				}, [
 					logo_image_(ctx, {
